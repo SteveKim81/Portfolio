@@ -6,12 +6,28 @@ body {
     background: #f4f4f4;
     color: #333;
   }
-  header {
-    background: #222;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+  .rotating-words {
+    display: inline-block;
+    height: 1.2em;
+    overflow: hidden;
+    vertical-align: bottom;
+    position: relative;
   }
+  
+  .rotating-words span {
+    display: block;
+    animation: slide 10s infinite;
+  }
+  
+  @keyframes slide {
+    0% { transform: translateY(0%); }
+    20% { transform: translateY(-100%); }
+    40% { transform: translateY(-200%); }
+    60% { transform: translateY(-300%); }
+    80% { transform: translateY(-400%); }
+    100% { transform: translateY(0%); }
+  }
+  
   main {
     padding: 20px;
     max-width: 800px;
