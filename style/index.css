@@ -1,117 +1,358 @@
-  body {
-    font-family: "DM Sans", sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background: #F1E9DB;
-    color: #333;
-  }
+.lato-100 {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.lato-300 {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.lato-400 {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lato-700 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.lato-900 {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
   .rotating-words {
     display: inline-block;
-    height: 1.2em;
+    height: 78px;
     overflow: hidden;
     vertical-align: bottom;
     position: relative;
-    text-align: left;
-    border-bottom:2px solid #000;
   }
-  .hero{
-    background-image:url(../images/bg-hero.png);
-    background-position:right;
-    max-height: 740px;
-  }
-  .hero-left{
-    max-height: 740px;
-    background:RGBA(255,255,255,0.5);
-  }
-  .hero-right{
-    max-height: 740px;
-    margin-left:120px;
-  }
-  .rotating-words span {
+  .rotating-words div {
     display: block;
-    animation: slide 20s infinite;
+    animation: slide 10s infinite;
+    text-align:center;
   }
   .text-highlight{
     color:#0d2669;
   }
   @keyframes slide {
-    0% { transform: translateY(-400%); }
-    19% { transform: translateY(-400%); }
-    20% { transform: translateY(-300%); }
-    39% { transform: translateY(-300%); }
-    40% { transform: translateY(-200%); }
-    59% { transform: translateY(-200%); }
-    60% { transform: translateY(-100%); }
-    79% { transform: translateY(-100%); }
-    80% { transform: translateY(0%); }
-    99% { transform: translateY(0%); }
-    100% { transform: translateY(-400%); }
+    0% { transform: translateY(0%); }
+    33% { transform: translateY(0%); }
+    34% { transform: translateY(-100%); }
+    66% { transform: translateY(-100%); }
+    67% { transform: translateY(-200%); }
+    99% { transform: translateY(-200%); }
+    100% { transform: translateY(0%); }
   }
 
-  @keyframes floatUpDown {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-
-  @keyframes wiggle {
-    0%, 10% { transform: rotate(0deg); }
-    2% { transform: rotate(5deg); }
-    4% { transform: rotate(-5deg); }
-    6% { transform: rotate(3deg); }
-  }
-
-  @keyframes pulse {
-    0%, 100% { transform: translateY(0) scale(1); opacity: 1; }
-    50% { transform: translateY(-10px) scale(1.1); opacity: 0.8; }
-  }
-
-  @keyframes bounceWithScale {
-    0%   { transform: translateY(0) scaleY(1); }
-    7%  { transform: translateY(-40px) scaleY(1.05); }
-    9%  { transform: translateY(0) scaleY(0.95); }
-    10%  { transform: translateY(-5px) scaleY(1.05); }
-    12%  { transform: translateY(0) scaleY(0.95); }
-    13%  { transform: translateY(0) scaleY(1); }
-    100% { transform: translateY(0) scaleY(1); }
-  }
-
-  .decImg-1{
-    top:-10px; right:10px;
-    animation: floatUpDown 3s ease-in-out infinite;
-  }
-  .decImg-2{
-    top:-90px; right:20px;
-    animation: wiggle 6s ease-in-out infinite;
-    transform-origin: left bottom;
-  }
-  .decImg-3{
-    top:-70px; left:-20px;
-    animation: wiggle 10s ease-in-out infinite;
-  }
-  .decImg-4{
-    bottom:60px; left:-60px;
-    animation: floatUpDown 5s ease-in-out infinite;
-  }
-  .decImg-5{
-    top:110px; right:-20px;
-    animation: pulse 2s ease-in-out infinite;
-  }
-  .decImg-6{
-    bottom:10px; right:-40px;
-    animation: bounceWithScale 5s ease-in-out infinite;
-    transform-origin: bottom;
+  body {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    padding: 0;
   }
 
   main {
     padding: 20px;
     max-width: 980px;
     margin: auto;
-    margin-top:100px;
   }
 
   footer {
     text-align: center;
     padding: 10px;
     margin-top: 20px;
+    font-size:.8rem;
+    font-weight:300;
+    background:#000;
+    color:#fff;
+  }
+  .navbar-nav {
+    gap: 1rem;
+  }
+  .navbar{
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+    background:#fff;
+    top:-60px;
+  }
+  .navbar.visible {
+    top:0px;
+    pointer-events: auto;
+  }
+  .banner {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid #000;
+    display: inline-block;
+    margin-top: 1rem;
+  }
+  .tagline {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .skills p {
+    margin: 0;
+  }
+  .project-main-menu {
+    margin-top:5rem;
+  }
+
+  blockquote {
+    font-style: italic;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-left: 5px solid #ccc;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 5rem;
+  }
+  .contact-icons div {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  section{
+    margin:10rem 0;
+  }
+  #home{
+    margin:0;
+  }
+  #home .line-1{
+    font-size:3rem;
+    font-weight:700;
+    margin-bottom:1rem;
+    opacity:0;
+    transition: opacity .3s ease-in-out;
+  }
+
+  #home .line-1 span{
+    display: inline-block;
+  }
+
+  #home .line-2{
+    font-size:2rem;
+    font-weight:500;
+    display: inline-block;
+    opacity:0;
+    transition: opacity .3s ease-in-out;
+    position:relative;
+  }
+  #home .line-2 .text-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  #home .line-2 .type {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: #000;
+    transform-origin: 0 50%;
+  }
+  #home .line-2 .type1 { 
+    top: 0; 
+    left: 0;
+  }
+
+  #home .line-2 .letter {
+    display: inline-block;
+  }
+
+  #home .line-3{
+    font-size:2.5rem;
+    font-weight:500;
+    opacity:0;
+    transition: opacity .3s ease-in-out;
+  }
+
+  #home .line-3 .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+
+  #home .line-name{
+    font-size:6rem;
+    font-weight:700;
+    margin:3rem 0;
+    background-image:url(../images/section1-name-ribbon.webp);
+    width:907px;
+    height:236px;
+    opacity:0;
+    transition: opacity .3s ease-in-out;
+    position:relative;
+  }
+
+  #home .line-name .letter {
+    display: inline-block;
+  }
+  #home .icon-divider{
+    margin-top:10rem;
+    opacity:0;
+    transition: opacity .3s ease-in-out;
+    background-image:url(../images/section1-divider.webp);
+    width:382px;
+    height:96px;
+  }
+  #home .icon-divider:hover{
+    background-image:url(../images/section1-divider-hover.webp);
+  }
+  
+  .subHeader{
+    font-size:2.5rem;
+    font-weight:700;
+  }
+  #intro{
+    margin-top:6rem;
+    /* opacity:0;
+    transition:all .3s ease-in-out; */
+    display:none;
+  }
+  #intro .capabilities{
+    background-image:url(../images/section1-capabilities.webp);
+    width:548px;
+    height:148px;
+    margin:0 auto;
+    padding-top: 3.5rem;
+    margin-top:5rem;
+  }
+  #intro .capabilities .cap-design{
+   font-family: "Montserrat", sans-serif;
+   font-size:3rem;
+   font-weight:700;
+  }
+  #intro .capabilities .cap-programming{
+    font-family: "Fira Code", monospace;
+    font-size:3rem;
+    font-weight:700;
+   }
+   #intro .capabilities .cap-elearning{
+    font-size:3rem;
+    font-weight:700;
+   }
+
+  #testimonials .blockquote{
+    background-image:url(../images/section3-testimonial.webp);
+    background-repeat:no-repeat;
+    width:570px;
+    height:280px;
+    padding:0 2.5rem 2.5rem 2.5rem;
+    margin:auto;
+    font-weight:300;
+   }
+  #testimonials .blockquote.bradd{
+    margin-top:5rem;
+   }
+  #testimonials .blockquote.jack{
+    margin-top:2rem;
+   }
+  #resume .resume-wrap{
+    width:100%;
+    max-width:690px;
+    margin:auto;
+   }
+  #resume .resume-wrap ul{
+   margin-top:2rem;
+   font-size:1.25rem;
+   font-weight:300;
+  }
+  #resume .resume-wrap .resume-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .75rem 1rem;
+    text-decoration: none;
+    color: #000;
+    width:187px;
+    height:56px;
+    background-image:url(../images/section4-bt-bg.webp);
+    background-repeat:no-repeat;
+    font-weight:500;
+  }
+  #resume .resume-wrap .resume-button:active {
+    background-image:url(../images/section4-bt-hover-bg.webp);
+    background-repeat:no-repeat;
+    height:51px;
+    margin-top:calc(1rem + 5px);
+  }
+  #resume .resume-wrap .button-pane .desc{
+    font-size:.8rem;
+    font-weight:300;
+  }
+  #contact .contact-icons div{
+    font-size:1.25rem;
+    font-weight:300;
+  }
+
+  #projects .project-main-menu .project-item .project-label{
+    font-size:1.75rem;
+    font-weight:700;
+  }
+  #projects .project-main-menu .project-item .project-description{
+    font-size:1.25rem;
+    font-weight:300;
+  }
+  #projects .project-main-menu{
+    max-width:515px;
+    margin:auto;
+    margin-top:4rem;
+  }
+  #projects .project-main-menu .project-item .project-label-wrap{
+    margin-left:1rem;
+    width:calc(100% - 202px);
+  }
+  
+  #projects .project-main-menu .project-item{
+    margin-top:2rem;
+    padding:0.5rem;
+    border-radius:10px;
+    position:relative;
+    transition:all .3s ease-in-out;
+  }
+  #projects .project-main-menu .project-item:hover{
+    color:#4400ff;
+    cursor: pointer;
+  }
+  #projects .project-main-menu .project-item .project-hover{
+    background-image:url(../images/section2-project-thumbnail-hover.webp);
+    background-repeat:no-repeat;
+    width:204px;
+    height:147px;
+    position:absolute;
+    top:-10px;
+    left:0;
+    opacity:0;
+    transition:all .3s ease-in-out;
+  }
+  #projects .project-main-menu .project-item:hover .project-hover{
+    opacity:1;
+  }
+  #projects .project-content-wrap{
+    display:none;
+    margin-top:5rem;
+    position:relative;
+  }
+  #projects .project-content-wrap.hiCreo .portfolio-wrap .label{
+    background-image:url(../images/section2-portfolio-label.webp);
+    width:315px;
+    height:75px;
+    font-size:2rem;
+    font-weight:700;
+    padding:1.5rem 0 0 2.2rem;
+  }
+  #projects .project-content-wrap.hiCreo .portfolio-wrap .label{
+  width:45px;
+  height:49px;  
   }
