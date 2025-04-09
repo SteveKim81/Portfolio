@@ -145,34 +145,145 @@ window.addEventListener('load', function () {
 
       });
 
-      const projectHiCreo = document.querySelector('.project-item.hicreo');
-      const projectElearning = document.querySelector('.project-item.elearning');
-      const projectPrint = document.querySelector('.project-item.print-media');
-      const projectGame = document.querySelector('.project-item.mobile-game');
       const projectMainMenu = document.querySelector('.project-main-menu');
-      const portfolioHiCreo = document.querySelector('.project-content-wrap.hiCreo');
+      const portfolioHiCreo = document.querySelector('.project-content-wrap.hicreo');
       const portfolioElearning = document.querySelector('.project-content-wrap.elearning');
       const portfolioPrint = document.querySelector('.project-content-wrap.print-media');
       const portfolioGame = document.querySelector('.project-content-wrap.mobile-game');
+      const closeButtons = document.querySelectorAll('.project-content-wrap .close-button');
+      const portfolios = document.querySelectorAll('.project-content-wrap');
+      const projectItemBtn = document.querySelectorAll('.project-sub-menu .project-item');
+      const projectSubMenu = document.querySelector('.project-sub-menu');
+      const projectHiCreoBtn = document.querySelector('.project-sub-menu .project-item.hicreo');
+      const projectElearningBtn = document.querySelector('.project-sub-menu .project-item.elearning');
+      const projectPrintBtn = document.querySelector('.project-sub-menu .project-item.print-media');
+      const projectGameBtn = document.querySelector('.project-sub-menu .project-item.mobile-game');
 
-      projectHiCreo.addEventListener('click', function () {
-        projectMainMenu.style.display = 'none'
-        portfolioHiCreo.style.display = 'block'
+      function hideAllPortfolios() {
+        portfolios.forEach(p => {
+          p.style.display = 'none';
+        });
+      }
+
+      function removeActiveFromProjectButtons() {
+        projectItemBtn.forEach(btn => {
+          btn.classList.remove('active');
+        });
+      }
+
+      document.body.addEventListener('click', function (e) {
+        if (e.target.closest('.project-item.hicreo')) {
+          hideAllPortfolios();
+          removeActiveFromProjectButtons();
+          portfolioHiCreo.style.display = 'block';
+          projectMainMenu.style.display = 'none';
+          projectSubMenu.style.display = 'flex';
+          projectHiCreoBtn.classList.add('active');
+        }
+      
+        else if (e.target.closest('.project-item.elearning')) {
+          hideAllPortfolios();
+          removeActiveFromProjectButtons();
+          portfolioElearning.style.display = 'block';
+          projectMainMenu.style.display = 'none';
+          projectSubMenu.style.display = 'flex';
+          projectElearningBtn.classList.add('active');
+        }
+      
+        else if (e.target.closest('.project-item.print-media')) {
+          hideAllPortfolios();
+          removeActiveFromProjectButtons();
+          portfolioPrint.style.display = 'block';
+          projectMainMenu.style.display = 'none';
+          projectSubMenu.style.display = 'flex';
+          projectPrintBtn.classList.add('active');
+        }
+      
+        else if (e.target.closest('.project-item.mobile-game')) {
+          hideAllPortfolios();
+          removeActiveFromProjectButtons();
+          portfolioGame.style.display = 'block';
+          projectMainMenu.style.display = 'none';
+          projectSubMenu.style.display = 'flex';
+          projectGameBtn.classList.add('active');
+        }
       });
 
-      projectElearning.addEventListener('click', function () {
-        projectMainMenu.style.display = 'none'
-        portfolioElearning.style.display = 'block'
+      closeButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.project-content-wrap').forEach(panel => {
+            panel.style.display = 'none';
+          });
+          projectMainMenu.style.display = 'block';
+        });
+
       });
 
-      projectPrint.addEventListener('click', function () {
-        projectMainMenu.style.display = 'none'
-        portfolioPrint.style.display = 'block'
+      const laptopImage = document.querySelector('.hicreo-website-laptop .hicreo-screen-capture');
+      const mobileImage = document.querySelector('.hicreo-website-mobile .hicreo-screen-capture');
+    
+      const imageSources = {
+        home: {
+          laptop: 'images/section2-screenshot-hicreo-home-laptop.webp',
+          mobile: 'images/section2-screenshot-hicreo-home-mobile.webp'
+        },
+        about: {
+          laptop: 'images/section2-screenshot-hicreo-about-laptop.webp',
+          mobile: 'images/section2-screenshot-hicreo-about-mobile.webp'
+        },
+        blogList: {
+          laptop: 'images/section2-screenshot-hicreo-bloglist-laptop.webp',
+          mobile: 'images/section2-screenshot-hicreo-bloglist-mobile.webp'
+        },
+        blogPage: {
+          laptop: 'images/section2-screenshot-hicreo-blogpage-laptop.webp',
+          mobile: 'images/section2-screenshot-hicreo-blogpage-mobile.webp'
+        }
+      };
+
+      const webPageButton = document.querySelectorAll('.hicreo-website-wrap .page-buttons .button');
+      const webPageButtonHome = document.querySelector('.hicreo-website-wrap .page-buttons .button.button-home');
+      const webPageAboutUs = document.querySelector('.hicreo-website-wrap .page-buttons .button.button-about-us');
+      const webPageBlogList = document.querySelector('.hicreo-website-wrap .page-buttons .button.button-blog-list');
+      const webPageButtonBlogPage = document.querySelector('.hicreo-website-wrap .page-buttons .button.button-blog-page');
+
+      function removeActiveFromwebPageButtons() {
+        webPageButton.forEach(btn => {
+          btn.classList.remove('active');
+        });
+      }
+
+      document.querySelector('.button-home').addEventListener('click', () => {
+        laptopImage.src = imageSources.home.laptop;
+        mobileImage.src = imageSources.home.mobile;
+        removeActiveFromwebPageButtons();
+        webPageButtonHome.classList.add('active');
+      });
+    
+      document.querySelector('.button-about-us').addEventListener('click', () => {
+        laptopImage.src = imageSources.about.laptop;
+        mobileImage.src = imageSources.about.mobile;
+        removeActiveFromwebPageButtons()
+        webPageAboutUs.classList.add('active');
+      });
+    
+      document.querySelector('.button-blog-list').addEventListener('click', () => {
+        laptopImage.src = imageSources.blogList.laptop;
+        mobileImage.src = imageSources.blogList.mobile;
+        removeActiveFromwebPageButtons()
+        webPageBlogList.classList.add('active');
+      });
+    
+      document.querySelector('.button-blog-page').addEventListener('click', () => {
+        laptopImage.src = imageSources.blogPage.laptop;
+        mobileImage.src = imageSources.blogPage.mobile;
+        removeActiveFromwebPageButtons()
+        webPageButtonBlogPage.classList.add('active');
       });
 
-      projectGame.addEventListener('click', function () {
-        projectMainMenu.style.display = 'none'
-        portfolioGame.style.display = 'block'
-      });
+
+
+
+
 
     });

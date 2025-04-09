@@ -341,10 +341,16 @@
   }
   #projects .project-content-wrap{
     display:none;
-    margin-top:5rem;
+    margin-top:2rem;
     position:relative;
   }
-  #projects .project-content-wrap.hiCreo .portfolio-wrap .label{
+  #projects .project-content-wrap .portfolio-wrap{
+    margin-top:2rem;
+    padding-top:3rem;
+    border-top:1px solid #aaa;
+    border-bottom:1px solid #aaa;
+  }
+  #projects .project-content-wrap .portfolio-wrap .label{
     background-image:url(../images/section2-portfolio-label.webp);
     width:315px;
     height:75px;
@@ -352,7 +358,201 @@
     font-weight:700;
     padding:1.5rem 0 0 2.2rem;
   }
-  #projects .project-content-wrap.hiCreo .portfolio-wrap .label{
-  width:45px;
-  height:49px;  
+  #projects .project-content-wrap .portfolio-wrap .close-button{
+    width:45px;
+    height:49px;  
+    background-image:url(../images/section2-portfolio-close-button.webp);
+    cursor:pointer;
+    float: right;
+    margin-top: -4rem;
+    position:relative;
+  }
+  #projects .project-content-wrap .portfolio-wrap .close-button:active{
+    background-image:url(../images/section2-portfolio-close-button-press.webp);
+    width:45px;
+    height:43px;  
+    margin-top: calc(-4rem + 6px);
+  }
+  #projects .project-content-wrap .portfolio-wrap .close-button .close-button-hover{
+    background-image:url(../images/section2-portfolio-close-button-hover.webp);
+    width:22px;
+    height:23px;  
+    position:absolute;
+    top:-5px;
+    left:-15px;
+    opacity:0;
+    transition: all .3s ease-in-out;;
+  }
+  #projects .project-content-wrap.hiCreo .portfolio-wrap .close-button:hover .close-button-hover{
+    opacity:1;
+  }
+  #projects .project-sub-menu{
+    cursor:pointer;
+    display:none;
+    margin-top:5rem;
+  }
+  #projects .project-sub-menu .project-item .project-label{
+    font-size:1em;
+    font-weight:700;
+  }
+  #projects .project-sub-menu .project-item:hover .project-label,
+  #projects .project-sub-menu .project-item.active .project-label{
+    color:#4400ff;
+  }
+  #projects .project-sub-menu .project-item{
+    position:relative;
+    margin:0 1rem;
+  }
+  #projects .project-sub-menu .project-item .project-hover{
+    background-image:url(../images/section2-portfolio-close-button-hover.webp);
+    width:22px;
+    height:23px;  
+    position:absolute;
+    top:-5px;
+    left:calc(50% - 50px);
+    opacity:0;
+    transition: all .3s ease-in-out;
+  }
+  #projects .project-sub-menu .project-item.active .project-hover,
+  #projects .project-sub-menu .project-item:hover .project-hover{
+    opacity:1;
+  }
+
+  #projects .project-content-wrap .portfolio-wrap .itemList{
+    margin-top:5rem;
+  }
+  #projects .project-content-wrap .portfolio-wrap .itemList.item2{
+    margin-top:10rem;
+  }
+
+  #projects .project-content-wrap .portfolio-wrap .itemList .header{
+    font-size:1.5rem;
+    font-weight:700;
+  }
+
+  #projects .project-content-wrap .portfolio-wrap .itemList .subHeader{
+    font-size:1.25rem;
+    font-weight:500;
+  }
+
+  #projects .project-content-wrap .portfolio-wrap .itemList .description{
+    font-size:1.25rem;
+    font-weight:300;
+    margin-top:1rem;
+  }
+
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap{
+    position:relative;
+    margin-top:4rem;
+  }
+
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap img{
+    position:relative;
+  }
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-laptop{
+    position:relative;
+    margin-top:2rem;
+    margin-left:-2rem;
+    width:980px;
+  }
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-laptop .capture-img-laptop{
+    position:absolute;
+    top: 34px;
+    left: 109px;
+    height: 478px;
+    width:762px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+  }
+
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-laptop .capture-img-laptop img{
+    width:747px;
+  }
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-mobile{
+    position:absolute;
+    top: 250px;
+    right: -50px;
+  }
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-mobile .capture-img-mobile-wrap{
+    border-radius:20px;
+    overflow: hidden;
+    height: 422px;
+    width: 199px;
+    position: absolute;
+    top: 6px;
+    left: 6px;
+  }
+
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-mobile .capture-img-mobile{
+    position:relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 422px;
+    width: 219px;
+  }
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-mobile .capture-img-mobile img{
+    width:200px;
+  }
+
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-mobile .capture-img-mobile::-webkit-scrollbar {
+    display: none; 
+  }
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-mobile .capture-img-mobile {
+    scrollbar-width: none;        /* Firefox */
+    -ms-overflow-style: none; 
+  }
+
+  #projects .page-buttons .button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    color: #000;
+    width: 140px;
+    height: 43px;
+    background-image: url(../images/section4-bt-bg.webp);
+    background-size: 140px;
+    background-repeat: no-repeat;
+    font-weight: 500;
+    cursor: pointer;
+    margin-left:0.5rem;
+    margin-right:0.5rem;
+    position:relative;
+  }
+  #projects .page-buttons .button:active {
+    background-image:url(../images/section4-bt-hover-bg.webp);
+    background-repeat:no-repeat;
+    height:38px;
+    margin-top:calc(1rem + 5px);
+  }
+  #projects .page-buttons .button .button-hover{
+    background-image:url(../images/section2-portfolio-close-button-hover.webp);
+    width:22px;
+    height:23px;  
+    position:absolute;
+    top:-5px;
+    left:-14px;
+    opacity:0;
+    transition: all .3s ease-in-out;
+  }
+  #projects .page-buttons .button.active .button-hover,
+  #projects .page-buttons .button:hover .button-hover{
+    opacity:1;
+  }
+  #projects .page-buttons .button.active,
+  #projects .page-buttons .button:hover{
+    color:#4400ff;
+  }
+  #projects .itemList.item2{
+    position:relative;
+  }
+  #projects .itemList.item2 .capture-video-laptop{
+    position:absolute;
+    top: 34px;
+    left: 107px;
+  }
+  .instruction{
+    font-size:1rem;
+    font-weight:300;
+    margin-top:2rem;
   }
