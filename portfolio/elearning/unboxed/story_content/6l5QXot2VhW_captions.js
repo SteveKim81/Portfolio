@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"WEBVTT%0D%0AKind:%20captions%0D%0ASource:%20Articulate%20Closed%20Captions%20Editor%0D%0ASource%20Version:%206.96.33815.0%0D%0A%0D%0A00:00:00.032%20--%3E%2000:00:04.924%0D%0ALet\u0027s%20explore%20some%20common%20design%20elements%20and%20see%20how%20good%20and%20bad%20practices%20compare.%0D%0A%0D%0A"}')
