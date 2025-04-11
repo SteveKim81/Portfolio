@@ -42,6 +42,10 @@
   .text-highlight{
     color:#0d2669;
   }
+
+  .mt-5rem{margin-top:5rem !important}
+  .mt-10rem{margin-top:10rem !important}
+
   @keyframes slide {
     0% { transform: translateY(0%); }
     33% { transform: translateY(0%); }
@@ -80,7 +84,9 @@
     transition: all 0.3s ease-in-out;
     pointer-events: none;
     background:#fff;
-    top:-60px;
+    top:-117px;
+    z-index:900;
+    box-shadow:0 0 5px 0 RGBA(0,0,0,0.3);
   }
   .navbar.visible {
     top:0px;
@@ -215,6 +221,10 @@
     font-size:2.5rem;
     font-weight:700;
   }
+  .subHeader-description{
+    font-size:1.25rem;
+    font-weight:300;
+  }
   #intro{
     margin-top:6rem;
     /* opacity:0;
@@ -280,6 +290,11 @@
     background-image:url(../images/section4-bt-bg.webp);
     background-repeat:no-repeat;
     font-weight:500;
+    position:relative;
+    transition: all .3s ease-in-out;
+  }
+  #resume .resume-wrap .resume-button:hover {
+    background-image:url(../images/section4-bt-bg-hover.webp);
   }
   #resume .resume-wrap .resume-button:active {
     background-image:url(../images/section4-bt-hover-bg.webp);
@@ -287,13 +302,82 @@
     height:51px;
     margin-top:calc(1rem + 5px);
   }
-  #resume .resume-wrap .button-pane .desc{
-    font-size:.8rem;
-    font-weight:300;
+  #resume .resume-wrap .resume-button:hover {
+    color:#4400ff;
   }
-  #contact .contact-icons div{
+
+  #resume .resume-wrap .resume-button .button-hover{
+    background-image:url(../images/section2-portfolio-close-button-hover.webp);
+    width:22px;
+    height:23px;  
+    position:absolute;
+    top:-5px;
+    left:-14px;
+    opacity:0;
+    transition: all .3s ease-in-out;
+  }
+  #resume .resume-wrap .resume-button:hover .button-hover{
+    opacity:1;
+  }
+
+  #resume .resume-wrap .button-pane .desc{
     font-size:1.25rem;
+    font-weight:500;
+    margin-top:3rem;
+  }
+  #contact .contact-icons div.contact-button{
+    font-size:1rem;
     font-weight:300;
+    cursor:pointer;
+    width:100px;
+    height:126px;
+    position:relative;
+  }
+  #contact .contact-icons div.contact-button:hover{
+    color:#4400ff;
+  }
+
+  #contact .contact-icons .contact-button.email-button{
+    background-image:url(../images/section5-email.webp);
+    background-repeat: no-repeat;
+    background-position: center top;
+  }
+  #contact .contact-icons .contact-button.linkedin-button{
+    background-image:url(../images/section5-linkedin.webp);
+    background-repeat: no-repeat;
+    background-position: center top;
+  }
+
+  #contact .contact-icons .contact-button .button-hover{
+    background-image:url(../images/section2-portfolio-close-button-hover.webp);
+    width:22px;
+    height:23px;  
+    position:absolute;
+    top:-10px;
+    left:-14px;
+    opacity:0;
+    transition: all .3s ease-in-out;
+  }
+  #contact .contact-icons .contact-button:hover .button-hover{
+    opacity:1;
+  }
+  #contact .contact-icons .contact-button.email-button:hover{
+    background-image:url(../images/section5-email-hover.webp);
+
+  }
+
+  #contact .contact-icons .contact-button.linkedin-button:hover{
+    background-image:url(../images/section5-linkedin-hover.webp);
+
+  }
+  #contact .contact-icons .contact-button.email-button:active{
+    background-image:url(../images/section5-email-press.webp);
+    background-position: center 6px;
+  }
+
+  #contact .contact-icons .contact-button.linkedin-button:active{
+    background-image:url(../images/section5-linkedin-press.webp);
+    background-position: center 6px;
   }
 
   #projects .project-main-menu .project-item .project-label{
@@ -320,6 +404,7 @@
     border-radius:10px;
     position:relative;
     transition:all .3s ease-in-out;
+    cursor:pointer;
   }
   #projects .project-main-menu .project-item:hover{
     color:#4400ff;
@@ -402,6 +487,7 @@
   #projects .project-sub-menu .project-item{
     position:relative;
     margin:0 1rem;
+    cursor:pointer;
   }
   #projects .project-sub-menu .project-item .project-hover{
     background-image:url(../images/section2-portfolio-close-button-hover.webp);
@@ -419,7 +505,7 @@
   }
 
   #projects .project-content-wrap .portfolio-wrap .itemList{
-    margin-top:5rem;
+    margin-top:10rem;
   }
   #projects .project-content-wrap .portfolio-wrap .itemList.item2{
     margin-top:10rem;
@@ -445,6 +531,31 @@
     position:relative;
     margin-top:4rem;
   }
+  #projects .project-content-wrap .portfolio-wrap .nav-instruction{
+    margin-top:2rem;
+    font-weight:500;
+  }
+  #projects .project-content-wrap .portfolio-wrap .item4 .nav-instruction{
+    margin-top:3rem;
+  }
+  #projects .project-content-wrap .portfolio-wrap .item6 .nav-instruction,
+  #projects .project-content-wrap .portfolio-wrap .item5 .nav-instruction{
+    margin-top:1rem;
+  }
+
+  #projects .project-content-wrap .portfolio-wrap .item6 .nav-instruction.gallery{
+    margin-top:5rem;
+  }
+  #projects .project-content-wrap .portfolio-wrap .item6 .nav-instruction.fold-up{
+    margin-top:3rem;
+  }
+
+  #projects .project-content-wrap .portfolio-wrap .item7 .nav-instruction,
+  #projects .project-content-wrap .portfolio-wrap .item8 .nav-instruction,
+  #projects .project-content-wrap .portfolio-wrap .item10 .nav-instruction{
+    margin-top:3rem;
+    font-weight:500;
+  }
 
   #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap img{
     position:relative;
@@ -455,7 +566,7 @@
     margin-left:-2rem;
     width:980px;
   }
-  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-laptop .capture-img-laptop{
+  #projects .project-content-wrap .portfolio-wrap .item1 .hicreo-website-wrap .hicreo-website-laptop .capture-img-laptop{
     position:absolute;
     top: 34px;
     left: 109px;
@@ -465,14 +576,31 @@
     overflow-x:hidden;
   }
 
+  #projects .project-content-wrap .portfolio-wrap .item3 .hicreo-website-wrap .hicreo-website-laptop .live-mlearning-course-laptop{
+    position:absolute;
+    top: 34px;
+    left: 109px;
+    height: 478px;
+    width:762px;
+    overflow-y:hidden;
+    overflow-x:hidden;
+  }
+
   #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-laptop .capture-img-laptop img{
     width:747px;
   }
-  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-mobile{
+  #projects .project-content-wrap .portfolio-wrap  .item1 .hicreo-website-wrap .hicreo-website-mobile{
     position:absolute;
-    top: 250px;
+    top: 150px;
     right: -50px;
   }
+
+  #projects .project-content-wrap .portfolio-wrap  .item3 .hicreo-website-wrap .hicreo-website-mobile{
+    position:absolute;
+    top: 150px;
+    left: -50px;
+  }
+
   #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-mobile .capture-img-mobile-wrap{
     border-radius:20px;
     overflow: hidden;
@@ -483,9 +611,16 @@
     left: 6px;
   }
 
-  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-mobile .capture-img-mobile{
+  #projects .project-content-wrap .portfolio-wrap .item1 .hicreo-website-wrap .hicreo-website-mobile .capture-img-mobile{
     position:relative;
     overflow-y: scroll;
+    overflow-x: hidden;
+    height: 422px;
+    width: 219px;
+  }
+  #projects .project-content-wrap .portfolio-wrap .item3 .hicreo-website-wrap .hicreo-website-mobile .capture-img-mobile{
+    position:relative;
+    overflow-y: hidden;
     overflow-x: hidden;
     height: 422px;
     width: 219px;
@@ -505,7 +640,7 @@
   #projects .page-buttons .button {
     display: inline-block;
     margin-top: 1rem;
-    padding: .5rem 1rem;
+    padding: .5rem;
     text-decoration: none;
     color: #000;
     width: 140px;
@@ -518,6 +653,9 @@
     margin-left:0.5rem;
     margin-right:0.5rem;
     position:relative;
+  }
+  #projects .page-buttons .button:hover {
+    background-image: url(../images/section4-bt-bg-hover.webp);
   }
   #projects .page-buttons .button:active {
     background-image:url(../images/section4-bt-hover-bg.webp);
@@ -556,3 +694,511 @@
     font-weight:300;
     margin-top:2rem;
   }
+  #projects .item3 .live-mlearning-course-laptop iframe{
+    transform: scale(0.596); transform-origin: top left; border: none;
+  }
+  #projects .item3 .live-mlearning-course-mobile iframe{
+    transform: scale(0.417); transform-origin: top left; border: none;
+  }
+
+  #projects .item4 .hicreoGallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+  
+  #projects .item4 .hicreoGallery img {
+    width: 167px;
+    height: auto;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: transform 0.2s;
+  }
+  
+  #projects .item4 .hicreoGallery img:hover {
+    transform: scale(1.05);
+  }
+  
+  #projects .item4 .hicreoLightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  #projects .item4 .hicreoLightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+  }
+  #projects .item4 .close-lightbox {
+    position: absolute;
+    top: 2rem;
+    right: 4rem;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  #projects .item4 .hicreo-template-wrap{
+    margin-top:1rem;
+  }
+  #projects .item4 .hicreo-template-wrap .template-wrap{
+    background:#efefef;
+    border:1px solid #ddd;
+    height:600px;
+    overflow-y:scroll;
+    padding:1rem;
+  }
+  #projects .item10 .button-close,
+  #projects .item6 .button-close,
+  #projects .item4 .button-close {
+    display: inline-block;
+    margin-top: 1rem;
+    margin-bottom:3rem;
+    padding: .5rem;
+    text-decoration: none;
+    color: #000;
+    width: 140px;
+    height: 43px;
+    background-image: url(../images/section4-bt-bg.webp);
+    background-size: 140px;
+    background-repeat: no-repeat;
+    font-weight: 500;
+    cursor: pointer;
+    margin-left:0.5rem;
+    margin-right:0.5rem;
+    position:relative;
+  }
+  #projects .item10 .button-close:hover,
+  #projects .item6 .button-close:hover,
+  #projects .item4 .button-close:hover {
+    background-image: url(../images/section4-bt-bg-hover.webp);
+  }
+  #projects .item10 .button-close:active,
+  #projects .item6 .button-close:active,
+  #projects .item4 .button-close:active {
+    background-image:url(../images/section4-bt-hover-bg.webp);
+    background-repeat:no-repeat;
+    height:38px;
+    margin-top:calc(1rem + 5px);
+  }
+  #projects .item10 .button-close .button-hover,
+  #projects .item6 .button-close .button-hover,
+  #projects .item4 .button-close .button-hover{
+    background-image:url(../images/section2-portfolio-close-button-hover.webp);
+    width:22px;
+    height:23px;  
+    position:absolute;
+    top:-5px;
+    left:-14px;
+    opacity:0;
+    transition: all .3s ease-in-out;
+  }
+  #projects .item10 .button-close.active .button-hover,
+  #projects .item10 .button-close:hover .button-hover,
+  #projects .item6 .button-close.active .button-hover,
+  #projects .item6 .button-close:hover .button-hover,
+  #projects .item4 .button-close.active .button-hover,
+  #projects .item4 .button-close:hover .button-hover{
+    opacity:1;
+  }
+  #projects .item10 .button-close.active,
+  #projects .item10 .button-close:hover,
+  #projects .item6 .button-close.active,
+  #projects .item6 .button-close:hover,
+  #projects .item4 .button-close.active,
+  #projects .item4 .button-close:hover{
+    color:#4400ff;
+  }
+  #projects .project-content-wrap.elearning .description-wrap{
+    margin-top:3rem
+  }
+  #projects .project-content-wrap.elearning .item5 .description{
+    width:calc(100% - 200px);
+  }
+  #projects .project-content-wrap.elearning .time-limit{
+    font-size:3rem;
+    font-weight:300;
+    color:#aaa;
+  }
+  #projects .project-content-wrap.elearning .elearningDemoThumbnail{
+    width:100%;
+    margin-top:2rem;
+    cursor:pointer;
+  }
+  #projects .project-content-wrap.elearning .elearningDemoThumbnail.unboxed{
+    background-image:url(../images/thumbnail-unboxed.webp);
+    height: 500px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  #projects .project-content-wrap.elearning .elearningDemoThumbnail.gci{
+    background-image:url(../images/thumbnail-gci.webp);
+    height: 400px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  #projects .project-content-wrap.elearning .elearningDemoThumbnail.NRCCRSM{
+    background-image:url(../images/thumbnail-NRCCRSM.webp);
+    height: 440px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  #projects .project-content-wrap.elearning .elearningDemoThumbnail.unboxed:hover{
+    background-image:url(../images/thumbnail-unboxed-hover.webp);
+  }
+  #projects .project-content-wrap.elearning .elearningDemoThumbnail.gci:hover{
+    background-image:url(../images/thumbnail-gci-hover.webp);
+  }
+  #projects .project-content-wrap.elearning .elearningDemoThumbnail.NRCCRSM:hover{
+    background-image:url(../images/thumbnail-NRCCRSM-hover.webp);
+  }
+
+  #projects .project-content-wrap.elearning .elearning-lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  #projects .project-content-wrap.elearning .elearning-lightbox.show {
+    display: flex;
+  }
+  
+  #projects .project-content-wrap.elearning .lightbox-content {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: 80%;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  #projects .project-content-wrap.elearning .lightbox-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  #projects .project-content-wrap.elearning .lightbox-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 32px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10000;
+  }
+  
+  #projects .project-content-wrap.elearning .item6 .elearningGallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+  
+  #projects .project-content-wrap.elearning .item6 .elearningGallery img {
+    width: 215px;
+    height: auto;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: transform 0.2s;
+  }
+  
+  #projects .project-content-wrap.elearning .item6 .elearningGallery img:hover {
+    transform: scale(1.05);
+  }
+
+  #projects .project-content-wrap.elearning .item6 .template-wrap{
+    padding:1rem;
+    margin-top:1rem;
+  }
+
+  #projects .project-content-wrap.elearning .item6  .img-wrap{
+    width: 100%;
+    height:100%;
+  }
+  #projects .project-content-wrap.elearning .item6  #elearningLightboxImg{
+    width: 100%;
+    height:100%;
+    object-fit:contain;
+    object-position:top;
+  }
+  #projects .project-content-wrap.elearning .item6 #elearningLightboxImage .lightbox-content{
+    background:transparent;
+    overflow:visible
+  }
+  #projects .project-content-wrap.elearning .item6 #elearningLightboxImage .lightbox-close#elearningImageLightboxClose {
+    top: -20px;
+    right: -20px;
+    line-height: 17px;
+    width: 20px;
+    height: 20px;
+  }
+  #projects .project-content-wrap .itemList.item6 .subHeader{
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-top:5rem;
+  }
+  #projects .project-content-wrap .itemList.item6 video{
+    width:100%;
+    max-width:800px;
+    margin-top:3rem;
+  }
+  #projects .project-content-wrap .itemList.item6 .elearning-video-demo{
+    text-align:center;
+  }
+  #projects .project-content-wrap .itemList.item6 .description li{
+    font-size:1rem;
+  }
+
+  #projects .project-content-wrap .itemList.item6 .description-wrap{
+    width:100%;
+    max-width:800px;
+    margin:0 auto;
+  }
+
+  #projects .project-content-wrap .itemList.item6 .button-wrap{
+    width:100%;
+    text-align:center;
+  }
+
+  #projects .project-content-wrap .portfolio-wrap .itemList .header {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  #projects .project-content-wrap.elearning .item6 .elearningGallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+  
+  #projects .project-content-wrap.elearning .item6 .elearningGallery img {
+    width: 215px;
+    height: auto;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: transform 0.2s;
+  }
+  
+  #projects .project-content-wrap.elearning .item6 .elearningGallery img:hover {
+    transform: scale(1.05);
+  }
+
+
+  #projects .project-content-wrap.elearning .item6  .img-wrap{
+    width: 100%;
+    height:100%;
+  }
+  #projects .project-content-wrap.elearning .item6  #elearningLightboxImg{
+    width: 100%;
+    height:100%;
+    object-fit:contain;
+    object-position:top;
+  }
+  #projects .project-content-wrap.elearning .item6 #elearningLightboxImage .lightbox-content{
+    background:transparent;
+    overflow:visible
+  }
+  #projects .project-content-wrap.elearning .item6 #elearningLightboxImage .lightbox-close#elearningImageLightboxClose {
+    top: -20px;
+    right: -20px;
+    line-height: 17px;
+    width: 20px;
+    height: 20px;
+  }
+  #projects .project-content-wrap.others .item8 .socialGallery,
+  #projects .project-content-wrap.others .item7 .printGallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+  #projects .project-content-wrap.others .item8 .socialGallery img{
+    width: 212px;
+    height: 120px;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: transform 0.2s;
+  }
+  #projects .project-content-wrap.others .item7 .printGallery img {
+    width: 215px;
+    height: 154px;
+    object-fit: cover;
+    object-position: top;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: transform 0.2s;
+  }
+  #projects .project-content-wrap.others .item8 .socialGallery img:hover,
+  #projects .project-content-wrap.others .item7 .printGallery img:hover {
+    transform: scale(1.05);
+  }
+  #projects .project-content-wrap.others .item8 .template-wrap,
+  #projects .project-content-wrap.others .item7 .template-wrap{
+    padding:1rem;
+    background:#efefef;
+    border-radius:10px;
+  }
+  #projects .project-content-wrap.others .item8 .template-wrap{
+    height:600px;
+    overflow-y:scroll;
+  }
+  #projects .project-content-wrap.others .item8  .img-wrap,
+  #projects .project-content-wrap.others .item7  .img-wrap{
+    width: 100%;
+    height:100%;
+  }
+  #projects .project-content-wrap.others .item8  #socialLightboxImg,
+  #projects .project-content-wrap.others .item7  #printLightboxImg{
+    width: 100%;
+    height:100%;
+    object-fit:contain;
+    object-position:top;
+  }
+  #projects .project-content-wrap.others .social-lightbox,
+  #projects .project-content-wrap.others .print-lightbox{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  #projects .project-content-wrap.others .lightbox-content {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: 80%;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  #projects .project-content-wrap.others .item8 #socialLightboxImage .lightbox-content,
+  #projects .project-content-wrap.others .item7 #printLightboxImage .lightbox-content{
+    background:transparent;
+    overflow:visible
+  }
+  #projects .project-content-wrap.others .lightbox-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 32px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10000;
+}
+  #projects .project-content-wrap.others .item8 #socialLightboxImg .lightbox-close#socialImageLightboxClose,
+  #projects .project-content-wrap.others .item7 #printLightboxImg .lightbox-close#printImageLightboxClose {
+    top: -20px;
+    right: -20px;
+    line-height: 17px;
+    width: 20px;
+    height: 20px;
+  }
+  #projects .project-content-wrap.others .social-lightbox,
+  #projects .project-content-wrap.others .print-lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#projects .project-content-wrap.others .itemList.item9 .game-thumbnail{
+  width:180px;
+
+}
+#projects .project-content-wrap.others .itemList.item9 .game-thumbnail img{
+  width:100%;
+}
+
+#projects .project-content-wrap.others .itemList.item9 .gameGallery img{
+  width:100%;
+  max-width:260px;
+  border-radius:10px;
+  margin:2px;
+}
+
+#projects .project-content-wrap.others .itemList.item9 .gameGallery{
+  width:100%; 
+  max-width:800px;
+  display:block;
+  margin:0 auto;
+}
+#projects .project-content-wrap.others .itemList.item9 .iframe-wrap{
+  width:100%; 
+  max-width:800px;
+  display:block;
+  margin:0 auto;
+  margin-top:3rem;
+}
+.iframe-wrap iframe{
+  width:100%;
+  max-width:800px;
+  height:450px;
+}
+.others-video-wrap {
+  margin-top:3rem;
+}
+.others-video-wrap video{
+  width:100%;
+  max-width:400px;
+}
+#contact a{
+  color:#000;
+  text-decoration: none;
+}
+.navbar .nav-item{
+  width:72px;
+  height:85px;
+  background-image:url(../images/nav-circle.webp);
+  background-repeat:no-repeat;
+  font-size:.75rem;
+  text-align:center;
+  position:relative;
+  cursor:pointer;
+  color:#000;
+}
+.navbar .nav-item:hover{
+  background-image:url(../images/nav-circle-hover.webp);
+}
+.navbar .nav-item:hover {
+  color:#4400ff;
+}
+.navbar .container{
+  background-image:url(../images/nav-line.webp);
+  background-repeat: no-repeat;
+  background-position:center 28px;
+}
+.navbar .nav-item .icon-wrap{
+  width:72px;
+  height:69px;
+  display:flex;
+  justify-content: center;
+  align-items:center;;
+}
