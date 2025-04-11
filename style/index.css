@@ -87,6 +87,7 @@
     top:-117px;
     z-index:900;
     box-shadow:0 0 5px 0 RGBA(0,0,0,0.3);
+    display:none;
   }
   .navbar.visible {
     top:0px;
@@ -253,7 +254,9 @@
     font-size:3rem;
     font-weight:700;
    }
-
+   #testimonials{
+    display:none;
+   }
   #testimonials .blockquote{
     background-image:url(../images/section3-testimonial.webp);
     background-repeat:no-repeat;
@@ -268,6 +271,9 @@
    }
   #testimonials .blockquote.jack{
     margin-top:2rem;
+   }
+   #resume{
+    display:none;
    }
   #resume .resume-wrap{
     width:100%;
@@ -325,6 +331,9 @@
     font-weight:500;
     margin-top:3rem;
   }
+  #contact{
+    display:none;
+  }
   #contact .contact-icons div.contact-button{
     font-size:1rem;
     font-weight:300;
@@ -379,7 +388,9 @@
     background-image:url(../images/section5-linkedin-press.webp);
     background-position: center 6px;
   }
-
+  #projects{
+    display:none;
+  }
   #projects .project-main-menu .project-item .project-label{
     font-size:1.75rem;
     font-weight:700;
@@ -1174,11 +1185,12 @@
   text-decoration: none;
 }
 .navbar .nav-item{
-  width:72px;
-  height:85px;
+  width:50px;
+  height:62px;
   background-image:url(../images/nav-circle.webp);
   background-repeat:no-repeat;
-  font-size:.75rem;
+  background-size:50px;
+  font-size:.6rem;
   text-align:center;
   position:relative;
   cursor:pointer;
@@ -1193,12 +1205,83 @@
 .navbar .container{
   background-image:url(../images/nav-line.webp);
   background-repeat: no-repeat;
-  background-position:center 28px;
+  background-position:center 18px;
 }
 .navbar .nav-item .icon-wrap{
-  width:72px;
-  height:69px;
+  width:50px;
+  height:47px;
   display:flex;
   justify-content: center;
   align-items:center;;
+}
+.navbar .nav-item .icon-wrap img{
+  width:24px;
+}
+
+.nav-link{
+  padding:0;
+
+}
+.elearning-video-demo{
+  margin-top:2rem;  
+}
+#elearningAdam{    
+  width: 100%;
+  max-width: 800px;
+  height: 434px;
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 930px) {
+  #home .line-name{
+    width:100%;
+    background-size:contain;
+    background-repeat:no-repeat;
+    font-size:5rem;
+  }
+}
+@media (min-width: 611px) and (max-width: 767px) {
+  #home .line-name{
+    width:100%;
+    background-size:contain;
+    background-repeat:no-repeat;
+    font-size:4rem;
+  }
+
+}
+@media (min-width: 400px) and (max-width: 610px) {
+  #home .line-name{
+    width:100%;
+    background-size:contain;
+    background-repeat:no-repeat;
+    font-size:3rem;
+  }
+    
+  #home .line-1 {
+    font-size:2rem;
+  }
+  #home .line-2 {
+    font-size:1.5rem;
+  }
+  #home .line-3 {
+    font-size:2rem;
+  }
+}
+@media (max-width: 399px) {
+  #home .line-name{
+    width:100%;
+    background-size:contain;
+    background-repeat:no-repeat;
+    font-size:2.5rem;
+  }
+  #home .line-1 {
+    font-size:1.5rem;
+  }
+  #home .line-2 {
+    font-size:1.25rem;
+  }
+  #home .line-3 {
+    font-size:1.5rem;
+  }
 }

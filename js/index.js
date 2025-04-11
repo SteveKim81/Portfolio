@@ -109,6 +109,12 @@ window.addEventListener('load', function () {
           if (iconDivider) {
             iconDivider.style.opacity = 1;
           }
+
+          const intro = document.querySelector('#intro');
+          if (intro) {
+            intro.style.display = "block";
+          }
+
         }, 8000);
 
         setTimeout(function () {
@@ -134,10 +140,38 @@ window.addEventListener('load', function () {
           navbar.classList.remove('visible');
         }
 
-        if (window.scrollY > 200) {
-          const intro = document.querySelector('#intro');
-          if (intro) {
-            intro.style.display = "block";
+        // if (window.scrollY > 50) {
+        //   const intro = document.querySelector('#intro');
+        //   if (intro) {
+        //     intro.style.display = "block";
+        //   }
+        // }
+
+        if (window.scrollY > 600) {
+          const projects = document.querySelector('#projects');
+          if (projects) {
+            projects.style.display = "block";
+          }
+        }
+
+        if (window.scrollY > 1400) {
+          const testimonials = document.querySelector('#testimonials');
+          if (testimonials) {
+            testimonials.style.display = "block";
+          }
+        }
+
+        if (window.scrollY > 2200) {
+          const resume = document.querySelector('#resume');
+          if (resume) {
+            resume.style.display = "block";
+          }
+        }
+
+        if (window.scrollY > 2700) {
+          const contact = document.querySelector('#contact');
+          if (contact) {
+            contact.style.display = "block";
           }
         }
 
@@ -395,25 +429,26 @@ window.addEventListener('load', function () {
 
         // Loop through each folder and image number
         for (let folder = 1; folder <= 8; folder++) {
-        const count = folderImageCounts[folder];
-
-        for (let i = 1; i <= count; i++) {
+          const count = folderImageCounts[folder];
+        
+          for (let i = 1; i <= count; i++) {
             const thumbPath = `images/templates/${folder}/thumbnail/slide${i}.webp`;
             const fullPath = `images/templates/${folder}/slide${i}.webp`;
-
+        
             const hicreoTemplateThumbnailimg = document.createElement('img');
-            hicreoTemplateThumbnailimg.src = thumbPath;
+            hicreoTemplateThumbnailimg.src = 'images/placeholder.webp'; // Optional placeholder
+            hicreoTemplateThumbnailimg.setAttribute('data-src', thumbPath);
             hicreoTemplateThumbnailimg.dataset.full = fullPath;
             hicreoTemplateThumbnailimg.alt = `Template ${folder} Slide ${i}`;
-            hicreoTemplateThumbnailimg.classList.add('thumb');
-
+            hicreoTemplateThumbnailimg.classList.add('thumb', 'lazyload');
+        
             hicreoTemplateThumbnailimg.addEventListener('click', () => {
-                hiCreoLightboxImg.src = fullPath;
-                hiCreoLightbox.style.display = 'flex';
+              hiCreoLightboxImg.src = fullPath;
+              hiCreoLightbox.style.display = 'flex';
             });
-
+        
             hiCreoGallery.appendChild(hicreoTemplateThumbnailimg);
-        }
+          }
         }
 
         // Close the lightbox on click
@@ -565,5 +600,33 @@ window.addEventListener('load', function () {
           }
         });
 
-
+    });
+    
+    document.addEventListener("DOMContentLoaded", function () {
+      const lazyVideos = document.querySelectorAll("video.lazy-video");
+  
+      if ("IntersectionObserver" in window) {
+        const videoObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const video = entry.target;
+              const source = video.querySelector("source");
+              source.src = source.dataset.src;
+              video.load();
+              observer.unobserve(video);
+            }
+          });
+        });
+  
+        lazyVideos.forEach(video => {
+          videoObserver.observe(video);
+        });
+      } else {
+        // Fallback for browsers without IntersectionObserver
+        lazyVideos.forEach(video => {
+          const source = video.querySelector("source");
+          source.src = source.dataset.src;
+          video.load();
+        });
+      }
     });
