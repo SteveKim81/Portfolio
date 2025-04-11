@@ -417,6 +417,8 @@
     transition:all .3s ease-in-out;
     cursor:pointer;
   }
+
+  
   #projects .project-main-menu .project-item:hover{
     color:#4400ff;
     cursor: pointer;
@@ -575,24 +577,28 @@
     position:relative;
     margin-top:2rem;
     margin-left:-2rem;
-    width:980px;
+    max-width:980px;
+    width:100%;
+  }
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-laptop img{
+    width:100%;
   }
   #projects .project-content-wrap .portfolio-wrap .item1 .hicreo-website-wrap .hicreo-website-laptop .capture-img-laptop{
     position:absolute;
-    top: 34px;
-    left: 109px;
+    top: 32px;
+    left: 105px;
     height: 478px;
-    width:762px;
+    width:730px;
     overflow-y:scroll;
     overflow-x:hidden;
   }
 
   #projects .project-content-wrap .portfolio-wrap .item3 .hicreo-website-wrap .hicreo-website-laptop .live-mlearning-course-laptop{
     position:absolute;
-    top: 34px;
-    left: 109px;
-    height: 478px;
-    width:762px;
+    top: 33px;
+    left: 105px;
+    height: 458px;
+    width: 730px;
     overflow-y:hidden;
     overflow-x:hidden;
   }
@@ -697,16 +703,26 @@
   }
   #projects .itemList.item2 .capture-video-laptop{
     position:absolute;
-    top: 34px;
-    left: 107px;
+    top: 32px;
+    left: 104px;
+    width: 100%;
+    max-width: 732px;
   }
+  #projects .itemList.item2 .capture-video-laptop video{
+    width:100%;
+  }
+
   .instruction{
     font-size:1rem;
     font-weight:300;
     margin-top:2rem;
   }
   #projects .item3 .live-mlearning-course-laptop iframe{
-    transform: scale(0.596); transform-origin: top left; border: none;
+    transform: scale(0.57); 
+    transform-origin: top left; 
+    border: none;
+    width:1280px;
+    height:803px;
   }
   #projects .item3 .live-mlearning-course-mobile iframe{
     transform: scale(0.417); transform-origin: top left; border: none;
@@ -1231,8 +1247,54 @@
   height: 434px;
 
 }
+.adamTimeStamp .list3,
+.adamTimeStamp .list2{
+  margin-left:2rem;
+}
+@media (min-width: 768px) and (max-width: 990px) {
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-laptop{
+    max-width:706px;
+  }
+  #projects .project-content-wrap .portfolio-wrap .item1 .hicreo-website-wrap .hicreo-website-laptop .capture-img-laptop{
+    top: 24px;
+    left: 79px;
+    height: 345px;
+    width: 548px;
+  }
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-laptop .capture-img-laptop img{
+    width:533px;
+  }
+  #projects .project-content-wrap .portfolio-wrap .item1 .hicreo-website-wrap .hicreo-website-mobile{
+    top: 0px;
+    right: 0px;
+  }
+  #projects .itemList.item2 .capture-video-laptop{
+    top: 24px;
+    left: 78px;
+    max-width: 550px;
+  }
+  #projects .project-content-wrap .portfolio-wrap .item2 .hicreo-website-wrap .hicreo-website-laptop{
+    margin:0 auto;
+  }
+  #projects .project-content-wrap .portfolio-wrap .item3 .hicreo-website-wrap .hicreo-website-laptop {
+    margin-left:10rem;
+  }
+  #projects .project-content-wrap .portfolio-wrap .item3 .hicreo-website-wrap .hicreo-website-laptop .live-mlearning-course-laptop{
+    top: 24px;
+    left: 78px;
+    height: 345px;
+    width: 550px;
+  }
+  #projects .item3 .live-mlearning-course-laptop iframe{
+    transform: scale(0.43);
+  }
+  #projects .project-content-wrap .portfolio-wrap .item3 .hicreo-website-wrap .hicreo-website-mobile{
+    top:0;
+    left:0;
+  }
+}
 
-/* Medium devices (tablets, 768px and up) */
+
 @media (min-width: 768px) and (max-width: 930px) {
   #home .line-name{
     width:100%;
@@ -1248,14 +1310,77 @@
     background-repeat:no-repeat;
     font-size:4rem;
   }
+  .subHeader{
+    font-size:2.25rem;
+  }
+  #testimonials .blockquote{
+    width:100%;
+    max-width:550px;
+    background-size:contain;
+  }
 
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-laptop{
+    max-width:537px;
+  }
+  #projects .project-content-wrap .portfolio-wrap .item1 .hicreo-website-wrap .hicreo-website-laptop .capture-img-laptop{
+    top: 18px;
+    left: 60px;
+    height: 263px;
+    width: 417px;
+  }
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-laptop .capture-img-laptop img{
+    width: 402px;
+  }
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-laptop{
+    margin:0 auto;
+  }
+  #projects .project-content-wrap .portfolio-wrap .item1 .hicreo-website-wrap .hicreo-website-mobile{
+    position:relative;
+    top: 0;
+    left: 0;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-mobile .capture-img-mobile-wrap{
+    top: 6px;
+    left: calc(50% - 100px);
+  }
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-mobile .capture-img-mobile img{
+    margin-left:-20px;
+  }
+  #projects .page-buttons .button{
+    margin:1px;
+  }
+  #projects .itemList.item2 .capture-video-laptop{
+    top: 18px;
+    left: 60px;
+    max-width: 417px;
+  }
+  #projects .project-content-wrap .portfolio-wrap .item3 .hicreo-website-wrap .hicreo-website-laptop .live-mlearning-course-laptop{
+    top: 19px;
+    left: 60px;
+    height: 262px;
+    width: 417px;
+  }
+  #projects .item3 .live-mlearning-course-laptop iframe{
+    transform: scale(0.326);
+  }
+  #projects .project-content-wrap .portfolio-wrap .item3 .hicreo-website-wrap .hicreo-website-mobile{
+    position:relative;
+    top:0;
+    margin-top: 1rem;
+    left: calc(50% - 100px);
+  }
+  #projects .project-content-wrap .portfolio-wrap .item3 .hicreo-website-wrap .hicreo-website-mobile .capture-img-mobile-wrap{
+    left:6px;
+  }
 }
 @media (min-width: 400px) and (max-width: 610px) {
   #home .line-name{
     width:100%;
     background-size:contain;
     background-repeat:no-repeat;
-    font-size:3rem;
+    font-size:2.75rem;
   }
     
   #home .line-1 {
@@ -1267,13 +1392,146 @@
   #home .line-3 {
     font-size:2rem;
   }
+  #home .icon-divider{
+    margin-top:5rem;
+    background-size: contain;
+    background-position: center;
+    width: 340px;
+    height: 85px;
+    background-repeat: no-repeat;
+  }
+  .subHeader{
+    font-size:2rem;
+  }
+  #intro .capabilities{
+    max-width: 400px;
+    width:100%;
+    height: 148px;
+    background-size:contain;
+    background-repeat:no-repeat;
+    padding-top:2.5rem;
+  }
+  .rotating-words{
+    height:45px;
+  }
+  #intro .capabilities .cap-programming,
+  #intro .capabilities .cap-elearning,
+  #intro .capabilities .cap-design{
+    font-size:2rem;
+  }
+  #projects .project-main-menu .project-item .project-description{
+    font-size:1rem;
+  }
+  #testimonials .blockquote{
+    width:100%;
+    max-width:320px;
+    background-size:contain;
+    font-size:0.75rem;
+    justify-content: start !important;
+    padding-top:1rem;
+    height: 175px;
+  }
+  #projects .project-content-wrap .portfolio-wrap .close-button{
+    margin-top:2rem;
+  }
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-laptop{
+    max-width:345px;
+  }
+  #projects .project-content-wrap .portfolio-wrap .item1 .hicreo-website-wrap .hicreo-website-laptop .capture-img-laptop{
+    top: 12px;
+    left: 38px;
+    height: 168px;
+    width: 268px;
+  }
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-laptop .capture-img-laptop img{
+    width: 253px;
+  }
+  .page-buttons{
+    flex-wrap:wrap;
+    margin-top:1rem;
+  }
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-laptop{
+    margin:0 auto;
+  }
+  #projects .project-content-wrap .portfolio-wrap .item1 .hicreo-website-wrap .hicreo-website-mobile{
+    position:relative;
+    top: 0;
+    left: 0;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-mobile .capture-img-mobile-wrap{
+    top: 6px;
+    left: calc(50% - 100px);
+  }
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-mobile .capture-img-mobile img{
+    margin-left:-20px;
+  }
+  #projects .page-buttons .button{
+    margin:2px 5px;
+  }
+  #projects .itemList.item2 .capture-video-laptop{
+    top: 12px;
+    left: 38px;
+    max-width: 269px;
+  }
+  #projects .project-content-wrap .portfolio-wrap .item3 .hicreo-website-wrap .hicreo-website-laptop .live-mlearning-course-laptop{
+    top: 12px;
+    left: 39px;
+    height: 168px;
+    width: 268px;
+  }
+  #projects .item3 .live-mlearning-course-laptop iframe{
+    transform: scale(0.21);
+  }
+  #projects .project-content-wrap .portfolio-wrap .item3 .hicreo-website-wrap .hicreo-website-mobile{
+    position:relative;
+    top:0;
+    margin-top: 1rem;
+    left: calc(50% - 100px);
+  }
+  #projects .project-content-wrap .portfolio-wrap .item3 .hicreo-website-wrap .hicreo-website-mobile .capture-img-mobile-wrap{
+    left:6px;
+  }
+  #projects .project-content-wrap.elearning .description-wrap{
+    flex-direction: column;
+  }
+  #projects .project-content-wrap.elearning .item5 .description{
+    width:100%;
+  }
+  #projects .project-content-wrap.elearning .elearningDemoThumbnail.unboxed,
+  #projects .project-content-wrap.elearning .elearningDemoThumbnail.gci,
+  #projects .project-content-wrap.elearning .elearningDemoThumbnail.NRCCRSM{
+    height:300px;
+  }
+  .adamTimeStamp{
+    flex-direction:column;
+  }
+  .adamTimeStamp .list3,
+  .adamTimeStamp .list2{
+    margin-left:0;
+  }
+}
+@media (max-width: 420px) {
+  .project-main-menu .project-item{
+    flex-direction: column;
+    align-items: center;
+  }
+  #projects .project-main-menu .project-item .project-label-wrap{
+    width:100%;
+    align-items:center !important;
+    text-align:center !important;
+  }
+  #projects .project-main-menu .project-item:hover .project-hover{
+    left: calc(50% - 100px);
+  }
 }
 @media (max-width: 399px) {
   #home .line-name{
     width:100%;
     background-size:contain;
     background-repeat:no-repeat;
-    font-size:2.5rem;
+    font-size:2.25rem;
   }
   #home .line-1 {
     font-size:1.5rem;
@@ -1283,5 +1541,124 @@
   }
   #home .line-3 {
     font-size:1.5rem;
+  }
+  #home .icon-divider{
+    margin-top:0rem;
+    background-size: contain;
+    background-position: center;
+    width: 300px;
+    height: 85px;
+    background-repeat: no-repeat;
+  }
+  .subHeader{
+    font-size:1.5rem;
+  }
+  #intro .capabilities{
+    max-width: 400px;
+    width:100%;
+    height: 148px;
+    background-size:contain;
+    background-repeat:no-repeat;
+    padding-top:1.5rem;
+  }
+  .rotating-words{
+    height:45px;
+  }
+  #intro .capabilities .cap-programming,
+  #intro .capabilities .cap-elearning,
+  #intro .capabilities .cap-design{
+    font-size:2rem;
+  }
+  #projects .project-main-menu .project-item .project-description{
+    font-size:1rem;
+  }
+  #testimonials .blockquote{
+    width:100%;
+    max-width:320px;
+    background-size:contain;
+    font-size:0.75rem;
+    justify-content: start !important;
+    padding:1rem .7rem;
+    height: 175px;
+  }
+  #projects .project-content-wrap .portfolio-wrap .close-button{
+    margin-top:2rem;
+  }
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-laptop{
+    max-width:305px;
+  }
+  #projects .project-content-wrap .portfolio-wrap .item1 .hicreo-website-wrap .hicreo-website-laptop .capture-img-laptop{
+    top: 11px;
+    left: 34px;
+    height: 148px;
+    width: 237px;
+  }
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-laptop .capture-img-laptop img{
+    width: 222px;
+  }
+  .page-buttons{
+    flex-wrap:wrap;
+    margin-top:1rem;
+  }
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-laptop{
+    margin:0 auto;
+  }
+  #projects .project-content-wrap .portfolio-wrap .item1 .hicreo-website-wrap .hicreo-website-mobile{
+    position:relative;
+    top: 0;
+    left: 0;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-mobile .capture-img-mobile-wrap{
+    top: 6px;
+    left: calc(50% - 100px);
+  }
+  #projects .project-content-wrap .portfolio-wrap .hicreo-website-wrap .hicreo-website-mobile .capture-img-mobile img{
+    margin-left:-20px;
+  }
+  #projects .page-buttons .button{
+    margin:2px 5px;
+  }
+  #projects .itemList.item2 .capture-video-laptop{
+    top: 10px;
+    left: 34px;
+    max-width: 237px;
+  }
+  #projects .project-content-wrap .portfolio-wrap .item3 .hicreo-website-wrap .hicreo-website-laptop .live-mlearning-course-laptop{
+    top: 11px;
+    left: 34px;
+    height: 148px;
+    width: 237px;
+  }
+  #projects .item3 .live-mlearning-course-laptop iframe{
+    transform: scale(0.19);
+  }
+  #projects .project-content-wrap .portfolio-wrap .item3 .hicreo-website-wrap .hicreo-website-mobile{
+    position:relative;
+    top:0;
+    margin-top: 1rem;
+    left: calc(50% - 100px);
+  }
+  #projects .project-content-wrap .portfolio-wrap .item3 .hicreo-website-wrap .hicreo-website-mobile .capture-img-mobile-wrap{
+    left:6px;
+  }
+  #projects .project-content-wrap.elearning .description-wrap{
+    flex-direction: column;
+  }
+  #projects .project-content-wrap.elearning .item5 .description{
+    width:100%;
+  }
+  #projects .project-content-wrap.elearning .elearningDemoThumbnail.unboxed,
+  #projects .project-content-wrap.elearning .elearningDemoThumbnail.gci,
+  #projects .project-content-wrap.elearning .elearningDemoThumbnail.NRCCRSM{
+    height:300px;
+  }
+  .adamTimeStamp{
+    flex-direction:column;
+  }
+  .adamTimeStamp .list3,
+  .adamTimeStamp .list2{
+    margin-left:0;
   }
 }

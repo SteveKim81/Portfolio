@@ -5,7 +5,7 @@ window.addEventListener('load', function () {
       line1.style.opacity = 1;
     }
     
-    if (window.scrollY == 0) {
+
       var line1Txt = document.querySelector('.line-1 span');
       line1Txt.innerHTML = line1Txt.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
@@ -18,8 +18,8 @@ window.addEventListener('load', function () {
         duration: 1400,
         delay: (el, i) => 300 + 30 * i
       })
-    }
-    if (window.scrollY == 0) {
+
+
       setTimeout(function () {
         const line2 = document.querySelector('.line-2');
         if (line2) {
@@ -40,14 +40,9 @@ window.addEventListener('load', function () {
             delay: (el, i) => 70*i
           });
         }, 1800);
-      }else{
-        const line2 = document.querySelector('.line-2');
-        if (line2) {
-          line2.style.opacity = 1;
-        }
-      }
 
-      if (window.scrollY == 0) {
+
+
 
         setTimeout(function () {
         const line3 = document.querySelector('.line-3');
@@ -69,14 +64,8 @@ window.addEventListener('load', function () {
             delay: (el, i) => 70*i
           });
         }, 3500);
-      }else{
-        const line3 = document.querySelector('.line-3');
-        if (line3) {
-          line3.style.opacity = 1;
-        }
-      }
 
-      if (window.scrollY == 0) {
+
         setTimeout(function () {
           const lineName = document.querySelector('.line-name');
           if (lineName) {
@@ -95,15 +84,7 @@ window.addEventListener('load', function () {
             delay: (el, i) => 45 * (i+1)
           })
         }, 6000);
-      }else{
-        const lineName = document.querySelector('.line-name');
-          if (lineName) {
-            lineName.style.opacity = 1;
-          }
-      }
 
-
-      if (window.scrollY == 0) {
         setTimeout(function () {
           const iconDivider = document.querySelector('.icon-divider');
           if (iconDivider) {
@@ -124,60 +105,25 @@ window.addEventListener('load', function () {
             behavior: 'smooth'
           });
         }, 8800);
-      }else{
-        const iconDivider = document.querySelector('.icon-divider');
-          if (iconDivider) {
-            iconDivider.style.opacity = 1;
-          }
-      }
 
-      window.addEventListener('scroll', function () {
 
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 0) {
-          navbar.classList.add('visible');
-        } else {
-          navbar.classList.remove('visible');
+        function isInViewport(el, offset = 0.8) {
+          const rect = el.getBoundingClientRect();
+          return rect.top < window.innerHeight * offset;
         }
-
-        // if (window.scrollY > 50) {
-        //   const intro = document.querySelector('#intro');
-        //   if (intro) {
-        //     intro.style.display = "block";
-        //   }
-        // }
-
-        if (window.scrollY > 600) {
-          const projects = document.querySelector('#projects');
-          if (projects) {
-            projects.style.display = "block";
-          }
-        }
-
-        if (window.scrollY > 1400) {
-          const testimonials = document.querySelector('#testimonials');
-          if (testimonials) {
-            testimonials.style.display = "block";
-          }
-        }
-
-        if (window.scrollY > 2200) {
-          const resume = document.querySelector('#resume');
-          if (resume) {
-            resume.style.display = "block";
-          }
-        }
-
-        if (window.scrollY > 2700) {
-          const contact = document.querySelector('#contact');
-          if (contact) {
-            contact.style.display = "block";
-          }
-        }
-
-        console.log(window.scrollY);
-
-      });
+        
+        window.addEventListener('scroll', () => {
+          const navbar = document.querySelector('.navbar');
+          navbar.classList.toggle('visible', window.scrollY > 0);
+        
+          const sections = ['projects', 'testimonials', 'resume', 'contact'];
+          sections.forEach(id => {
+            const section = document.getElementById(id);
+            if (section && isInViewport(section)) {
+              section.style.display = 'block';
+            }
+          });
+        });
 
       const projectMainMenu = document.querySelector('.project-main-menu');
       const portfolioHiCreo = document.querySelector('.project-content-wrap.hicreo');
@@ -601,7 +547,7 @@ window.addEventListener('load', function () {
         });
 
     });
-    
+
     document.addEventListener("DOMContentLoaded", function () {
       const lazyVideos = document.querySelectorAll("video.lazy-video");
   
