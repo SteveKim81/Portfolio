@@ -1,0 +1,1476 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Help Center</title>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-ui.min.js" ></script>
+	<script type="text/javascript" src="../../json/glossaryData.js" ></script>
+	<script type="text/javascript" src="../../json/pageData.js" ></script>
+
+	<link rel="stylesheet" href="../css/jquery-ui.css">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/font.css"/>
+	<link rel="stylesheet" href="../css/dialogStyle.css"/>
+	
+	<style>
+
+	html, body{
+		font-family:'Open Sans', sans-serif;
+		margin: 0px;
+		height:100%;
+		overflow: hidden;
+		background-color: #fff;
+	}
+
+	textarea.form-control {
+		resize: none;
+		height:200px;
+	}
+
+	#help_content {
+		display: -webkit-flex;
+		display: flex;
+		flex-direction: column;
+		height:100%;
+	}
+
+	#help_content .top_block {
+		width:100%;
+    	padding: 5.6px 14px;
+		background-color: #3f3f3f;
+	}
+
+	#help_content .top_block .title {
+		color:white;
+		font-size: 14px;	
+		font-weight:bold;
+		color:#ddd;
+	}
+
+	/*.contentsWrap{height:350px;}*/
+
+	#help_content .btn_block {
+		display: inline-block;
+
+		width:100%;
+		height:28px;
+
+		/*background-color:#E9EEF3;*/
+		background-color:#fff;
+
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-o-user-select: none;
+		user-select: none; 
+
+	}
+
+	#help_content .btn_block .tabset {
+		
+		display: inline-block;
+
+		width:100%;
+		/*height:100%;*/
+	}
+
+	#help_content .btn_block .tabset .tab_btn:first-child{
+		border-left:0;
+	}
+
+	#help_content .btn_block .tabset .tab_btn {
+		display: inline-block;
+		width:110px;
+		height:28px;
+		cursor:pointer;
+		border-left:1px solid;
+		border-right:1px solid;
+		border-top:3px solid;
+		color:#ccc; 
+		box-sizing: border-box;
+	}
+
+	#help_content .btn_block .tabset .tab_btn:hover {
+		background:#ddd; color:#fff; border-color:#aaa;
+	}
+
+	#help_content .btn_block .tabset .active,
+	#help_content .btn_block .tabset .active:hover {
+		background:#fff; color:#000; border-color:#666;
+	}
+	
+	#help_content .btn_block .tabset{
+		border-bottom: 1px solid #bbb;
+	}
+	
+	#help_content .btn_block .tabset .tab_btn.active .tab_name {
+		color:#000;
+	}
+	
+	#help_content .btn_block .tabset .tab_btn .tab_name {
+		margin: 0 auto;
+		font-size:11px;
+		text-align:center;
+		margin-top:4px;
+		color:#999;
+	}
+
+	#help_content .btn_block .tabset:hover .tab_btn .tab_name {
+	
+		opacity:1;
+
+	}
+
+	#help_content .content_block {
+		display: inline-block;
+		width:100%;
+		height:446px;
+		/*background-color: #E9EEF3;*/
+		background-color:#efefef;
+		vertical-align:top;
+		/*padding-top:20px;
+		padding-bottom:20px;*/
+	}
+
+	#help_content .content_block .tab_content {
+		width:100%;
+		height:100%;
+		display:none;
+	}
+
+	#help_content .content_block .tab_content .navigation {
+		width:780px;
+		height:450px;
+		margin:0 auto;
+		padding:25px 0;
+
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-o-user-select: none;
+		user-select: none; 
+
+	}
+
+	#help_content .content_block .tab_content .glossary {
+		/*background-color:aqua;*/
+		width:100%;
+		height:100%;
+	}
+
+	#help_content .content_block .tab_content .course_map_wrap {
+		width:100%;
+		height:100%;
+		overflow-y: auto;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-o-user-select: none;
+		user-select: none; 
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;		
+	}
+
+	#help_content .content_block .tab_content .course_map_block {
+
+		width:100%;
+		border:1px solid #ccc;
+		padding:10px;
+		background:#fff;
+		display:inline-block;
+		text-align:left;
+
+	}
+
+	#help_content .content_block .tab_content .course_map_block .course_map_list {
+		width:100%;
+		margin-top: 5px;
+		margin-bottom: 5px;
+
+		padding-left: 10px;
+		padding-right: 10px;
+
+		white-space: nowrap;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
+    	font-size:12px;
+	}
+
+	#help_content .content_block .tab_content .navigation img {
+		width:780px;
+		height:400px;
+	}
+
+	/* glossary content */
+
+	#help_content .content_block .tab_content .glossary .glossary_buttonset {
+		position: absolute;
+		left:50%;
+		bottom:0;
+		z-index:100;
+
+		display: -webkit-flex;
+		display: flex;
+		flex-direction: row;
+	}
+
+	#help_content .content_block .tab_content .glossary .glossary_buttonset div {
+		/*width:50%;*/
+		margin-right:10px;
+		cursor:pointer;
+
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-o-user-select: none;
+		user-select: none; 
+	}
+
+	#help_content .content_block .tab_content .glossary .glossary_buttonset .glossary_btn {
+		width:25px;
+		height:25px;
+		background-color: #434343;
+		color:white;
+		font-size:20px;
+		border-radius: 50%;
+	}
+
+	#help_content .content_block .tab_content .glossary .glossary_buttonset .glossary_btn.add_btn {
+		padding-left:4px;
+	}
+
+	#help_content .content_block .tab_content .glossary .glossary_buttonset .glossary_btn.edit_btn {
+		padding-left:4px;
+	}
+
+	#help_content .content_block .tab_content .glossary .glossary_buttonset .glossary_btn.delete_btn {
+		padding-left:6px;
+	}
+
+	#help_content .content_block .tab_content .glossary .glossary_wrap {
+		width:100%;
+		height:100%;
+		margin: 0 auto;
+		/*margin-bottom:10px;*/
+
+		display: -webkit-flex;
+		display: flex;
+		flex-direction: column;
+
+		/*background-color:#F1F0F1;*/
+		/*background-color:#EDE3ED;*/
+		background-color:#efefef;
+	}
+
+/*	#help_content .content_block .tab_content .glossary .glossary_title_block {
+		width:100%;
+		height:20%;
+		background-color: #0566a8;
+		color:white;
+		font-size:18px;
+		border-radius: 10px 10px 0px 0px;
+	}*/
+
+	#help_content .content_block .tab_content .glossary .glossary_word_block {
+		width:100%;
+		height:30px;
+		/*background-color: #1C7196;*/
+
+		display: -webkit-flex;
+		display: flex;
+		flex-direction: row;
+
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-o-user-select: none;
+		user-select: none; 
+	}
+
+	#help_content .content_block .tab_content .glossary .glossary_word_block div{
+		/*width:3.846153846153846%;
+		width:calc(100% / 26);*/
+		height:100%;
+		padding:5px 10px;
+		color:#bbb;
+	}
+
+	#help_content .content_block .tab_content .glossary .glossary_word_block .letter_list.active {
+		color:#333;
+		cursor:pointer;
+	}
+
+	#help_content .content_block .tab_content .glossary .glossary_word_block .letter_list.active.selectedLetter{
+		color:#fff;
+		background:#666;
+	}
+	#help_content .content_block .tab_content .glossary .glossary_content {
+		width:calc(100% - 2px);
+		height:calc(100% - 30px);
+		display: -webkit-flex;
+		display: flex;
+		flex-direction: row;
+	}
+
+	#help_content .content_block .tab_content .glossary .glossary_content .glossary_content_left {
+		width:35%;
+		height:100%;
+	}
+
+	#help_content .content_block .tab_content .glossary .glossary_content .glossary_content_left .left_box {
+		width:100%;
+		height:100%;
+		margin: 0 auto;
+	}
+
+	#help_content .content_block .tab_content .glossary .glossary_content .glossary_content_left .left_block {
+		width:100%;
+		height:30px;
+		background-color: #666;
+		border-right:0px solid #efefef;
+
+		display: -webkit-flex;
+		display: flex;
+		flex-direction: row;
+	}
+
+/*	#help_content .content_block .tab_content .glossary .glossary_content .glossary_content_left .left_block .search_title {
+		width:40%;
+		padding-top:7px;
+		padding-left:7px;
+		color:white;
+	}*/
+
+	#help_content .content_block .tab_content .glossary .glossary_content .glossary_content_right .right_block .search_input {
+		width:100%;
+		padding-top:5px;
+		padding-right:10px;
+		text-align:right;
+		position:relative;
+	}
+	#help_content .content_block .tab_content .glossary .glossary_content .glossary_content_right .right_block #search_clear{
+		color:#ddd;
+		width:12px;
+		height:18px;
+		display:none;
+		position:absolute;
+		top:4px;
+		right:14px;
+		cursor:pointer;
+	}
+	#help_content .content_block .tab_content .glossary .glossary_content .glossary_content_left .left_block .add_btn{
+
+		background:#3f3f3f;
+		padding:2px 20px;
+		color:#ddd;
+		border:1px solid #aaa;
+		font-size:12px;
+		height:24px;
+		margin:3px 0 0 5px;
+	}
+	#help_content .content_block .tab_content .glossary .glossary_content .glossary_content_left .left_block .add_btn:hover{
+		background:#222;
+		color:#fff;
+		cursor:pointer;
+
+	}
+
+
+	#help_content .content_block .tab_content .glossary .glossary_content .right_box .right_block .search_input input {
+		width:60%;
+		height:80%;
+		border:0;
+		border-bottom:1px solid #efefef;
+		background-color:transparent;
+		color:#fff;
+		padding:0 20px 0 5px;
+		background-image: url(../img/help/help_search_btn.svg) ;
+		background-repeat: no-repeat ;
+		background-size:14px;
+		background-position:right 5px center;
+	}
+
+	input:focus {
+		outline:none;
+	}
+
+	#help_content .content_block .tab_content .glossary .glossary_content .glossary_content_left .left_box .word_list_block {
+		width:100%;
+		height:calc(100% - 30px);
+		overflow-y: auto;
+		background-color: white;
+		border-right:1px solid #bbb;
+	}
+
+	#help_content .content_block .tab_content .glossary .glossary_content .glossary_content_left .left_box .word_list {
+		/*margin-bottom: 10px;*/
+		/*padding-left: 10px;*/
+		
+		border-bottom:1px solid #eaeaea;
+		padding:10px 0;
+		
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-o-user-select: none;
+		user-select: none; 
+	}
+	
+	#help_content .content_block .tab_content .glossary .glossary_content .glossary_content_left .left_box .word_list:nth-child(even){
+		background:#f6f6f6;
+	}
+	#help_content .content_block .tab_content .glossary .glossary_content .glossary_content_left .left_box .index {
+		padding-left: 10px;		
+		background-color:#efefef;
+		margin-bottom:10px;
+	}
+
+	#help_content .content_block .tab_content .glossary .glossary_content .glossary_content_left .left_box .word {
+		white-space: nowrap;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
+
+    	padding-left: 10px;
+		font-size:12px;
+    	cursor:pointer;
+	}
+
+	#help_content .content_block .tab_content .glossary .glossary_content .glossary_content_left .left_box .word.active {
+		background-color:#beebff;
+		height:50px;
+		position:relative;
+	}
+	body.preview #help_content .content_block .tab_content .glossary .glossary_content .glossary_content_left .left_box .word.active{
+		height:auto;
+	}
+	
+	body.preview #help_content .content_block .tab_content .glossary .glossary_content .glossary_content_left .left_box .word.active .glossaryEdit_btn,
+	body.preview #help_content .content_block .tab_content .glossary .glossary_content .glossary_content_left .left_box .word.active .glossaryDelete_btn{
+		display:none;
+	}
+	#help_content .content_block .tab_content .glossary .glossary_content .glossary_content_right {
+		width:65%;
+		height:100%;
+	}
+
+	#help_content .content_block .tab_content .glossary .glossary_content .glossary_content_right .right_box {
+		width:100%;
+		height:100%;
+
+	}
+
+	#help_content .content_block .tab_content .glossary .glossary_content .glossary_content_right .right_box .right_block {
+		width:100%;
+		height:30px;
+		background-color: #666;
+	}
+
+	#help_content .content_block .tab_content .glossary .glossary_content .glossary_content_right .right_box .right_block .word_name {
+		white-space: nowrap;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
+
+    	width:100%;
+		padding-top:7px;
+		padding-left:7px;
+		color:white;
+	}
+
+	#help_content .content_block .tab_content .glossary .glossary_content .glossary_content_right .right_box .word_description_block {
+		width:100%;
+	    height:calc(100% - 30px);
+	    overflow-y: auto;
+	    background-color: white;
+	    padding:10px;
+	}
+	#help_content .content_block .tab_content .glossary .glossary_content .glossary_content_right .right_box .word_name {
+		padding:10px;
+		border-bottom:1px solid #ddd;
+		font-size:14px;
+		font-weight:bold;
+	}
+	#help_content .content_block .tab_content .glossary .glossary_content .glossary_content_right .right_box .word_description {
+		padding:10px;
+		font-size:12px;
+	}
+
+	#edit_page_buttonsets {
+		text-align:center;
+		margin-top:10px;
+	}
+	.word_name_default, .word_description_default {
+		color: #ccc;
+	}
+	.glossaryEdit_btn{
+		display:none; 
+		padding:3px 15px;
+		border:1px solid #aaa; 
+		font-size:12px;
+		position:absolute;
+		bottom:5px;
+		right:75px;
+		background:#fff;
+	}
+	.glossaryEdit_btn:hover{
+		background:#e6e6e6;
+	}
+	.glossaryDelete_btn{
+		display:none; 
+		padding:3px 15px;
+		border:1px solid #aaa; 
+		font-size:12px;
+		position:absolute;
+		bottom:5px;
+		right:5px;
+		background:#fff;
+	}
+	
+	.glossaryDelete_btn:hover{
+		background:#e6e6e6;
+	}	
+	
+	.word.active .glossaryEdit_btn{ display:inline-block; }
+	.word.active .glossaryDelete_btn{ display:inline-block; }
+
+	.glossary_dialog{border-radius:0;}
+	.glossary_dialog, .deleteConfirm{padding:0; font-family:'Open Sans', sans-serif;}
+	.glossary_dialog .ui-dialog-titlebar{border-radius: 0; background:#3f3f3f; color:#ddd; border:0; border-bottom:1px solid #ddd; font-weight:bold;}
+	.glossary_dialog .ui-dialog-buttonpane{text-align:center; border:0; margin-top:0; padding:0;}
+	.glossary_dialog .ui-dialog-buttonpane .ui-dialog-buttonset{float:none;}
+	.glossary_dialog #word_edit_btn,.glossary_dialog #word_add_btn{background:#fff; font-family:'Open Sans', sans-serif; border-radius:0; outline:none; color:#666; border:1px solid #aaa; padding:5px 20px;}
+	.glossary_dialog #word_edit_btn,.glossary_dialog #word_add_btn{color:#333; border:1px solid #999;}
+	.glossary_dialog .ui-dialog-titlebar-close{background:none; border:0; outline:none;}
+	.glossary_dialog .ui-dialog-titlebar-close .ui-icon{background-image:none; text-indent:0;}
+	.glossary_dialog .ui-dialog-titlebar-close .ui-icon:after{content:'✕'; font-size:18px; line-height:0; color:#ddd;}
+
+
+	.glossary_dialog #word_name{border-radius:0; margin-bottom:5px;}
+	.glossary_dialog #word_description{border-radius:0;}
+	.word.active .glossaryWordWrap{display:inline-block; max-width:240px; overflow:hidden; vertical-align:middle; text-overflow:ellipsis;}
+	.word .glossaryWordWrap{display:inline-block; max-width:295px; overflow:hidden; vertical-align:middle; text-overflow:ellipsis;}
+	.closeHelpWindow{position:absolute; color:#fff; font-size:20px; top:2px; right:20px; cursor:pointer;}
+	.ui-widget-overlay{background:#000; opacity:0.5;}
+
+	body.preview #help_content .top_block, body.publish #help_content .top_block{display:none;}
+  /*-webkit-CSS scroll */
+
+  ::-webkit-scrollbar {
+      width: 10px;
+      height:10px;
+  }
+
+  ::-webkit-scrollbar-track {
+      background:#e7e7e7;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border:1px solid #bec1c4;
+  }
+  ::-webkit-scrollbar-corner {
+    background:#e7e7e7; 
+  }
+  /*-webkit-CSS scroll End*/
+  
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+color: #ddd;
+opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #ddd;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #ddd;
+}  
+</style> 
+<script>
+  window.creoFns = window.parent.creoFns
+	$(window).load(function() {	
+		
+		window.openedLocation = getParameterByName('location');
+		//jw20200604
+		$('body').addClass(openedLocation)
+		if(openedLocation === 'editor'){
+			globalPageData = parent.globalPageData
+			globalGlossaryData = parent.globalGlossaryData
+			$('.closeHelpWindow').show()
+		}else if(openedLocation === 'preview'){
+			globalPageData = opener.globalPageData
+			globalGlossaryData = opener.globalGlossaryData
+		}
+		
+		InitPage();
+		UpdateGlossary({'type':'init'});
+		UpdateCourseMap();
+
+		$(document).on('keyup', (event) => {
+			if (event.which === 32) {
+				if(document.activeElement.classList.contains("tab_btn")){
+					document.activeElement.click()
+				}else if(document.activeElement.classList.contains("word_list")){
+					console.log('keyup',document.activeElement)
+					document.activeElement.getElementsByClassName("word")[0].click()
+				}
+			}
+		});
+		/* jw20201104 This is tricky 
+		Windows Narrator fails to call the click event. In this case, if add mousedown and mouseup events, the click event is executed.
+		Also, The keyboard listener doesn't work while Narrator is running.
+		*/
+		$('.narratorButton').on('mousedown', function () {/*console.log('mousedown',)*/}).on('mouseup', function () {});
+		//$('.word').on('mousedown', function () {console.log('mousedown',)}).on('mouseup', function () {});
+	});
+	
+	var glossary_dialog = '';
+	var glossary_dialog_root = '';
+
+	var word_list_block = '';
+	var word_name = $('.word_name');
+	var word_description = $('.word_description');
+	
+	var word_name_default = 'Title';
+	var word_description_default = 'Content';
+	
+	var glossary_list = '';
+	var glossaryInfo = {'id':'', 'name': '', 'description': '', 'index':''};
+	var glossaryArray = [];
+	
+	
+	window.InitPage = () =>{
+		$('#tab1_content').show();
+		$('#tab1').addClass('active');
+
+		if(openedLocation !== 'editor'){
+			$('.glossary_buttonset').remove();
+			$('.glossaryEdit_btn').remove();
+			$('.glossaryDelete_btn').remove();
+			$('.left_block .add_btn').remove();
+		}
+	}
+	let tabIndexCnt = 10
+	function UpdateGlossary(param){
+		
+		word_list_block = $('#word_list_block');
+		word_list_block.empty();
+		word_name.empty();
+		word_description.empty();
+
+		$('.letter_list').removeClass('active');
+
+		glossaryArray = [];
+
+		var _search_txt = '';
+
+		if(param.type == 'init'){
+			if(openedLocation === 'editor'){
+				globalPageData = parent.globalPageData
+				globalGlossaryData = parent.globalGlossaryData
+			}else if(openedLocation === 'preview'){
+				globalPageData = opener.globalPageData
+				globalGlossaryData = opener.globalGlossaryData
+			}
+			WordFocus('');
+			for (var key in globalGlossaryData) {
+			   if (globalGlossaryData.hasOwnProperty(key)) {
+			      glossaryArray.push({
+			      	'id': key,
+			      	'name': globalGlossaryData[key].name,
+			      	'description': globalGlossaryData[key].description,
+			      	'index': globalGlossaryData[key].index,
+			      	'order': globalGlossaryData[key].name.toLowerCase()
+			      });
+			   }
+			}
+
+			glossaryArray.sort(function(a, b) {
+				if (a.order < b.order) return -1
+				if (a.order > b.order) return 1
+				return 0;
+			});
+			
+			word_name.empty();
+			word_description.empty();
+		
+		}else if(param.type == 'search'){
+			_search_txt = param.search_txt;
+
+			for (var key in globalGlossaryData) {
+				if (globalGlossaryData.hasOwnProperty(key)) {
+					var _regex = new RegExp(_search_txt, 'i');
+					var _search_regex = _regex.test(globalGlossaryData[key].name);
+
+					if(_search_regex){
+						var _similarity = Math.round(similarity(_search_txt, globalGlossaryData[key].name) * 10000) / 100;
+
+						glossaryArray.push({
+				      	'id': key,
+				      	'name': globalGlossaryData[key].name,
+				      	'description': globalGlossaryData[key].description,
+				      	'index': globalGlossaryData[key].index,
+				      	'order':parseFloat(_similarity)
+				      });
+
+					}
+			  	}
+
+			}
+
+
+			glossaryArray.sort(function(a, b) {
+				if (a.order > b.order) return -1
+				if (a.order < b.order) return 1
+				return 0;
+			});
+
+		}
+
+		for(var i=0; i<glossaryArray.length; i++){
+			var _glossaryInfo = {
+				'id': glossaryArray[i].id,
+				'name': glossaryArray[i].name,
+				'description': glossaryArray[i].description,
+				'index': glossaryArray[i].index
+			}
+
+			var _word_list = $('#word_list_block .word_list[index="' + _glossaryInfo.index + '"]');
+
+			if(_word_list.length == 0){
+				word_list_block.append(getWordList(_glossaryInfo, tabIndexCnt));
+
+				_word_list = $('#word_list_block .word_list[index="' + _glossaryInfo.index + '"]');
+
+				var _letter_regex = /[A-Za-z]/.test(_glossaryInfo.index);
+				
+				if(_letter_regex){
+					$('#letter_' + _glossaryInfo.index.toUpperCase()).addClass('active');
+				}
+				tabIndexCnt += 3
+			}
+			_word_list.append(getWord(_glossaryInfo));
+			_word_list.on('mousedown', function () {}).on('mouseup', function () {});
+		}
+		
+
+	}
+
+	window.UpdateCourseMap =() =>{
+		// append to course_map_block
+		$('#course_map_block').empty();
+		
+		const _sidebarMenus = [];
+		PageDataHandler({
+			action: 'do.everyPage',
+			pageData: globalPageData,
+			callback: param => {
+				const { lsId: _lsId, pageInfo: _pageInfo, parentLsId: _parentLsId, parentData: _parentData } = param
+				var _depth = PageDataHandler({action:'get.pageStack',pageData: globalPageData, lsId: _lsId}).length - 1;
+
+				_sidebarMenus.push({
+					'lsId': _lsId,
+					'name': _pageInfo.name,
+					'depth': _depth
+				});
+
+			}
+		});
+		for(var i=0; i<_sidebarMenus.length; i++){
+			var _page = _sidebarMenus[i];
+			var _page_tag = getPage(_page);
+			$('#course_map_block').append(_page_tag);
+		}
+
+	}
+	window.PageDataHandler = param => {
+		const { action: _action, pageData : _pageData } = param
+		if (_action === 'do.everyPage') {
+			const _callback = param.callback !== undefined ? param.callback : () => {}
+			traversalPageData(_pageData, null, [], 0, _callback)
+		} else if (_action === 'get.pageStack') {
+			const _lsId = param.lsId || parent.global_LS_id
+	
+			return getPageStack(_pageData, _lsId)
+		} 
+	}
+	const traversalPageData = (pageData, parentLsId, ancestorsLsId, depth, callback) => {
+		Object.entries(pageData)
+			.forEach(data => {
+				if (data[1].pageInfo.action !== 'delete') {
+					callback({ lsId: data[0], pageInfo: data[1].pageInfo, parentLsId: parentLsId, ancestorsLsId: ancestorsLsId, parentData: pageData, depth: depth })
+				}
+	
+				data[1].pages !== undefined ? traversalPageData(data[1].pages, data[0], ancestorsLsId.concat(data[0]), depth + 1, callback) : null
+			})
+	}
+	const getPageStack = (pageData, lsId, currentLsStack = []) => { // kevin Mar.11.2019 / find page stack
+		let _pageStack = []
+	
+		const FindPage = (pageData, lsId, currentLsStack) => {
+			if (pageData[lsId] !== undefined) {
+				_pageStack = currentLsStack.concat(lsId)
+			}
+	
+			Object.entries(pageData).forEach(data => {
+				if (data[1].pages !== undefined) {
+					FindPage(data[1].pages, lsId, currentLsStack.concat(data[0]))
+				}
+			})
+		}
+	
+		FindPage(pageData, lsId, currentLsStack)
+	
+		return _pageStack
+	}
+	function getPage(info, depth){
+		var _pageInfo = info;
+		var _depth = depth;
+		var _page = $('<div class="course_map_list" depth="'+_depth+'" title="'+_pageInfo.name+'" style="padding-left:'+ (info.depth * 15) +'px;">- \
+						'+ _pageInfo.name +'\
+						</div>');
+
+		return _page;
+	}
+
+	function getWord(info){
+		var _item = '<div id="'+info.id+'" class="word" description="'+info.description+'"><div class="glossaryWordWrap">'+info.name+'</div>';
+
+		if(openedLocation != 'publish'){
+			_item = _item + '<div class="glossaryEdit_btn edit_btn">Edit</div><div  class="glossaryDelete_btn">Delete</div>';
+		}
+
+		_item = _item + '</div>';
+
+		return $(_item);
+	}
+
+	function getWordList(info, cnt){
+
+		// 181115 Jay, 1410
+		// <div class="index">'+info.index+'</div>\
+		var _item = $('<div class="word_list" index="'+info.index+'" tabindex="'+cnt+'" title="'+info.name+'">\
+					  </div>');
+
+		return _item;
+	}
+
+	// search similarity
+	function similarity(s1, s2) {
+	  var longer = s1;
+	  var shorter = s2;
+	  if (s1.length < s2.length) {
+	    longer = s2;
+	    shorter = s1;
+	  }
+	  var longerLength = longer.length;
+	  if (longerLength === 0) {
+	    return 1.0;
+	  }
+	  return (longerLength - editDistance(longer, shorter)) / parseFloat(longerLength);
+	}
+
+	// search similarity
+	function editDistance(s1, s2) {
+	  s1 = s1.toLowerCase();
+	  s2 = s2.toLowerCase();
+
+	  var costs = new Array();
+	  for (var i = 0; i <= s1.length; i++) {
+	    var lastValue = i;
+	    for (var j = 0; j <= s2.length; j++) {
+	      if (i == 0)
+	        costs[j] = j;
+	      else {
+	        if (j > 0) {
+	          var newValue = costs[j - 1];
+	          if (s1.charAt(i - 1) != s2.charAt(j - 1))
+	            newValue = Math.min(Math.min(newValue, lastValue),
+	              costs[j]) + 1;
+	          costs[j - 1] = lastValue;
+	          lastValue = newValue;
+	        }
+	      }
+	    }
+	    if (i > 0)
+	      costs[s2.length] = lastValue;
+	  }
+	  return costs[s2.length];
+	}
+
+  $(document).on('click', '.tabset .tab_btn', function(e){
+    if(e.which == 1 || e.which === undefined)
+    {
+      var _open_id = '#' + $(this).attr('id') + '_content';
+
+      $('.tabset .tab_btn').removeClass('active');
+      $(this).addClass('active');
+
+      $('.tab_content').hide();
+      $(_open_id).show();
+    }
+  });
+
+	$(document).on('click', '.glossary .add_btn', function(e){
+		if(e.which == 1)
+		{
+			OpenEditDialog({'action':'add'});
+		}
+	});
+
+	$(document).on('click', '.glossary .edit_btn', function(e){
+		if(e.which == 1)
+		{
+			var _focused_obj = $('.word.active');
+
+			if(_focused_obj.length != 0){
+				var _id = $(_focused_obj[0]).attr('id');
+
+				OpenEditDialog({'action':'edit', 'id': _id});
+			}else{
+
+			}
+		}
+	});
+
+	$(document).on('click', '.glossary .word_list .word', function(e){
+		if(e.which == 1) {
+
+			WordFocus(this.id, $(this).attr('tabindex'));
+		}
+	});
+
+	$(document).on('click', '#word_add_btn', function(e){
+		
+		if($.trim($('#word_name').val()) == ''){//4604_06052020_SK
+			
+			$('#word_name').css({'border': '1px solid #f00', 'transition': 'border 500ms ease-out'});
+			$('#word_description').css({'border': '1px dashed #666', 'transition': 'border 500ms ease-out'});
+			$('.name_warningMsg').show();
+			$('.description_warningMsg').hide();
+			
+		}else if($.trim($('#word_description').val()) == ''){//4604_06052020_SK
+			
+			$('#word_name').css({'border': '1px dashed #666', 'transition': 'border 500ms ease-out'});
+			$('#word_description').css({'border': '1px solid #f00', 'transition': 'border 500ms ease-out'});
+			$('.description_warningMsg').show();
+			$('.name_warningMsg').hide();
+			
+		}else{//4604_06052020_SK
+			
+			if(e.which == 1)
+				{
+				var _word_name = $.trim($('#word_name').val());
+				var _word_description = $('#word_description').val();
+				var _word_index = _word_name.charAt(0).toUpperCase();
+				var _glossaryInfo = {
+					'name':'',
+					'description':'',
+					'index':''
+				}
+				//jw20200325 4136 
+				var _time = creoFns.core.generateUUID();
+				//var _time = parent.Stage[0].contentWindow.GetDifferentTimestamp();
+				var _newId = 'glossary_' + parent.user_id + '_' + _time;
+	
+				if(_word_name != ''){
+					_glossaryInfo.id = _newId;
+					_glossaryInfo.name = _word_name;
+					_glossaryInfo.description = _word_description;
+					_glossaryInfo.index = _word_index;
+	
+					AddGlossaryWordJsonTag(_glossaryInfo);
+	
+					UpdateGlossary({'type':'init'});
+	
+					WordFocus(_newId);
+	
+					var _focused_obj = $('.word.active');
+					if(_focused_obj.length != 0){
+						var _scroll_id = $(_focused_obj[0]).attr('id');
+						var _scroll_obj = word_list_block.find('#' + _scroll_id);
+	
+						var _scroll_top_value = Math.floor(_scroll_obj.offset().top) + Math.floor(word_list_block.scrollTop()) - Math.floor(word_list_block.offset().top);
+	
+						word_list_block.stop().animate({scrollTop:_scroll_top_value}, 300);
+					}
+	
+					UpdateThemeHelp({'action':'add', 'target':_newId});
+	
+					if(glossary_dialog){
+						glossary_dialog.dialog('close');
+					}
+				}
+	
+			}
+		}
+	});
+
+	$(document).on('click', '#word_edit_btn', function(e){
+		
+		if($.trim($('#word_name').val()) == ''){//4604_06052020_SK
+			
+			$('#word_name').css({'border': '1px solid #f00', 'transition': 'border 500ms ease-out'});
+			$('#word_description').css({'border': '1px dashed #666', 'transition': 'border 500ms ease-out'});
+			$('.name_warningMsg').show();
+			$('.description_warningMsg').hide();
+			
+		}else if($.trim($('#word_description').val()) == ''){//4604_06052020_SK
+			
+			$('#word_name').css({'border': '1px dashed #666', 'transition': 'border 500ms ease-out'});
+			$('#word_description').css({'border': '1px solid #f00', 'transition': 'border 500ms ease-out'});
+			$('.description_warningMsg').show();
+			$('.name_warningMsg').hide();
+			
+		}else{//4604_06052020_SK		
+			
+			if(e.which == 1)
+			{
+				var _word_id = '';
+				var _word_name = $.trim($('#word_name').val());
+				var _word_description = $('#word_description').val();
+				var _word_index = _word_name.charAt(0).toUpperCase();
+	
+				var _focused_obj = $('.word.active');
+	
+				if(_word_name != ''){
+					if(_focused_obj.length != 0){
+			          _word_id = $(_focused_obj[0]).attr('id');
+	
+			          parent.globalGlossaryData[_word_id].name = _word_name;
+			          parent.globalGlossaryData[_word_id].description = _word_description;
+			          parent.globalGlossaryData[_word_id].index = _word_index;
+			        }
+	
+			        UpdateGlossary({'type':'init'});
+			        WordFocus(_word_id);
+	
+			        // UpdateThemeHelp();
+			        UpdateThemeHelp({'action':'edit', 'target':_word_id});
+	
+					if(glossary_dialog){
+						glossary_dialog.dialog('close');
+					}
+	
+				}
+			}
+		}
+	});
+
+
+	$(document).on('click', '.glossaryDelete_btn', function(e){
+
+			//var _glossary_id = $(this).parent().attr('id');
+
+		if($('#glossary_deleteConfirm').length == 0){
+			var glossary_deleteConfirm = $('<div id="glossary_deleteConfirm"></div>');
+			$('body').append(glossary_deleteConfirm);
+
+			 $('#glossary_deleteConfirm').dialog({
+				dialogClass: 'deleteConfirm dialogConfirm001',
+				resizable: false,
+				draggable: true,
+				modal: true,
+				title: 'Delete',
+				height: 140,
+				width: 400,
+				open: function(event, ui){
+					var _edit_page = '<div>\
+										Are you sure?\
+				                     </div>';
+
+				    glossary_deleteConfirm.append($(_edit_page));
+				},
+				close: function(event, ui){
+					if(glossary_deleteConfirm){
+						glossary_deleteConfirm.dialog('destroy');
+						glossary_deleteConfirm.remove();
+					}
+
+				},
+				buttons: {
+							"Confirm": function() {
+
+								if(e.which == 1)
+								{
+									var _focused_obj = $('.word.active');
+
+									if(_focused_obj.length != 0){
+										var _id = $(_focused_obj[0]).attr('id');
+
+										delete parent.globalGlossaryData[_id];
+
+								        UpdateGlossary({'type':'init'});
+
+								         if(glossary_deleteConfirm){
+										 	glossary_deleteConfirm.dialog('close');
+										 }
+
+										 // UpdateThemeHelp();
+										 UpdateThemeHelp({'action':'delete', 'target':_id});
+
+									}
+								}
+								//$(this).dialog('close');
+							},
+							"Cancel": function() {
+								$(this).dialog('close');									
+							}
+						}
+
+			});
+
+	}
+});
+
+
+	$(document).on('click', '.letter_list.active', function(e)
+	{	
+		$('.letter_list').removeClass('selectedLetter');
+		$(this).addClass('selectedLetter');
+		
+		if(e.which == 1)
+		{
+			var _alphabet = $(this).attr('data');
+			var _target_obj = word_list_block.find('.word_list[index="' + _alphabet + '"]');
+			var _scroll_top_value = Math.floor(_target_obj.offset().top) + Math.floor(word_list_block.scrollTop()) - Math.floor(word_list_block.offset().top);
+
+			word_list_block.stop().animate({scrollTop:_scroll_top_value}, 300);
+		}
+	});
+	//jw20200608 4624 keyup
+	$(document).on('keyup', '#search_txt', function(e){
+		
+		var _search_txt = $.trim($(this).val());
+
+		if(_search_txt == ''){
+			UpdateGlossary({'type':'init'});
+			$('#search_clear').hide();
+			$('#search_txt').css('background-image','url(../img/help/help_search_btn.svg)');
+		}else{
+			UpdateGlossary({'type':'search', 'search_txt':_search_txt});
+			$('#search_clear').show();
+			$('#search_txt').css('background-image','none');
+		}
+		word_list_block.stop().animate({scrollTop:0}, 300);
+		
+	});
+	//SK_20200609 4624
+	$(document).on('click', '#search_clear', function(e)
+	{	
+		$('#search_txt').val('');
+		$('#search_clear').hide();
+		$('#search_txt').css('background-image','url(../img/help/help_search_btn.svg)');
+		UpdateGlossary({'type':'init'});
+		
+	});
+	//convert first letter to capital letter 
+	// function capitalizeFirstWords(str)
+	// {
+	// 	return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+	// }
+
+    $(document).on('click', '.closeHelpWindow', function(e){
+    	if(e.which == 1)
+    	{
+    		//jw20200601 4536
+    		//console.log('openedLocation',openedLocation)
+    		if(openedLocation === 'editor'){
+	    		if(parent.$('#help_dialog')){
+	    			parent.$('#help_dialog').dialog('close');
+	    		}
+    		}else{
+    			self.close()
+    		}
+    		
+    	}
+    });
+
+	function AddGlossaryWordJsonTag(info){
+		// id, description, index, name
+
+		parent.globalGlossaryData[info.id] = {
+			'name': info.name,
+			'description': info.description,
+			'index': info.index
+		}
+
+
+	}
+	
+
+	function WordFocus(id, cnt){
+		$('.glossary .word').removeClass('active');
+
+		var _id = id;
+		var _word_name = '';
+		var _word_description = '';
+		
+		if(_id === ''){
+			_word_name = word_name_default;
+			_word_description = word_description_default;
+			$('.word_name').addClass('word_name_default');
+			$('.word_description').addClass('word_description_default');
+			$('.word_name').attr('tabindex', '')
+			$('.word_description').attr('tabindex', '')
+			$('.word_name').attr('title', '')
+			$('.word_description').attr('title', '')
+		}else{
+			var _obj = $('#word_list_block').find('#' + _id);
+
+			_obj.addClass('active');
+	
+			var _word_json_obj = parent.globalGlossaryData[_id];
+			_word_name = _word_json_obj.name;
+			_word_description = _word_json_obj.description;
+			
+			$('.word_name').removeClass('word_name_default');
+			$('.word_description').removeClass('word_description_default');
+			$('.word_name').attr('tabindex', ++cnt)
+			$('.word_description').attr('tabindex', ++cnt)
+			$('.word_name').attr('title', _word_name)
+			$('.word_description').attr('title', _word_description)
+		}
+		
+
+		$('.word_name').text(_word_name);
+		$('.word_description').text(_word_description);
+	}
+
+	function OpenEditDialog(param) {
+		var _action = param.action;
+		var _title = _action;
+		var _btn_id = 'word_' + _action + '_btn';
+
+		var _button_title = '';
+		var _word_id = '';
+		var _word_name_val = '';
+		var _word_description_val = '';
+		var _target_id = '';
+
+		if(_action == 'add') {
+			_button_title = 'Add';
+
+		} else if(_action == 'edit') {
+			var _word_json_obj = null;
+
+			_button_title = 'Edit';
+			_target_id = param.id;
+
+			_word_json_obj = parent.globalGlossaryData[_target_id];
+
+			if(!_word_json_obj) return;
+
+
+			_word_name_val = _word_json_obj.name;
+			_word_description_val = _word_json_obj.description;
+			_word_id = _target_id;
+		}
+
+
+		if($('#glossary_dialog').length == 0){
+			glossary_dialog = $('<div id="glossary_dialog"></div>');
+			$('body').append(glossary_dialog);
+
+			$('#glossary_dialog').dialog({
+				dialogClass: 'glossary_dialog',
+				resizable: false,
+				draggable: true,
+				modal: true,
+				title: _button_title,
+				open: function(event, ui){
+					glossary_dialog_root = glossary_dialog.parent();
+					glossary_dialog_root.css('width', '400px');
+
+					var _edit_page = '<div>\
+				                        <div>\
+				                        	<input id="word_name" word_id="'+_word_id+'" type="text" class="form-control" placeholder="word" value="'+_word_name_val+'" style="border:1px dashed #666;"/>\
+				                        	<span class="name_warningMsg" style="display:none; font-size:10px; color:#f00;">This field is required.</span>\
+				                        </div>\
+				                        <div>\
+				                        	<textarea id="word_description" word_id="'+_word_id+'" class="form-control" placeholder="description" style="border:1px dashed #666;">'+_word_description_val+'</textarea>\
+				                        	<span class="description_warningMsg" style="display:none; font-size:10px; color:#f00;">This field is required.</span>\
+				                        </div>\
+				                        <div id="edit_page_buttonsets"><button id="'+_btn_id+'" type="button" class="btn btn-default">Save</button></div>\
+				                     </div>';
+
+				    glossary_dialog.append($(_edit_page));
+
+				    $(this).parent().css({
+				    	position: 'absolute',
+				    	left: ($(window).width() - $(this).parent().outerWidth()) / 2,
+                		top: ($(window).height() - $(this).parent().outerHeight()) / 2
+				    });
+
+
+				},
+				close: function(event, ui){
+					glossary_dialog_root = '';
+					if(glossary_dialog){
+						glossary_dialog.dialog('destroy');
+						glossary_dialog.remove();
+					}
+
+				}
+
+
+			});
+
+		}
+	}
+
+	function UpdateThemeHelp(param) {
+		if(!creoFns.isCollaboration){
+			parent.HelpHandler('update');
+		}
+			
+		creoFns.collaboration?.saveCourseData({
+		eventName: 'glossary.' + param.action + '.data'
+		});
+	}
+
+	function getParameterByName(name) {
+		name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+		var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+		results = regex.exec(location.search);
+		return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	}
+
+	$('img').on('dragstart', function(event) { event.preventDefault(); });
+
+
+  window.ExecuteHelpCommand = function(param) {
+    if(param.flag == 'UpdateGlossary.init'){
+      UpdateGlossary({'type':'init'});
+    } else if (param.flag === 'change.tab') {
+      $('.tabset #' + param.tabId).trigger('click')
+    }
+  }
+	
+	
+</script>
+</head>
+<body>
+	<div id="help_wrap" class="wrap" style="font-size: 14px; width:100%; height:100%; max-width: 950px; margin: auto;">
+		<div id="help_content">
+			<div class="top_block">
+				<div class="title">Help Center</div>
+				<div class="closeHelpWindow" style="display: none;">✕</div>
+			</div>
+
+			<div class="contentsWrap">
+				<div class="btn_block">
+					<div class="tabset">
+						<div id="tab1" class="tab_btn narratorButton" tabindex="1" title="Navigation">
+							<div class="tab_name">Navigation</div>
+						
+						</div><div id="tab2" class="tab_btn narratorButton" tabindex="2" title="Glossary">
+							<div class="tab_name">Glossary</div>
+						
+						</div><div id="tab3" class="tab_btn narratorButton" tabindex="3" title="Course Map">
+							<div class="tab_name">Course Map</div>
+						</div>
+					</div>
+				
+
+				</div><div class="content_block">
+					<div id="tab1_content" class="tab_content">
+						<div class="navigation">
+							<img src="../img/help/navigation_img.jpg" />
+						</div>
+					</div>
+
+					<div id="tab2_content" class="tab_content">
+						<div class="glossary">
+							
+							<div class="glossary_wrap">
+								<div class="glossary_word_block">
+									<div id="letter_A" class="letter_list" data="A">A</div>
+									<div id="letter_B" class="letter_list" data="B">B</div>
+									<div id="letter_C" class="letter_list" data="C">C</div>
+									<div id="letter_D" class="letter_list" data="D">D</div>
+									<div id="letter_E" class="letter_list" data="E">E</div>
+									<div id="letter_F" class="letter_list" data="F">F</div>
+									<div id="letter_G" class="letter_list" data="G">G</div>
+									<div id="letter_H" class="letter_list" data="H">H</div>
+									<div id="letter_I" class="letter_list" data="I">I</div>
+									<div id="letter_J" class="letter_list" data="J">J</div>
+									<div id="letter_K" class="letter_list" data="K">K</div>
+									<div id="letter_L" class="letter_list" data="L">L</div>
+									<div id="letter_M" class="letter_list" data="M">M</div>
+									<div id="letter_N" class="letter_list" data="N">N</div>
+									<div id="letter_O" class="letter_list" data="O">O</div>
+									<div id="letter_P" class="letter_list" data="P">P</div>
+									<div id="letter_Q" class="letter_list" data="Q">Q</div>
+									<div id="letter_R" class="letter_list" data="R">R</div>
+									<div id="letter_S" class="letter_list" data="S">S</div>
+									<div id="letter_T" class="letter_list" data="T">T</div>
+									<div id="letter_U" class="letter_list" data="U">U</div>
+									<div id="letter_V" class="letter_list" data="V">V</div>
+									<div id="letter_W" class="letter_list" data="W">W</div>
+									<div id="letter_X" class="letter_list" data="X">X</div>
+									<div id="letter_Y" class="letter_list" data="Y">Y</div>
+									<div id="letter_Z" class="letter_list" data="Z">Z</div>
+								</div>
+								<div class="glossary_content">
+									<div class="glossary_content_left">
+										<div class="left_box">
+											<div class="left_block">
+												<div class="add_btn">													
+													+ Add									
+												</div>
+												
+											</div>
+
+											<div id="word_list_block" class="word_list_block">
+												<!--word_list-->
+
+											</div>
+										</div>
+									</div>
+
+									<div class="glossary_content_right">
+										<div class="right_box">
+											<div id="right_block" class="right_block">
+												<div class="search_input"><input id="search_txt" class="" type="text" placeholder="Type search text here..." tabindex="6" title="Search"/><div id="search_clear">✕</div></div>
+											</div>
+											<div id="word_description_block" class="word_description_block">
+												<div class="word_name word_name_default">
+													Title
+												</div>
+												<div class="word_description word_description_default">
+													Content
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+					
+					<div id="tab3_content" class="tab_content">
+						<div id="course_map_wrap" class="course_map_wrap">
+							<div style="height:100%; min-width:50%; max-width:100%;">										
+								<div id="course_map_block" class="course_map_block" tabindex="6" title='Course Map'>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+	<!-- player dialog -->
+	<!-- <div id="player_dialog" style="display:none;"></div> -->
+</body>
+</html>

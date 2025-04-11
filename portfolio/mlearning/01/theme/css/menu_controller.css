@@ -1,0 +1,218 @@
+#treeview li.selected{
+	border-color:#0066ff
+}
+
+/* #treeview a.title:hover,*/
+#treeview li.selected > a.title {
+	 background-color: #fff;
+} 
+#treeview > li > ul > li:before,
+#treeview>li:before{
+	content:'';
+	width:0%;
+	position:absolute;
+	height:100%;
+	background-color: #fff;
+	left:0;
+
+}
+#treeview > li > ul > li:hover:before,
+#treeview>li:hover:before{
+	content:'';
+	width:100%;
+	position:absolute;
+	height:100%;
+	background-color: #fff;
+	transition:all 0.3s ease-in-out;
+	left:0;
+}
+#treeview li.page.selected > a.title {
+	background-image: url(../img/menu_selected.svg);
+	background-size: 14px;
+}
+/* kevin Apr.08.2019 / quiz shape is different between editor and preview */
+#treeview[location="editor"] li.quiz.selected > a.title {
+
+}
+#treeview li.quiz.selected > a.title {
+	background-image: url(../img/sidebar_quizIcon_selected.svg);
+	background-size: 14px;
+}
+/* ./ kevin Apr.08.2019 / quiz shape is different between editor and preview */
+#treeview[location='editor'] li.selected > a.title > div.title_block {
+	/*width: calc(100% - 38px);*/ /* kevin Apr.05.2019 / sidebar edit box width */
+	width:100%;
+}
+#treeview[location='editor'] li.quiz > ul > li.selected > a.title > div.title_block {
+	width: 100%; /* kevin Apr.05.2019 / no edit box at question page */
+}
+
+
+#treeview {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#treeview ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#treeview li {
+	width: calc(100% - 5px);
+	display: block;
+	position: relative;
+	cursor: pointer;
+	border-right:5px solid #aaa;
+	background-color:#efefef;
+	transition:all 0.3s ease-in-out;
+}
+#treeview li > a.title {
+	position: relative;
+	display: inline-block;
+	background-repeat: no-repeat;
+}
+#treeview li > a.title > div.title_block {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 12px;
+	display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+	line-height:24px;
+}
+#treeview li.group > a.title {
+	background-image: url(../img/menu_group.svg);
+	background-size: 10px;
+}
+#treeview li.group.hideProceedingPage > a.title {
+	background-image: url(../img/menu_group3.svg);
+	background-size: 10px;
+}
+
+/* kevin Apr.08.2019 / quiz shape is different between editor and preview */
+#treeview[location="editor"] li.quiz > a.title {
+	background-image: url(../img/sidebar_quizIcon.svg);
+	background-size: 14px;
+	border-bottom:1px solid #ccc;
+}
+#treeview[location="editor"] li.quiz.selected > a.title {
+	background-image: url(../img/sidebar_quizIcon_selected.svg);
+}
+
+/* ./ kevin Apr.08.2019 / quiz shape is different between editor and preview */
+#treeview li.page > a.title {
+	background-image: url(../img/menu_bullet.svg);
+	background-size: 14px;
+	border-bottom:1px solid #ccc;
+}
+
+/* depth 0 */
+#treeview > li > a.title {
+	padding: 14px 14px 14px 30px;
+	width: calc(100% - 44px);
+	background-position: 11px 19px;
+}
+/* ./ depth 0 */
+
+/* depth 1 */
+#treeview > li > ul > li > a.title {
+	padding: 14px 14px 14px 56px;
+	width: calc(100% - 70px);
+	background-position: 36px center;
+}
+
+#treeview > li > ul > li{
+	background-color:#dddddd;
+	border-color:#888;
+}
+
+/* ./ depth 1 */
+
+/* depth 2 */
+#treeview > li > ul > li > ul > li > a.title {
+	padding: 3px 25px 3px 55px;
+	width: calc(100% - 80px);
+	background-position: 42px center;
+}
+/* ./ depth 2 */
+
+/* depth 3 */
+#treeview > li > ul > li > ul > li > ul > li > a.title {
+	padding: 3px 25px 3px 70px;
+	width: calc(100% - 95px);
+	background-position: 57px center;
+}
+/* ./ depth 3 */
+
+
+/*group indicators*/
+#treeview li a.title span.group-indicator {
+	float: left;
+	top: 18px;
+	position: absolute;
+	font-size: 10px;
+	opacity: 0.5;
+}
+
+/* depth 0 */
+#treeview > li > a.title > span.group-indicator {
+	right:5px;
+}
+/* ./ depth 0 */
+
+/* depth 1 */
+#treeview > li > ul > li > a.title > span.group-indicator {
+	left: 17px;
+}
+/* ./ depth 1 */
+
+/* depth 2 */
+#treeview > li > ul > li > ul > li > a.title > span.group-indicator {
+	left: 32px;
+}
+/* ./ depth 2 */
+/* ./ group indicators*/
+
+/*Harvey July 23 2019/2832*/
+#treeview li.hideProceedingPage > a.title > div.title_block{
+	opacity: 0.3; /*Harvey July 23 2019/2832*/
+}
+#treeview li.hideProceedingPage.activated > a.title > div.title_block{
+	opacity: initial; /*Harvey July 23 2019/2832*/
+}
+#treeview li.group.hideProceedingPage > a.title > .group-indicator{
+	opacity: 0.3; /*Harvey July 24 2019/2837*/
+}
+/* #treeview li.hideProceedingPage > a.title{
+	background-image: url(../img/menu_bullet3.svg);
+    background-size: 5px;
+} */
+
+#treeview li.visited > a.title > div.title_block{
+	opacity: initial; /*Harvey July 23 2019/2832*/
+	
+}
+/*#treeview li.group > ul > li.visited > a.title{*/
+/*	background-image: url(../img/menu_bullet2.svg);*/
+/*    background-size: 5px;*/
+/*}*/
+/* #treeview li.activated > a.title,
+#treeview li.visited > a.title{
+	background-image: url(../img/menu_bullet.svg); */
+    /* background-size: 5px; */
+/* } */
+/*Harvey July 23 2019/2832*/
+
+#treeview li.visited {
+	opacity: initial;
+}
+#treeview li.activated {
+	opacity: initial;
+}
+
+#treeview li.quiz > a.title {
+	background-image: url(../img/sidebar_quizIcon.svg);
+	background-size: 14px;
+	border-bottom:1px solid #ccc;
+}
