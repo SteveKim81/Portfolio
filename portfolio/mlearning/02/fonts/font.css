@@ -1,0 +1,945 @@
+@font-face {
+  font-family: 'PlaylistScript';
+  src: local('☺'), url('playlistscript/playlistScript.woff') format('woff'),
+    url('playlistscript/playlistScript.ttf') format('truetype'),
+    url('playlistScript/playlistScript.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HerrVonMuellerhoff-Regular';
+  src: local('☺'),
+    url('herrvonmuellerhoff-regular/HerrVonMuellerhoff-Regular.woff') format('woff'),
+    url('herrvonmuellerhoff-regular/HerrVonMuellerhoff-Regular.ttf') format('truetype'),
+    url('herrvonmuellerhoff-regular/HerrVonMuellerhoff-Regular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SixCaps';
+  src: local('☺'), url('sixcaps/SixCaps.woff') format('woff'),
+    url('sixcaps/SixCaps.ttf') format('truetype'),
+    url('sixcaps/SixCaps.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pacifico';
+  src: local('☺'), url('pacifico/pacifico.woff') format('woff'),
+    url('pacifico/pacifico.ttf') format('truetype'),
+    url('pacifico/pacifico.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mathlete';
+  src: local('☺'), url('mathlete/mathlete.woff') format('woff'),
+    url('mathlete/mathlete.ttf') format('truetype'),
+    url('mathlete/mathlete.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ffadmatro';
+  src: local('☺'), url('ffadmatro/ffadmatro.woff') format('woff'),
+    url('ffadmatro/ffadmatro.ttf') format('truetype'),
+    url('ffadmatro/ffadmatro.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TimesRoman';
+  src: local('☺'), url('timesroman/timesroman.woff') format('woff'),
+    url('timesroman/timesroman.ttf') format('truetype'),
+    url('timesroman/timesroman.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PoppinsLight';
+  src: url('poppins/PoppinsLight.eot');
+  src: local('☺'), url('poppins/PoppinsLight.woff') format('woff'),
+    url('poppins/PoppinsLight.ttf') format('truetype'),
+    url('poppins/PoppinsLight.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PoppinsMedium';
+  src: url('poppins/PoppinsMedium.eot');
+  src: local('☺'), url('poppins/PoppinsMedium.woff') format('woff'),
+    url('poppins/PoppinsMedium.ttf') format('truetype'),
+    url('poppins/PoppinsMedium.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PoppinsBold';
+  src: url('poppins/PoppinsBold.eot');
+  src: local('☺'), url('poppins/PoppinsBold.woff') format('woff'),
+    url('poppins/PoppinsBold.ttf') format('truetype'),
+    url('poppins/PoppinsBold.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LatoLight';
+  src: url('Lato/LatoLight.eot');
+  src: local('☺'), url('Lato/LatoLight.woff') format('woff'),
+    url('Lato/LatoLight.ttf') format('truetype'), url('Lato/LatoLight.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'JosefinSansRegular';
+  src: url('josefinsans/JosefinSansRegular.eot');
+  src: local('☺'), url('josefinsans/JosefinSansRegular.woff') format('woff'),
+    url('josefinsans/JosefinSansRegular.ttf') format('truetype'),
+    url('josefinsans/JosefinSansRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AlegreyaSansMedium';
+  src: url('alegreyasans/AlegreyaSansMedium.eot');
+  src: local('☺'), url('alegreyasans/AlegreyaSansMedium.woff') format('woff'),
+    url('alegreyasans/AlegreyaSansMedium.ttf') format('truetype'),
+    url('alegreyasans/AlegreyaSansMedium.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AnonymousProRegular';
+  src: url('anonymouspro/AnonymousProRegular.eot');
+  src: local('☺'), url('anonymouspro/AnonymousProRegular.woff') format('woff'),
+    url('anonymouspro/AnonymousProRegular.ttf') format('truetype'),
+    url('anonymouspro/AnonymousProRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ArchivoNarrowMedium';
+  src: url('archivonarrow/ArchivoNarrowMedium.eot');
+  src: local('☺'), url('archivonarrow/ArchivoNarrowMedium.woff') format('woff'),
+    url('archivonarrow/ArchivoNarrowMedium.ttf') format('truetype'),
+    url('archivonarrow/ArchivoNarrowMedium.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ArvoRegular';
+  src: url('arvo/ArvoRegular.eot');
+  src: local('☺'), url('arvo/ArvoRegular.woff') format('woff'),
+    url('arvo/ArvoRegular.ttf') format('truetype'),
+    url('arvo/ArvoRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BioRhymeRegular';
+  src: url('biorhyme/BioRhymeRegular.eot');
+  src: local('☺'), url('biorhyme/BioRhymeRegular.woff') format('woff'),
+    url('biorhyme/BioRhymeRegular.ttf') format('truetype'),
+    url('biorhyme/BioRhymeRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BitterRegular';
+  src: url('bitter/BitterRegular.eot');
+  src: local('☺'), url('bitter/BitterRegular.woff') format('woff'),
+    url('bitter/BitterRegular.ttf') format('truetype'),
+    url('bitter/BitterRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CabinMedium';
+  src: url('cabin/CabinMedium.eot');
+  src: local('☺'), url('cabin/CabinMedium.woff') format('woff'),
+    url('cabin/CabinMedium.ttf') format('truetype'),
+    url('cabin/CabinMedium.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CardoRegular';
+  src: url('cardo/CardoRegular.eot');
+  src: local('☺'), url('cardo/CardoRegular.woff') format('woff'),
+    url('cardo/CardoRegular.ttf') format('truetype'),
+    url('cardo/CardoRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ChivoRegular';
+  src: url('chivo/ChivoRegular.eot');
+  src: local('☺'), url('chivo/ChivoRegular.woff') format('woff'),
+    url('chivo/ChivoRegular.ttf') format('truetype'),
+    url('chivo/ChivoRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CormorantMedium';
+  src: url('cormorant/CormorantMedium.eot');
+  src: local('☺'), url('cormorant/CormorantMedium.woff') format('woff'),
+    url('cormorant/CormorantMedium.ttf') format('truetype'),
+    url('cormorant/CormorantMedium.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CrimsonTextRegular';
+  src: url('crimsontext/CrimsonTextRegular.eot');
+  src: local('☺'), url('crimsontext/CrimsonTextRegular.woff') format('woff'),
+    url('crimsontext/CrimsonTextRegular.ttf') format('truetype'),
+    url('crimsontext/CrimsonTextRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'DomineRegular';
+  src: url('domine/DomineRegular.eot');
+  src: local('☺'), url('domine/DomineRegular.woff') format('woff'),
+    url('domine/DomineRegular.ttf') format('truetype'),
+    url('domine/DomineRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'EczarMedium';
+  src: url('eczar/EczarMedium.eot');
+  src: local('☺'), url('eczar/EczarMedium.woff') format('woff'),
+    url('eczar/EczarMedium.ttf') format('truetype'),
+    url('eczar/EczarMedium.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FiraSansMedium';
+  src: url('firasans/firasans/FiraSansMedium.eot');
+  src: local('☺'), url('firasans/firasans/FiraSansMedium.woff') format('woff'),
+    url('firasans/firasans/FiraSansMedium.ttf') format('truetype'),
+    url('firasans/firasans/FiraSansMedium.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FiraSansCondensedMedium';
+  src: url('firasans/firasanscondensed/FiraSansCondensedMedium.eot');
+  src: local('☺'),
+    url('firasans/firasanscondensed/FiraSansCondensedMedium.woff') format('woff'),
+    url('firasans/firasanscondensed/FiraSansCondensedMedium.ttf') format('truetype'),
+    url('firasans/firasanscondensed/FiraSansCondensedMedium.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FiraSansExtraCondensedMedium';
+  src: url('firasans/firasansextracondensed/FiraSansExtraCondensedMedium.eot');
+  src: local('☺'),
+    url('firasans/firasansextracondensed/FiraSansExtraCondensedMedium.woff')
+      format('woff'),
+    url('firasans/firasansextracondensed/FiraSansExtraCondensedMedium.ttf')
+      format('truetype'),
+    url('firasans/firasansextracondensed/FiraSansExtraCondensedMedium.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'InconsolataRegular';
+  src: url('inconsolata/InconsolataRegular.eot');
+  src: local('☺'), url('inconsolata/InconsolataRegular.woff') format('woff'),
+    url('inconsolata/InconsolataRegular.ttf') format('truetype'),
+    url('inconsolata/InconsolataRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'InknutAntiquaMedium';
+  src: url('inknutantiqua/InknutAntiquaMedium.eot');
+  src: local('☺'), url('inknutantiqua/InknutAntiquaMedium.woff') format('woff'),
+    url('inknutantiqua/InknutAntiquaMedium.ttf') format('truetype'),
+    url('inknutantiqua/InknutAntiquaMedium.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KarlaRegular';
+  src: url('karla/KarlaRegular.eot');
+  src: local('☺'), url('karla/KarlaRegular.woff') format('woff'),
+    url('karla/KarlaRegular.ttf') format('truetype'),
+    url('karla/KarlaRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LibreBaskervilleRegular';
+  src: url('librebaskerville/LibreBaskervilleRegular.eot');
+  src: local('☺'), url('librebaskerville/LibreBaskervilleRegular.woff') format('woff'),
+    url('librebaskerville/LibreBaskervilleRegular.ttf') format('truetype'),
+    url('librebaskerville/LibreBaskervilleRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LibreFranklinMedium';
+  src: url('librefranklin/LibreFranklinMedium.eot');
+  src: local('☺'), url('librefranklin/LibreFranklinMedium.woff') format('woff'),
+    url('librefranklin/LibreFranklinMedium.ttf') format('truetype'),
+    url('librefranklin/LibreFranklinMedium.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LoraRegular';
+  src: url('lora/LoraRegular.eot');
+  src: local('☺'), url('lora/LoraRegular.woff') format('woff'),
+    url('lora/LoraRegular.ttf') format('truetype'),
+    url('lora/LoraRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MerriweatherRegular';
+  src: url('merriweather/MerriweatherRegular.eot');
+  src: local('☺'), url('merriweather/MerriweatherRegular.woff') format('woff'),
+    url('merriweather/MerriweatherRegular.ttf') format('truetype'),
+    url('merriweather/MerriweatherRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MontserratMedium';
+  src: url('montserrat/MontserratMedium.eot');
+  src: local('☺'), url('montserrat/MontserratMedium.woff') format('woff'),
+    url('montserrat/MontserratMedium.ttf') format('truetype'),
+    url('montserrat/MontserratMedium.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NeutonRegular';
+  src: url('neuton/NeutonRegular.eot');
+  src: local('☺'), url('neuton/NeutonRegular.woff') format('woff'),
+    url('neuton/NeutonRegular.ttf') format('truetype'),
+    url('neuton/NeutonRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/**
+ * https://github.com/hiCreo/editor/issues/1540
+ * https://github.com/hiCreo/editor/issues/1644
+ * https://github.com/hiCreo/editor/issues/1645
+ *
+ * I know 'OpenSansRegular' is exactly same with 'Open Sans'
+ * But for some reason, both of them are already used.
+ * So, for preview and publish, import it to solve it.
+ */
+@font-face {
+  font-family: 'Open Sans';
+  src: url('opensans/OpenSansRegular.eot');
+  src: local('☺'), url('opensans/OpenSansRegular.woff') format('woff'),
+    url('opensans/OpenSansRegular.ttf') format('truetype'),
+    url('opensans/OpenSansRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSansRegular';
+  src: url('opensans/OpenSansRegular.eot');
+  src: local('☺'), url('opensans/OpenSansRegular.woff') format('woff'),
+    url('opensans/OpenSansRegular.ttf') format('truetype'),
+    url('opensans/OpenSansRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PlayfairDisplayRegular';
+  src: url('playfairdisplay/PlayfairDisplayRegular.eot');
+  src: local('☺'), url('playfairdisplay/PlayfairDisplayRegular.woff') format('woff'),
+    url('playfairdisplay/PlayfairDisplayRegular.ttf') format('truetype'),
+    url('playfairdisplay/PlayfairDisplayRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ProzaLibreRegular';
+  src: url('prozalibre/ProzaLibreRegular.eot');
+  src: local('☺'), url('prozalibre/ProzaLibreRegular.woff') format('woff'),
+    url('prozalibre/ProzaLibreRegular.ttf') format('truetype'),
+    url('prozalibre/ProzaLibreRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PTSansWebRegular';
+  src: url('ptsans/PTSansWebRegular.eot');
+  src: local('☺'), url('ptsans/PTSansWebRegular.woff') format('woff'),
+    url('ptsans/PTSansWebRegular.ttf') format('truetype'),
+    url('ptsans/PTSansWebRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RalewayMedium';
+  src: url('raleway/RalewayMedium.eot');
+  src: local('☺'), url('raleway/RalewayMedium.woff') format('woff'),
+    url('raleway/RalewayMedium.ttf') format('truetype'),
+    url('raleway/RalewayMedium.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RobotoMedium';
+  src: url('roboto/RobotoMedium.eot');
+  src: local('☺'), url('roboto/RobotoMedium.woff') format('woff'),
+    url('roboto/RobotoMedium.ttf') format('truetype'),
+    url('roboto/RobotoMedium.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RobotoSlabRegular';
+  src: url('robotoslab/RobotoSlabRegular.eot');
+  src: local('☺'), url('robotoslab/RobotoSlabRegular.woff') format('woff'),
+    url('robotoslab/RobotoSlabRegular.ttf') format('truetype'),
+    url('robotoslab/RobotoSlabRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RubikMedium';
+  src: url('rubik/RubikMedium.eot');
+  src: local('☺'), url('rubik/RubikMedium.woff') format('woff'),
+    url('rubik/RubikMedium.ttf') format('truetype'),
+    url('rubik/RubikMedium.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceSansProRegular';
+  src: url('sourcesanspro/SourceSansProRegular.eot');
+  src: local('☺'), url('sourcesanspro/SourceSansProRegular.woff') format('woff'),
+    url('sourcesanspro/SourceSansProRegular.ttf') format('truetype'),
+    url('sourcesanspro/SourceSansProRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceSerifProRegular';
+  src: url('sourceserifpro/SourceSerifProRegular.eot');
+  src: local('☺'), url('sourceserifpro/SourceSerifProRegular.woff') format('woff'),
+    url('sourceserifpro/SourceSerifProRegular.ttf') format('truetype'),
+    url('sourceserifpro/SourceSerifProRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SpaceMonoRegular';
+  src: url('spacemono/SpaceMonoRegular.eot');
+  src: local('☺'), url('spacemono/SpaceMonoRegular.woff') format('woff'),
+    url('spacemono/SpaceMonoRegular.ttf') format('truetype'),
+    url('spacemono/SpaceMonoRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SpectralRegular';
+  src: url('spectral/SpectralRegular.eot');
+  src: local('☺'), url('spectral/SpectralRegular.woff') format('woff'),
+    url('spectral/SpectralRegular.ttf') format('truetype'),
+    url('spectral/SpectralRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'WorkSansMedium';
+  src: url('worksans/WorkSansMedium.eot');
+  src: local('☺'), url('worksans/WorkSansMedium.woff') format('woff'),
+    url('worksans/WorkSansMedium.ttf') format('truetype'),
+    url('worksans/WorkSansMedium.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Chomsky';
+  src: url('chomsky/Chomsky.eot');
+  src: local('☺'), url('chomsky/Chomsky.woff') format('woff'),
+    url('chomsky/Chomsky.ttf') format('truetype'),
+    url('chomsky/Chomsky.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'font-awesome';
+  src: url('font-awesome/fonts/fontawesome-webfont.eot');
+  src: local('☺'), url('font-awesome/fonts/fontawesome-webfont.woff') format('woff'),
+    url('font-awesome/fonts/fontawesome-webfont.ttf') format('truetype'),
+    url('font-awesome/fonts/fontawesome-webfont.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/*12082020_Add list_SK*/
+@font-face {
+  font-family: 'AbrilFatface';
+  src: local('☺'), url('AbrilFatface/AbrilFatface.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AlexBrush';
+  src: local('☺'), url('AlexBrush/AlexBrush.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AmaticSC';
+  src: local('☺'), url('AmaticSC/AmaticSC.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ArchitectsDaughter';
+  src: local('☺'), url('ArchitectsDaughter/ArchitectsDaughter.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BalsamiqSans';
+  src: local('☺'), url('BalsamiqSans/BalsamiqSans.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BebasNeue';
+  src: local('☺'), url('BebasNeue/BebasNeue.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Caveat';
+  src: local('☺'), url('Caveat/Caveat.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cinzel';
+  src: local('☺'), url('Cinzel/Cinzel.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Comfortaa';
+  src: local('☺'), url('Comfortaa/Comfortaa.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ComingSoon';
+  src: local('☺'), url('ComingSoon/ComingSoon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DancingScript';
+  src: local('☺'), url('DancingScript/DancingScript.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FrederickatheGreat';
+  src: local('☺'), url('FrederickatheGreat/FrederickatheGreat.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FredokaOne';
+  src: local('☺'), url('FredokaOne/FredokaOne.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IBMPlexMono';
+  src: local('☺'), url('IBMPlexMono/IBMPlexMono.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IMFellEnglishSC';
+  src: local('☺'), url('IMFellEnglishSC/IMFellEnglishSC.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: local('☺'), url('IndieFlower/IndieFlower.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local('☺'), url('Lato/Lato.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lobster';
+  src: local('☺'), url('Lobster/Lobster.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LobsterTwo';
+  src: local('☺'), url('LobsterTwo/LobsterTwo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Monoton';
+  src: local('☺'), url('Monoton/Monoton.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MountainsofChristmas';
+  src: local('☺'), url('MountainsofChristmas/MountainsofChristmas.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NotoSansJP';
+  src: local('☺'), url('NotoSansJP/NotoSansJP.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NotoSerif';
+  src: local('☺'), url('NotoSerif/NotoSerif.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSansCondensed';
+  src: local('☺'), url('OpenSansCondensed/OpenSansCondensed.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Oswald';
+  src: local('☺'), url('Oswald/Oswald.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PatuaOne';
+  src: local('☺'), url('PatuaOne/PatuaOne.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PermanentMarker';
+  src: local('☺'), url('PermanentMarker/PermanentMarker.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PoiretOne';
+  src: local('☺'), url('PoiretOne/PoiretOne.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Righteous';
+  src: local('☺'), url('Righteous/Righteous.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RobotoCondensed';
+  src: local('☺'), url('RobotoCondensed/RobotoCondensed.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RobotoMono';
+  src: local('☺'), url('RobotoMono/RobotoMono.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ShadowsIntoLight';
+  src: local('☺'), url('ShadowsIntoLight/ShadowsIntoLight.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Slabo27px';
+  src: local('☺'), url('Slabo27px/Slabo27px.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceCodePro';
+  src: local('☺'), url('SourceCodePro/SourceCodePro.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/*04142022_Add list_SK*/
+
+@font-face {
+  font-family: 'AbelRegular';
+  src: local('☺'), url('abel/AbelRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BarlowThin';
+  src: local('☺'), url('barlow/BarlowThin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BarlowRegular';
+  src: local('☺'), url('barlow/BarlowRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BarlowBlack';
+  src: local('☺'), url('barlow/BarlowBlack.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BreeSerifRegular';
+  src: local('☺'), url('breeSerif/BreeSerifRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CambayRegular';
+  src: local('☺'), url('cambay/CambayRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CourgetteRegular';
+  src: local('☺'), url('courgette/CourgetteRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Exo2Thin';
+  src: local('☺'), url('exo2/Exo2Thin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Exo2Regular';
+  src: local('☺'), url('exo2/Exo2Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Exo2Black';
+  src: local('☺'), url('exo2/Exo2Black.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KaushanScriptRegular';
+  src: local('☺'), url('kaushanScript/KaushanScriptRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LalezarRegular';
+  src: local('☺'), url('lalezar/LalezarRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MartelSansBlack';
+  src: local('☺'), url('martelSans/MartelSansBlack.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MartelSansRegular';
+  src: local('☺'), url('martelSans/MartelSansRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MeriendaRegular';
+  src: local('☺'), url('merienda/MeriendaRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MolleItalic';
+  src: local('☺'), url('molleItalic/MolleItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NunitoLight';
+  src: local('☺'), url('nunito/NunitoLight.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NunitoRegular';
+  src: local('☺'), url('nunito/NunitoRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NunitoBlack';
+  src: local('☺'), url('nunito/NunitoBlack.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NunitoSansLight';
+  src: local('☺'), url('nunito/NunitoSansLight.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NunitoSansRegular';
+  src: local('☺'), url('nunito/NunitoSansRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NunitoSansBlack';
+  src: local('☺'), url('nunito/NunitoSansBlack.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OverpassThin';
+  src: local('☺'), url('overpass/OverpassThin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OverpassRegular';
+  src: local('☺'), url('overpass/OverpassRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OverpassBlack';
+  src: local('☺'), url('overpass/OverpassBlack.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PTSerifRegular';
+  src: local('☺'), url('ptserif/PTSerifRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PTSerifBold';
+  src: local('☺'), url('ptserif/PTSerifBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RobotoRegular';
+  src: local('☺'), url('roboto/RobotoRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RubikLight';
+  src: local('☺'), url('rubik/RubikLight.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RubikRegular';
+  src: local('☺'), url('rubik/RubikRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RubikBlack';
+  src: local('☺'), url('rubik/RubikBlack.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SatisfyRegular';
+  src: local('☺'), url('satisfy/SatisfyRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UbuntuLight';
+  src: local('☺'), url('ubuntu/UbuntuLight.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UbuntuRegular';
+  src: local('☺'), url('ubuntu/UbuntuRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UbuntuBold';
+  src: local('☺'), url('ubuntu/UbuntuBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'VastShadowRegular';
+  src: local('☺'), url('vastShadow/VastShadowRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

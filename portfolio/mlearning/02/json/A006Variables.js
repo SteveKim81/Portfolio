@@ -1,0 +1,1 @@
+var globalA006Variables = []
