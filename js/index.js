@@ -399,7 +399,7 @@ window.addEventListener('load', function () {
 
         for (let i = 1; i <= count; i++) {
             const thumbPath = `images/templates/${folder}/thumbnail/slide${i}.webp`;
-            const fullPath = `images/templates/${folder}/slide${i}.jpg`;
+            const fullPath = `images/templates/${folder}/slide${i}.webp`;
 
             const hicreoTemplateThumbnailimg = document.createElement('img');
             hicreoTemplateThumbnailimg.src = thumbPath;
