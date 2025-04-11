@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Resources Center</title>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-ui.min.js" ></script>
+	<script type="text/javascript" src="../../json/resourcesData.js" ></script>
+	<link rel="stylesheet" type="text/css" href="../css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/font.css"/>
+	
+	<style>
+		
+	div:focus{outline:none;}
+
+	html, body{
+		font-family:'Open Sans', sans-serif;
+		margin: 0px;
+		height:100%;
+		overflow: hidden;
+		background-color: #fff;
+	}
+
+	div {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none; 
+	}
+
+	#resources_content {
+		display: -webkit-flex;
+		display: flex;
+		flex-direction: column;
+		height:100%;
+	}
+
+	#resources_content .top_block {
+		width:100%;
+    	padding: 5.6px 14px;
+		background-color: #3f3f3f;
+	}
+
+	#resources_content .top_block .title {
+		color:white;
+		font-size: 14px;	
+		font-weight:bold;
+		color:#ddd;
+/*		position: absolute;
+		margin: 0 auto;
+		top:75px;
+		left:50%;
+		transform:translate(-50%, -50%);*/
+	}
+
+	#resources_content .content_block {
+
+		width:100%;
+		height:calc(100% - 75px);
+		background-color: #E9EEF3;
+
+	}
+
+	#resources_content .content_block .resource-item-wrapper {
+		background-color:white;
+	}
+
+	#resources_content .content_block .navi_btn{
+		width:60px;
+		position: relative;
+		/* visibility: hidden; */
+	}
+
+	#resources_content .swiper-button-next, .swiper-button-prev {
+		outline: none;
+	}
+
+	.swiper-item-wrapper {
+      width: 100%;
+    }
+
+    #resources_content .content_block .resources_item {
+    	margin: 1px;
+    	cursor:pointer;
+    	transition:all 0.3s ease-in-out;
+    }
+
+	#resources_content .content_block .resources_item .title_img_wrap {
+		display:inline-block;
+		vertical-align:middle;
+		padding:5px;
+		margin-top:-4px;
+		/*width:110px;*/
+  /*  	height:40px;*/
+	}
+	/*#resources_content .content_block .resources_item:hover .title_img_wrap {*/
+
+	/*	width:110px;*/
+ /*   	height:60px;*/
+	/*}*/
+    #resources_content .content_block .resources_item .title_img {
+    	width:100px;
+    	height:50px;
+    	/*width:70px;*/
+    	/*height:30px;*/
+    	/*margin:0 auto;*/
+    }
+    /*#resources_content .content_block .resources_item:hover .title_img {*/
+    /*	width:100px;*/
+    /*	height:50px;*/
+    /*}*/
+    #resources_content .content_block .resources_item .text_block {
+		text-overflow: ellipsis;
+		word-wrap: break-word;
+    	cursor:default;
+    	display:inline-block;
+    	width: calc(100% - 134px);
+    	padding:5px 0;
+    	vertical-align:middle;
+    }
+
+    #resources_content .content_block .resources_item .text_block .text_title {
+    	width:100%;
+    	font-size:12px;
+    	/*margin-bottom: 10px;*/
+    }
+    
+    #resources_content .content_block .resources_item .text_block .text_description {
+    	width:100%;
+    	font-size:11px;
+    	margin-top:2px;
+    	/*display:none;*/
+    }
+    
+	/*#resources_content .content_block .resources_item:hover .text_block .text_description {*/
+	/*	display:block;*/
+	/*}*/
+	
+    #resources_content .content_block .resources_item .text_block .text_description:focus {
+    	outline: none;
+	}
+
+	#resources_content .content_block .resources_item .text_block .text_title input {
+		width:100%;
+		outline: none;
+		border: 1px dashed #aaa;
+		font-weight: bold;
+	}
+
+	#resources_content .content_block .resources_item .text_block .text_title input:focus {
+		border:1px dashed #006;
+	}
+
+	#resources_content .content_block .resources_item .text_block .text_description textarea {
+		outline: none;
+		border: 1px dashed #aaa;
+		width:100%;
+    	overflow:hidden;
+    	resize: none;
+	}
+
+	#resources_content .content_block .resources_item .text_block .text_description textarea:focus {
+		 border:1px dashed #006;
+	}
+
+    #resources_content .content_block .resources_item .edit_buttons {
+    	display: inline-block;
+    	vertical-align:middle;
+    }
+
+    #resources_content .content_block .resources_item .edit_buttons button {
+    	border: 0 solid;
+    	outline:none;
+    	background: url(../../../../../../authoring/images/UIIcon/R010/toolbox_table_dataset_delete_icon.svg) no-repeat;
+	    background-size: 20px;
+	    width: 20px;
+	    height: 20px;
+	    background-position: center;
+    	vertical-align: middle;
+    }
+
+    textarea:disabled, input:disabled {
+	    background-color: white;
+	}
+	
+	.resourceCloseButton{
+		font-size:20px;
+		position:absolute;
+		right:15px;
+		cursor:pointer;
+		top:1px; 
+		color:#ddd;
+	}
+	.resourcePreview_audio_player .ui-dialog-titlebar-close:before,
+	.resourcePreview_video_player .ui-dialog-titlebar-close:before{content:'✕'; text-indent:0; display:block; color:#666; font-size:16px; margin-top:-2px;}
+	.resourcePreview_audio_player .ui-dialog-titlebar-close,
+	.resourcePreview_video_player .ui-dialog-titlebar-close{color:RGBA(0,0,0,0);}
+
+	.resourcePreview_audio_player .ui-dialog-titlebar,
+	.resourcePreview_video_player .ui-dialog-titlebar{border-radius:0; border:0; background-color:#fff;}
+
+	#resources_wrap #resources_content .btn_block{position:relative; background:#E9EEF3; padding:10px 13px 5px 5px;}
+
+	#resources_wrap #resources_content .content_block{margin-top:0px;}
+
+	#resources_wrap #resources_content .btn_block .add_btn{border:1px solid #aaa; border-radius:0px; padding:5px 10px; color:#3f3f3f; font-size:12px; outline:0; float:right;}
+	
+	.resource_items_wrap{background:#fff; height:calc(100% - 24px);}
+	
+	/*#initialAddBtn{width:100%; height:25px; background:#fff; margin-right:0px; text-align:center;}*/
+	/*#resource_items #initialAddBtn .title_img{background-color: #94cde3; width:100%; height:100%; color:#fff; margin-bottom:0; background-image: url(../img/resources/add_icon.svg); background-repeat:no-repeat; background-size:15px; background-position: center;}*/
+	/*#resource_items #initialAddBtn .title_img:hover{background-color: #6c92a0;}*/
+	#resource_items .resource-item-wrapper:nth-child(even){background:#efefef}
+	
+	body.preview .top_block, 
+	body.publish .top_block, 
+	body.preview .btn_block button.add_btn,
+	body.publish .btn_block button.add_btn
+	{display:none;}
+	
+	body.preview #resources_wrap #resources_content .btn_block, 
+	body.publish #resources_wrap #resources_content .btn_block{padding:5px 0 0 0px;}
+	
+	body.preview #resources_content .content_block, 
+	body.publish #resources_content .content_block{height:calc(100% - 5px);}
+	
+	body.preview #resources_content .content_block .resources_item .text_block .text_title input, 
+	body.publish #resources_content .content_block .resources_item .text_block .text_title input, 
+	body.preview #resources_content .content_block .resources_item .text_block .text_description textarea, 
+	body.publish #resources_content .content_block .resources_item .text_block .text_description textarea{border:0; background:transparent;}
+	
+	
+	  /*-webkit-CSS scroll */
+	
+	  ::-webkit-scrollbar {
+	      width: 10px;
+	      height:10px;
+	  }
+	
+	  ::-webkit-scrollbar-track {
+	      background:#e7e7e7;
+	  }
+	
+	  ::-webkit-scrollbar-thumb {
+	    background-color: #fff;
+	    border:1px solid #bec1c4;
+	  }
+	  ::-webkit-scrollbar-corner {
+	    background:#e7e7e7; 
+	  }
+	  /*-webkit-CSS scroll End*/	
+</style>
+<script>
+  window.creoFns = window.parent.creoFns
+	$(window).load(function() {
+		let swiper = null
+		let parentWindow = null
+		
+		window.openedLocation = getParameterByName('location');
+		//jw20200604
+		$('body').addClass(openedLocation)
+		
+		//jw20200520 4536
+		let _course_path = '../../content/files/'
+		
+    	const _parent = openedLocation === 'editor' ? parent : opener
+		parentWindow = _parent
+	
+		if(openedLocation === 'editor' || openedLocation === 'preview'){
+			if(!_parent.isNewTemplate){
+				// _course_path = '../../../../'+_parent.hiCreoStorageName+'/' + _parent.owner_id + '/publish/' + _parent.course_id + '/content/files/'
+				_course_path = '../../../../'+'storage'+'/' + _parent.owner_id + '/publish/' + _parent.course_id + '/content/files/'
+			}else{
+				_course_path = '../../../../temp/project_template/' + _parent.owner_id + '/' + _parent.course_id + '/content/files/'
+			}
+			globalResourcesData = _parent.globalResourcesData
+
+			if(openedLocation === 'editor'){
+				$('.resourceCloseButton').show()
+			}
+		}
+		
+		const fileType = {
+		  image: ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'svg'],
+		  audio: ['mp3', 'wma'],
+		  video: ['avi', 'mp4', 'wmv'],
+		  isImage: function(_ext) {
+		    var _rtn = false;
+
+		    this.image.forEach(function(element) {
+		      if (element == _ext)
+		        _rtn = _ext;
+		    });
+
+		    return _rtn;
+		  },
+		  isAudio: function(_ext) {
+			var _rtn = false;
+
+			this.audio.forEach(function(element) {
+				if (element == _ext)
+					_rtn = _ext;
+			});
+
+			return _rtn;
+		  },
+		  isVideo: function(_ext) {
+			var _rtn = false;
+
+			this.video.forEach(function(element) {
+				if (element == _ext)
+					_rtn = _ext;
+			});
+
+			return _rtn;
+		  },
+		  findExtension: function(_ext) {
+		    if (this.isImage(_ext)) {
+				return 'image';
+			} else if (this.isAudio(_ext)) {
+				return 'audio';
+			} else if (this.isVideo(_ext)) {
+				return 'video';
+			} else {
+				return false;
+			}
+		  }
+		}
+		let tabIndexCnt = 1
+	    const ResourceHandler = param => {
+	    	const {type: _type, id: _id, data:_data, path:_path, ext:_ext} = param
+	    	
+	    	const _resource_items = $('#resource_items')
+	    	if(_type === 'init'){
+	    		_resource_items.children('div.resource-item-wrapper').remove();
+		    	const _resourcesData = parentWindow.globalResourcesData;
+	
+		    	for (let key in _resourcesData) {
+		    		if (_resourcesData.hasOwnProperty(key)) {
+		    			const _resourcesInfo = {
+		    			  'id':key,
+				          'type':_resourcesData[key].type,
+				          'name':_resourcesData[key].name,
+				          'description':_resourcesData[key].description,
+				          'path':_resourcesData[key].path,
+				          'ext':_resourcesData[key].ext,
+				          'uploaded': _resourcesData[key].uploaded,
+				          'delete': _resourcesData[key].delete
+				        };
+	
+				        if(_resourcesData[key].delete == false){
+							const _$item = GetItemTag(_resourcesInfo, tabIndexCnt++)
+							_resource_items.append(_$item);
+							_$item.on('mousedown', function () {}).on('mouseup', function () {});
+				        }
+		    		}
+		    	}
+				
+		    	if (openedLocation !== 'editor') {
+		    		// $('#initialAddBtn').remove();
+		    		$('.edit_buttons').remove();
+		    		$('.add_btn_wrap').remove();
+		    		$('.text_block').find('textarea').attr('disabled', '').attr('placeholder', '');
+		    		$('.text_block').find('input').attr('disabled', '').attr('placeholder', '');
+		    	}
+			} else if(_type === 'add') {
+				AddResourcesJsonTag(_data);
+				UpdateThemeResources({ 'action':'add', 'target': _id }).then(() => {
+					//jw20200514 4505
+					const _fileType = fileType.findExtension(_data.ext);
+					if (_fileType != 'image') {
+					_resource_items.append(GetItemTag(_data, tabIndexCnt++));
+					} else {
+					const _new_path = _course_path + _data.id + '.'+_data.ext;
+					fetch(_new_path).then((response) => {
+						_resource_items.append(GetItemTag(_data, tabIndexCnt++))
+					})
+					}
+				})
+	    	}else if(_type === 'delete'){
+	    		_resource_items.find('#'+_id).remove()
+	    		globalResourcesData[_id].delete = true;
+	    		UpdateThemeResources({ 'action':'delete', 'target': _id });
+	    	}else if(_type === 'update.name'){
+	    		globalResourcesData[_id].name = _data;
+	    		UpdateThemeResources({ 'action': 'edit', 'target': _id });
+	    	}else if(_type === 'update.description'){
+	    		globalResourcesData[_id].description = _data;
+	    		UpdateThemeResources({ 'action': 'edit', 'target': _id });
+	    	}else if(_type === 'click'){
+          		const _dataType = param.dataType
+	    		const _fileType = fileType.findExtension(_ext);
+
+				if (_fileType === 'image' || _fileType === 'audio' || _fileType === 'video') {
+					window.open('resourceViewer.html?filePath=' + _path + '&fileType=' + _fileType, '_blank');
+				} else {
+					let _fixedPath = _path
+					
+					if (_dataType === 'url') {
+						if (!(/^https:\/\//g.test(_fixedPath))) {
+							_fixedPath = 'https://' + _fixedPath
+						}
+					} else if (_dataType === 'file') {
+					}
+
+					window.open(_fixedPath, '_blank')
+				}
+	    	}
+	    }
+
+		window.AddResourcesItem = function(param) {
+			const _type = (param.type === undefined) ? 'file' : param.type
+			var _source_path, _source_name, _extension
+			var _uploaded = true;
+			if(_type === 'file'){
+				_source_path = param.path;
+				_source_name = param.name;
+				_extension = _source_name.substr(_source_name.lastIndexOf('.') + 1).toLowerCase();
+				_uploaded = false;
+			}else if(_type === 'url'){
+				_source_path = param.path
+				_source_name = _source_path.replace(/(^\w+:|^)\/\//, '');
+			}
+			
+			var _newId = 'resources_' + parent.user_id + '_' + window.parent.creoFns.core.generateUUID();
+
+			const _resourcesInfo = {
+				'type':_type,
+				'id':_newId,
+				'name':_source_name,
+				'description':'',
+				'path':_source_path,
+				'ext':_extension,
+				'uploaded': _uploaded
+			};
+			ResourceHandler({type:'add', id:_newId, data:_resourcesInfo})
+
+		}
+
+    function GetItemTag(info, cnt){
+			var _resourcesInfo = info;
+			const _type = (_resourcesInfo.type === undefined) ? 'file' : _resourcesInfo.type
+			const _html = $('<div id="'+_resourcesInfo.id+'" class="swiper-slide resource-item-wrapper"></div>');
+			if(_type === 'file'){
+				var _extension_img = _resourcesInfo.path;
+	    		var _fileType = fileType.findExtension(_resourcesInfo.ext);
+	    		//jw20200504 4399
+				const _new_path = _course_path + _resourcesInfo.id + '.'+_resourcesInfo.ext;
+
+	    		if (_fileType != 'image') {
+	    		_extension_img = '../../theme/img/resources/file_extension_';
+		    		var _rest_path = '.svg';
+		    		if(_resourcesInfo.ext == 'avi' || _resourcesInfo.ext == 'mp4' || _resourcesInfo.ext == 'wmv' || _resourcesInfo.ext == 'flv' || _resourcesInfo.ext == 'webm' || _resourcesInfo.ext == 'vob' || _resourcesInfo.ext == 'mts' || _resourcesInfo.ext == 'mpg' || _resourcesInfo.ext == 'mpeg' || _resourcesInfo.ext == 'mov' || _resourcesInfo.ext == 'mkv' || _resourcesInfo.ext == 'm4v' || _resourcesInfo.ext == '3gp'){//video
+		    			_extension_img = '../img/resources/file_video';
+		    		}else if(_resourcesInfo.ext == 'mp3' || _resourcesInfo.ext == 'wma'){//audio
+	    				_extension_img = '../img/resources/file_audio';
+		    		}else if(_resourcesInfo.ext == 'pptx' ){
+		    		
+		    			_extension_img = '../img/resources/file_document_ppt';
+		    			
+		    		}else if(_resourcesInfo.ext == 'pdf' ){
+		    			
+		    			_extension_img = '../img/resources/file_document_pdf';
+		    			
+		    		}else if(_resourcesInfo.ext == 'xlsx' ){
+		    		
+		    			_extension_img = '../img/resources/file_document_xlsx';
+		    			
+		    		}else if(_resourcesInfo.ext == 'doc' || _resourcesInfo.ext == 'docx'){//document
+						_extension_img = '../img/resources/file_document';
+	
+		    		}else{//others
+						_extension_img ='../img/resources/file_others';
+		    		}
+		    		_extension_img = _extension_img + _rest_path;
+		    	} else {
+		    		_extension_img = _new_path;
+		    	}
+				_extension_img = "'" + _extension_img + "'";
+		    	const _item = '<div class="resources_item" data-type="'+_type+'" data-path="'+_new_path+'" data-extension="'+_resourcesInfo.ext+'" tabindex="'+cnt+'" title="'+_resourcesInfo.name+'">\
+		    						<div class="title_img_wrap">\
+			    						<div class="title_img" style="background: url('+_extension_img+') no-repeat; background-size: cover; background-position:center;">\
+			    						</div>\
+		    						</div><div class="text_block">\
+		    							<div class="text_title"><input item_id="'+_resourcesInfo.id+'" class="item_title" type="text" value="'+_resourcesInfo.name+'" placeholder="title" /></div>\
+		    							<div class="text_description"><textarea class="description" item_id="'+_resourcesInfo.id+'" placeholder="description">'+_resourcesInfo.description+'</textarea></div>\
+		    						</div><div class="edit_buttons">\
+		    							<button item_id="'+_resourcesInfo.id+'" type="button" class="delete_btn btn btn-default"></button>\
+		    						</div>\
+		    					</div>'
+		    	_html.html(_item)			
+			}else if(_type === 'url'){
+				_extension_img = '../img/resources/url.svg';
+				const _item = '<div class="resources_item" data-type="'+_type+'" data-path="'+_resourcesInfo.path+'" tabindex="'+cnt+'" title="'+_resourcesInfo.name+'">\
+							<div class="title_img_wrap">\
+	    						<div class="title_img" style="background: url('+_extension_img+') no-repeat; background-size: cover; background-position:center;">\
+    							</div>\
+    						</div><div class="text_block">\
+    							<div class="text_title"><input item_id="'+_resourcesInfo.id+'" class="item_title" type="text" value="'+_resourcesInfo.name+'" placeholder="title" /></div>\
+    							<div class="text_description"><textarea class="description" item_id="'+_resourcesInfo.id+'" placeholder="description">'+_resourcesInfo.description+'</textarea></div>\
+    						</div><div class="edit_buttons">\
+    							<button item_id="'+_resourcesInfo.id+'" type="button" class="delete_btn btn btn-default"></button>\
+    						</div>\
+    					</div>'
+				_html.html(_item)
+			}
+	    	
+
+	    	return _html;
+	    }
+
+	    function AddResourcesJsonTag(info){
+	    	var _id = info.id;
+	    	var _uploaded = info.uploaded;
+
+	    	globalResourcesData[_id] = {
+	    		'type': info.type,
+	    		'name': info.name,
+	    		'description': info.description,
+	    		'path': info.path,
+	    		'ext': info.ext,
+	    		'uploaded': _uploaded,
+	    		'delete': false
+	    	};
+		}
+		
+		function UpdateThemeResources(param) {
+		return new Promise((resolve) => {
+			parent.ResourcesHandler('update').then(() => {
+				creoFns.collaboration?.saveAndSendSyncSignal({
+					eventName: 'resources.' + param.action + '.data'
+				})
+				resolve()
+			})
+		})
+		}
+
+		function getParameterByName(name) {
+			name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+			var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+			results = regex.exec(location.search);
+			return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+		}
+
+		window.ExecuteResourcesCommand = function(param) {
+			if(param.flag == 'Init'){
+        ResourceHandler({type:'init'})
+			}
+		}
+
+	     $('.add_btn').click(function(e) {
+			e.stopPropagation();
+
+	    	parent.FileUploader({'type': 'open','isNew': true, 'role': 'resources', 'x': 0, 'y': 0});
+	    });
+
+	    $(document).on('focusout', '.resources_item .description', function(e){
+	    	var _val = $(this).val();
+	    	var _id = $(this).attr('item_id');
+			ResourceHandler({type:'update.description', id: _id, data:_val})
+	    });
+
+	    $(document).on('focusout', '.resources_item .item_title', function(e){
+	    	var _val = $(this).val();
+	    	var _id = $(this).attr('item_id');
+			ResourceHandler({type:'update.name', id: _id, data:_val})
+	    });
+
+	    $(document).on('click', '.resources_item .delete_btn', function(e){
+	    	if(e.which == 1) {
+				e.stopPropagation();
+
+				const _id = $(this).attr('item_id');
+				ResourceHandler({type:'delete', id: _id})
+	    	}
+	    });
+
+		$(document).on('click', '.resources_item', function(e){
+			if (e.which === 1) {
+				const _file_path = $(this).attr('data-path');
+				const _file_extension = $(this).attr('data-extension');
+				ResourceHandler({type:'click', dataType: this.getAttribute('data-type'), path: _file_path, ext:_file_extension})
+			}
+		});
+	    // $(document).on('click', '.text_title, .text_description', function(e){
+	    $(document).on('click', '.text_block', function(e){
+	    	if(e.which === 1) {
+	    		e.stopPropagation();
+	    	}
+	    });
+
+	    $(document).on('click', '.resourceCloseButton', function(e){
+	    	if(e.which == 1) {
+	    		//jw20200601 4536
+	    		//console.log('openedLocation',openedLocation)
+	    		if(openedLocation === 'editor'){
+		    		if(parent.$('#resources_dialog')) {
+		    			parent.$('#resources_dialog').dialog('close');
+		    		}
+	    		}else{
+	    			self.close()
+	    		}
+	    	}
+	    });
+
+	    $('img').on('dragstart', function(event) { event.preventDefault(); });
+	    
+	    ResourceHandler({type:'init'})
+
+});
+	
+	$(document).on('keyup', (event) => {
+		if (event.which === 32) {
+			if(document.activeElement.classList.contains("resources_item")){
+				document.activeElement.click()
+			}
+		}
+	});
+</script>
+</head>
+<body>
+  <div id="resources_wrap" class="wrap" style="font-size: 14px; width:100%; height:100%; max-width: 950px; margin: auto;">
+    <div id="resources_content">
+      <div class="top_block">
+        <div class="title">Resource Center</div>
+        <div class="resourceCloseButton" style="display: none;">
+          ✕
+        </div>
+      </div>
+
+      <div class="btn_block">
+        <button type="button" class="btn btn-default add_btn">+ Add Resource</button><!-- Add Resources-->
+      </div>	
+
+      <div class="content_block">
+        <div class="swiper-container swiper-item-wrapper" style="padding:5px 10px 10px 10px; height:100%; ">
+          <div style="width:calc(100% - 2px); height:100%; border:1px solid #aaa;">
+            <div class="header" style="width:100%; background:#666;">
+              <div style="display:inline-block; padding:5px; font-size:10px; color: #fff; width:110px; border-right:1px solid #aaa; text-align:center;">
+                Thumbnail
+              </div><div style="display:inline-block; padding:5px; font-size:10px; color: #fff; width:calc(100% - 110px); text-align:center;">
+                Description
+              </div>
+            </div>
+            <div class="resource_items_wrap" style="overflow-y:auto;"> 
+              <div id="resource_items" class="swiper-wrapper">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
