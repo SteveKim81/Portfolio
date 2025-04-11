@@ -148,21 +148,26 @@ window.addEventListener('load', function () {
       const projectMainMenu = document.querySelector('.project-main-menu');
       const portfolioHiCreo = document.querySelector('.project-content-wrap.hicreo');
       const portfolioElearning = document.querySelector('.project-content-wrap.elearning');
-      const portfolioPrint = document.querySelector('.project-content-wrap.print-media');
-      const portfolioGame = document.querySelector('.project-content-wrap.mobile-game');
+      const portfolioOthers = document.querySelector('.project-content-wrap.others');
       const closeButtons = document.querySelectorAll('.project-content-wrap .close-button');
+      const hiCreoClose = document.querySelector('#projects .project-content-wrap.hicreo .button-close');
+      const elearningClose = document.querySelector('#projects .project-content-wrap.elearning .button-close');
+      const othersClose = document.querySelector('#projects .project-content-wrap.others .button-close');
       const portfolios = document.querySelectorAll('.project-content-wrap');
       const projectItemBtn = document.querySelectorAll('.project-sub-menu .project-item');
       const projectSubMenu = document.querySelector('.project-sub-menu');
       const projectHiCreoBtn = document.querySelector('.project-sub-menu .project-item.hicreo');
       const projectElearningBtn = document.querySelector('.project-sub-menu .project-item.elearning');
-      const projectPrintBtn = document.querySelector('.project-sub-menu .project-item.print-media');
-      const projectGameBtn = document.querySelector('.project-sub-menu .project-item.mobile-game');
+      const projectOthersBtn = document.querySelector('.project-sub-menu .project-item.others');
 
       function hideAllPortfolios() {
         portfolios.forEach(p => {
           p.style.display = 'none';
         });
+      }
+
+      function hideProjectsSubMenu() {
+        projectSubMenu.style.display = 'none';
       }
 
       function removeActiveFromProjectButtons() {
@@ -190,22 +195,13 @@ window.addEventListener('load', function () {
           projectElearningBtn.classList.add('active');
         }
       
-        else if (e.target.closest('.project-item.print-media')) {
+        else if (e.target.closest('.project-item.others')) {
           hideAllPortfolios();
           removeActiveFromProjectButtons();
-          portfolioPrint.style.display = 'block';
+          portfolioOthers.style.display = 'block';
           projectMainMenu.style.display = 'none';
           projectSubMenu.style.display = 'flex';
-          projectPrintBtn.classList.add('active');
-        }
-      
-        else if (e.target.closest('.project-item.mobile-game')) {
-          hideAllPortfolios();
-          removeActiveFromProjectButtons();
-          portfolioGame.style.display = 'block';
-          projectMainMenu.style.display = 'none';
-          projectSubMenu.style.display = 'flex';
-          projectGameBtn.classList.add('active');
+          projectOthersBtn.classList.add('active');
         }
       });
 
@@ -215,9 +211,61 @@ window.addEventListener('load', function () {
             panel.style.display = 'none';
           });
           projectMainMenu.style.display = 'block';
+          hideProjectsSubMenu()
         });
-
       });
+
+      
+      if (hiCreoClose) {
+        hiCreoClose.addEventListener('click', function (e) {
+          document.querySelector('.project-content-wrap.hicreo').style.display = 'none';
+          projectMainMenu.style.display = 'block';
+          hideProjectsSubMenu()
+
+          const projectsSection = document.getElementById('projects');
+          if (projectsSection) {
+            projectsSection.scrollIntoView({ behavior: 'smooth' });
+          }
+          
+        });
+      } else {
+        console.warn('hiCreoClose button not found');
+      }
+      
+      
+      if (elearningClose) {
+        elearningClose.addEventListener('click', function (e) {
+          document.querySelector('.project-content-wrap.elearning').style.display = 'none';
+          projectMainMenu.style.display = 'block';
+          hideProjectsSubMenu()
+
+          const projectsSection = document.getElementById('projects');
+          if (projectsSection) {
+            projectsSection.scrollIntoView({ behavior: 'smooth' });
+          }
+          
+        });
+      } else {
+        console.warn('hiCreoClose button not found');
+      }
+
+      if (othersClose) {
+        othersClose.addEventListener('click', function (e) {
+          document.querySelector('.project-content-wrap.others').style.display = 'none';
+          projectMainMenu.style.display = 'block';
+          hideProjectsSubMenu()
+
+          const projectsSection = document.getElementById('projects');
+          if (projectsSection) {
+            projectsSection.scrollIntoView({ behavior: 'smooth' });
+          }
+          
+        });
+      } else {
+        console.warn('hiCreoClose button not found');
+      }
+
+      
 
       const laptopImage = document.querySelector('.hicreo-website-laptop .hicreo-screen-capture');
       const mobileImage = document.querySelector('.hicreo-website-mobile .hicreo-screen-capture');
@@ -281,9 +329,241 @@ window.addEventListener('load', function () {
         webPageButtonBlogPage.classList.add('active');
       });
 
+      const laptopFrame = document.querySelector('.live-mlearning-course-laptop .hicreo-screen-capture');
+      const mobileFrame = document.querySelector('.live-mlearning-course-mobile .hicreo-screen-capture');
+      
+      const courseSources = {
+        microlearning: {
+          laptop: 'portfolio/mlearning/01/',
+          mobile: 'portfolio/mlearning/01/'
+        },
+        vital: {
+          laptop: 'portfolio/mlearning/02/',
+          mobile: 'portfolio/mlearning/02/'
+        },
+        adaptive: {
+          laptop: 'portfolio/mlearning/03/',
+          mobile: 'portfolio/mlearning/03/'
+        }
+      };
+      
+      const mlearningButtons = document.querySelectorAll('.item3 .page-buttons .button');
+      const mlearningButtonMicro = document.querySelector('.item3 .button-microlearning');
+      const mlearningButtonVital = document.querySelector('.item3 .button-vital');
+      const mlearningButtonAdaptive = document.querySelector('.item3 .button-adaptive');
+      
+      function removeActiveFromButtons() {
+        mlearningButtons.forEach(btn => btn.classList.remove('active'));
+      }
+      
+      mlearningButtonMicro.addEventListener('click', () => {
+        laptopFrame.src = courseSources.microlearning.laptop;
+        mobileFrame.src = courseSources.microlearning.mobile;
+        removeActiveFromButtons();
+        mlearningButtonMicro.classList.add('active');
+      });
+      
+      mlearningButtonVital.addEventListener('click', () => {
+        laptopFrame.src = courseSources.vital.laptop;
+        mobileFrame.src = courseSources.vital.mobile;
+        removeActiveFromButtons();
+        mlearningButtonVital.classList.add('active');
+      });
+      
+      mlearningButtonAdaptive.addEventListener('click', () => {
+        laptopFrame.src = courseSources.adaptive.laptop;
+        mobileFrame.src = courseSources.adaptive.mobile;
+        removeActiveFromButtons();
+        mlearningButtonAdaptive.classList.add('active');
+      });
+      
+        const hiCreoGallery = document.getElementById('hicreoGallery');
+        const hiCreoLightbox = document.getElementById('hicreoLightbox');
+        const hiCreoLightboxImg = document.getElementById('hicreoLightboxImg');
+
+        // Define how many images are in each folder
+        const folderImageCounts = {
+        1: 25,
+        2: 25,
+        3: 24,
+        4: 25,
+        5: 25,
+        6: 12,
+        7: 12,
+        8: 50
+        };
+
+        // Loop through each folder and image number
+        for (let folder = 1; folder <= 8; folder++) {
+        const count = folderImageCounts[folder];
+
+        for (let i = 1; i <= count; i++) {
+            const thumbPath = `images/templates/${folder}/thumbnail/slide${i}.webp`;
+            const fullPath = `images/templates/${folder}/slide${i}.jpg`;
+
+            const hicreoTemplateThumbnailimg = document.createElement('img');
+            hicreoTemplateThumbnailimg.src = thumbPath;
+            hicreoTemplateThumbnailimg.dataset.full = fullPath;
+            hicreoTemplateThumbnailimg.alt = `Template ${folder} Slide ${i}`;
+            hicreoTemplateThumbnailimg.classList.add('thumb');
+
+            hicreoTemplateThumbnailimg.addEventListener('click', () => {
+                hiCreoLightboxImg.src = fullPath;
+                hiCreoLightbox.style.display = 'flex';
+            });
+
+            hiCreoGallery.appendChild(hicreoTemplateThumbnailimg);
+        }
+        }
+
+        // Close the lightbox on click
+        hiCreoLightbox.addEventListener('click', (e) => {
+            if (e.target === hiCreoLightbox) {
+              hiCreoLightbox.style.display = 'none';
+            }
+          });
+
+        document.querySelector('.close-lightbox').addEventListener('click', () => {
+        hiCreoLightbox.style.display = 'none';
+        });
+
+        const elearningCourseDemoIFrameLightbox = document.getElementById('elearningLightboxCourse');
+        const elearningCourseDemoIFrameFrame = document.getElementById('elearningFrame');
+        const elearningCourseDemoIFrameCloseBtn = document.querySelector('.lightbox-close');
+
+        // URL map for different demos
+        const elearningCourseDemoIFrameUrls = {
+          unboxed: 'portfolio/elearning/unboxed/story.html',
+          gci: 'portfolio/elearning/gci/story.html',
+          NRCCRSM: 'portfolio/elearning/NRCCRSM/story_html5.html'
+        };
+
+        // Click listeners for thumbnails
+        document.querySelectorAll('.elearningDemoThumbnail').forEach(elearningCourseDemoIFrameThumbnail => {
+          elearningCourseDemoIFrameThumbnail.addEventListener('click', () => {
+            const classList = elearningCourseDemoIFrameThumbnail.classList;
+            let elearningCourseDemoIFrameKey = null;
+
+            if (classList.contains('unboxed')) elearningCourseDemoIFrameKey = 'unboxed';
+            else if (classList.contains('gci')) elearningCourseDemoIFrameKey = 'gci';
+            else if (classList.contains('NRCCRSM')) elearningCourseDemoIFrameKey = 'NRCCRSM';
+
+            if (elearningCourseDemoIFrameKey) {
+              elearningCourseDemoIFrameFrame.src = elearningCourseDemoIFrameUrls[elearningCourseDemoIFrameKey];
+              elearningCourseDemoIFrameLightbox.classList.add('show');
+            }
+            
+            if (elearningCourseDemoIFrameKey === 'NRCCRSM') {
+              elearningCourseDemoIFrameCloseBtn.style.color = 'black';
+              elearningCourseDemoIFrameCloseBtn.style.top = '-5px'
+            } else {
+              elearningCourseDemoIFrameCloseBtn.style.color = 'white';
+              elearningCourseDemoIFrameCloseBtn.style.top = '10px'
+            }
+
+          });
+        });
+
+        // Close lightbox
+        elearningCourseDemoIFrameCloseBtn.addEventListener('click', () => {
+          elearningCourseDemoIFrameFrame.src = ''; // Stop playback
+          elearningCourseDemoIFrameLightbox.classList.remove('show');
+        });
+
+        const elearningThumbs = document.querySelectorAll('#elearningGallery .thumb');
+        const elearningLightbox = document.getElementById('elearningLightboxImage');
+        const elearningLightboxImg = document.getElementById('elearningLightboxImg');
+        const elearningImageLightboxClose = document.getElementById('elearningImageLightboxClose');
+        
+        elearningThumbs.forEach(thumb => {
+          thumb.addEventListener('click', () => {
+            const imgIndex = thumb.getAttribute('in');
+            const fullImgPath = `images/elearning/image${imgIndex}.webp`;
+        
+            elearningLightboxImg.src = fullImgPath;
+            elearningLightbox.classList.add('show');
+            elearningLightbox.style.display = 'flex';
+          });
+        });
+        
+        elearningImageLightboxClose.addEventListener('click', () => {
+          elearningLightbox.classList.remove('show');
+          elearningLightbox.style.display = 'none';
+          elearningLightboxImg.src = ''; // optional: clear image
+        });
+
+        const elearnignAdamVideo = document.getElementById('elearningAdam');
+        const timeLinks = document.querySelectorAll('[data-time]');
+      
+        timeLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const time = parseFloat(this.getAttribute('data-time'));
+            elearnignAdamVideo.currentTime = time;
+            elearnignAdamVideo.play();
+          });
+        });
 
 
+        const printThumbs = document.querySelectorAll('#printGallery .thumb');
+        const printLightbox = document.getElementById('printLightboxImage');
+        const printLightboxImg = document.getElementById('printLightboxImg');
+        const printImageLightboxClose = document.getElementById('printImageLightboxClose');
+        
+        printThumbs.forEach(thumb => {
+          thumb.addEventListener('click', () => {
+            const imgIndex = thumb.getAttribute('in');
+            const fullImgPath = `images/print/image${imgIndex}.webp`;
+        
+            printLightboxImg.src = fullImgPath;
+            printLightbox.classList.add('show');
+            printLightbox.style.display = 'flex';
+          });
+        });
+        
+        printImageLightboxClose.addEventListener('click', () => {
+          printLightbox.classList.remove('show');
+          printLightbox.style.display = 'none';
+          printLightboxImg.src = ''; // optional: clear image
+        });
 
+
+        const socialGallery = document.getElementById('socialGallery');
+        const socialLightbox = document.getElementById('socialLightboxImage');
+        const socialLightboxImg = document.getElementById('socialLightboxImg');
+        const socialLightboxClose = document.getElementById('socialImageLightboxClose');
+      
+        const totalSocialImages = 54;
+      
+        // Generate thumbnails and append to the gallery
+        for (let i = 1; i <= totalSocialImages; i++) {
+          const socialThumbPath = `images/social/thumbnail/image${i}.webp`;
+          const socialFullPath = `images/social/image${i}.webp`;
+      
+          const socialThumbImg = document.createElement('img');
+          socialThumbImg.src = socialThumbPath;
+          socialThumbImg.alt = `Social Template ${i}`;
+          socialThumbImg.classList.add('thumb');
+          socialThumbImg.dataset.full = socialFullPath;
+      
+          // Add click event to open lightbox
+          socialThumbImg.addEventListener('click', () => {
+            socialLightboxImg.src = socialFullPath;
+            socialLightbox.style.display = 'flex';
+          });
+      
+          socialGallery.appendChild(socialThumbImg);
+        }
+      
+        // Close the lightbox on close button or outside click
+        socialLightbox.addEventListener('click', (e) => {
+          if (
+            e.target === socialLightbox || 
+            e.target === socialLightboxClose
+          ) {
+            socialLightbox.style.display = 'none';
+          }
+        });
 
 
     });
