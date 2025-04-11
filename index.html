@@ -29,11 +29,11 @@
 <nav class="navbar fixed-top">
   <div class="container justify-content-center">
     <ul class="navbar-nav flex-row">
-      <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-      <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-      <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
-      <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
-      <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      <a class="nav-link" href="#home"><li class="nav-item home"><div class="icon-wrap"><img src="images/nav-home.webp"/></div>Home</li></a>
+      <a class="nav-link" href="#projects"><li class="nav-item projects"><div class="icon-wrap"><img src="images/nav-project.webp"/></div>Projects</li></a>
+      <a class="nav-link" href="#testimonials"><li class="nav-item testimonials"><div class="icon-wrap"><img src="images/nav-testimonial.webp"/></div>Testimonials</li></a>
+      <a class="nav-link" href="#resume"><li class="nav-item resume"><div class="icon-wrap"><img src="images/nav-resume.webp"/></div>Resume</li></a>
+      <a class="nav-link" href="#contact"><li class="nav-item contact"><div class="icon-wrap"><img src="images/nav-contact.webp"/></div>Contact</li></a>
     </ul>
   </div>
 </nav>
@@ -71,13 +71,14 @@
 <!-- Projects -->
 <section id="projects" class="container text-center">
   <div class="subHeader">See What I Make</div>
+  <div class="subHeader-description">Click each category to see what I’ve made.</div>
   <div class="project-main-menu w-100">
 
     <div class="project-item hicreo text-start d-flex">
       <img src="images/section2-project-thumbnail-hicreo.webp" width="186"/>
       <div class="project-label-wrap d-flex align-items-start justify-content-center flex-column">
         <div class="project-label">hiCreo</div>
-        <div class="project-description">UI/UX, SEO, and eLearning/Presentation Templates</div>
+        <div class="project-description">UI/UX, SEO, & eLearning/Presentation Templates</div>
       </div>
       <div class="project-hover"></div>
     </div>
@@ -91,20 +92,11 @@
       </div>
     </div>
 
-    <div class="project-item print-media text-start d-flex">
+    <div class="project-item others text-start d-flex">
       <img src="images/section2-project-thumbnail-print.webp" width="186"/>
       <div class="project-label-wrap d-flex align-items-start justify-content-center flex-column">
-        <div class="project-label">Print Media</div>
-        <div class="project-description">Marketing & Visual Asset</div>
-        <div class="project-hover"></div>
-      </div>
-    </div>
-
-    <div class="project-item mobile-game text-start d-flex">
-      <img src="images/section2-project-thumbnail-game.webp" width="186"/>
-      <div class="project-label-wrap d-flex align-items-start justify-content-center flex-column">
-        <div class="project-label">Mobile Games</div>
-        <div class="project-description">UI Design for Android/iOS Apps</div>
+        <div class="project-label">Others</div>
+        <div class="project-description">Print/Digital Assets &<br/>Mobile App UI Design</div>
         <div class="project-hover"></div>
       </div>
     </div>
@@ -126,17 +118,10 @@
         </div>
         <div class="project-hover"></div>
     </div>
-    <div class="project-item print-media text-start d-flex flex-column justify-content-center align-items-center">
+    <div class="project-item others text-start d-flex flex-column justify-content-center align-items-center">
         <img src="images/section2-project-thumbnail-print-sub-menu.webp" width="67"/>
         <div class="project-label-wrap d-flex align-items-start justify-content-center flex-column">
-        <div class="project-label">Print Media</div>
-        </div>
-        <div class="project-hover"></div>
-    </div>
-    <div class="project-item mobile-game text-start d-flex flex-column justify-content-center align-items-center">
-        <img src="images/section2-project-thumbnail-game-sub-menu.webp" width="67"/>
-        <div class="project-label-wrap d-flex align-items-start justify-content-center flex-column">
-        <div class="project-label">Mobile Games</div>
+        <div class="project-label">Others</div>
         </div>
         <div class="project-hover"></div>
     </div>
@@ -145,23 +130,18 @@
   <div class="project-content-wrap hicreo w-100">
 
     <div class="portfolio-wrap">
-      <div class="label">hiCreo</div>
+      <div class="label  mt-5rem">hiCreo</div>
       <div class="close-button">
         <div class="close-button-hover"></div>
       </div>
 
-      <div class="itemList item1 text-start">
-        <div class="header">Website Design</div>
-        <div class="description">Designed and developed the hiCreo.ai homepage and subpages, including Product, Pricing, About Us, Blog, Help Center, and User Guide. Optimized the webpages with SEO strategies to improve Google search rankings and enhance online visibility.</div>
+      <div class="itemList item1 text-start mt-5">
+        <div class="header">Website Design  |  2025</div>
+        <div class="description">Designed and developed the hiCreo.ai homepage and subpages, including Product, Pricing, About Us, Blog, Help Center, and User Guide. Optimized the webpages with SEO strategies to improve Google search rankings and enhance online visibility.
+        </div>
 
         <div class="hicreo-website-wrap">
 
-          <div class="page-buttons d-flex justify-content-center align-items-center">
-            <div class="button-home button text-center">Home<div class="button-hover"></div></div>
-            <div class="button-about-us button text-center">About Us<div class="button-hover"></div></div>
-            <div class="button-blog-list button text-center">Blog List<div class="button-hover"></div></div>
-            <div class="button-blog-page button text-center">Blog Page<div class="button-hover"></div></div>
-          </div>
 
           <div class="hicreo-website-laptop">
             <img src="images/section2-laptop-frame.webp" width="980"/>
@@ -178,13 +158,20 @@
               </div>
             </div>
           </div>
-          <div class="instruction text-center">Hover and scroll to browse the page on each device.</div>
+          <div class="nav-instruction text-center">Click the buttons to navigate pages — scroll to explore each screen.</div>
+          <div class="page-buttons d-flex justify-content-center align-items-center">
+            <div class="button-home button text-center">Home<div class="button-hover"></div></div>
+            <div class="button-about-us button text-center">About Us<div class="button-hover"></div></div>
+            <div class="button-blog-list button text-center">Blog List<div class="button-hover"></div></div>
+            <div class="button-blog-page button text-center">Blog Page<div class="button-hover"></div></div>
+          </div>
+
         </div>
 
       </div>
 
       <div class="itemList item2 text-start">
-        <div class="header">UI/UX Design</div>
+        <div class="header">UI/UX Design  |  2025</div>
         <div class="subHeader">Editor Page</div>
         <div class="description">Designed and developed the user interface for hiCreo Editor and its tools, focusing on delivering an intuitive and seamless user experience. Prioritized user-centric design principles to create accessible and efficient workflows for AI-powered authoring.</div>
 
@@ -205,34 +192,62 @@
       </div>
 
       <div class="itemList item3 text-start">
-        <div class="header">mLearning</div>
-        <div class="description">Designed and developed the hiCreo.ai homepage and subpages, including Product, Pricing, About Us, Blog, Help Center, and User Guide. Optimized the webpages with SEO strategies to improve Google search rankings and enhance online visibility.</div>
+        <div class="header">mLearning  |  2023</div>
+        <div class="description">Designed and developed mobile learning (mLearning) authoring tools with an intuitive UI/UX</div>
 
         <div class="hicreo-website-wrap">
 
-          <div class="page-buttons d-flex justify-content-center align-items-center">
-            <div class="button-home button text-center">Home<div class="button-hover"></div></div>
-            <div class="button-about-us button text-center">About Us<div class="button-hover"></div></div>
-            <div class="button-blog-list button text-center">Blog List<div class="button-hover"></div></div>
-            <div class="button-blog-page button text-center">Blog Page<div class="button-hover"></div></div>
-          </div>
-
           <div class="hicreo-website-laptop">
             <img src="images/section2-laptop-frame.webp" width="980"/>
-            <div class="capture-img-laptop">
-              <img class="hicreo-screen-capture" src="images/section2-screenshot-hicreo-home-laptop.webp"/>
+            <div class="live-mlearning-course-laptop">
+              <iframe class="hicreo-screen-capture" width="1280" height="803" src="portfolio/mlearning/01/"  frameborder="0" allowfullscreen>
+              </iframe>
             </div>
           </div>
 
           <div class="hicreo-website-mobile">
             <img src="images/section2-phone-frame.webp" width="213"/>
             <div class="capture-img-mobile-wrap">
-              <div class="capture-img-mobile">
-                <img class="hicreo-screen-capture" src="images/section2-screenshot-hicreo-home-mobile.webp"/>
+              <div class="live-mlearning-course-mobile">
+                <iframe class="hicreo-screen-capture" width="480" height="1013" src="portfolio/mlearning/01/"  frameborder="0" allowfullscreen>
+                </iframe>
               </div>
             </div>
           </div>
         </div>
+        <div class="nav-instruction text-center">Click the buttons to explore each course, and use the on-screen UI to navigate through the lessons.</div>
+        
+        <div class="page-buttons d-flex justify-content-center align-items-center">
+          <div class="button-microlearning button text-center">Microlearning<div class="button-hover"></div></div>
+          <div class="button-vital button text-center">Vital Signs<div class="button-hover"></div></div>
+          <div class="button-adaptive button text-center">Adaptive Design<div class="button-hover"></div></div>
+        </div>
+
+      </div>
+
+      <div class="itemList item4 text-center ">
+        <div class="header text-start">eLearning/Presentation Templates   |  2025</div>
+
+        <div class="description text-start">Designed and developed presentation templates for hiCreo.ai, utilizing the hiCreo editor to ensure seamless functionality and user experience.</div>
+
+        <div class="nav-instruction text-center">Click any image to see it in full size.</div>
+
+        <div class="hicreo-template-wrap">
+
+          <div class="template-wrap">
+            <div id="hicreoGallery" class="hicreoGallery"></div>
+
+            <!-- Lightbox -->
+            <div class="hicreoLightbox" id="hicreoLightbox" style="display: none;">
+              <span class="close-lightbox">&times;</span>
+              <img id="hicreoLightboxImg" src="" alt="Enlarged Image">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="nav-instruction text-center">Click below to return to the main portfolio menu</div>
+        <div class="button-close button text-center">Fold Up<div class="button-hover"></div></div>
 
       </div>
 
@@ -242,39 +257,312 @@
 
   <div class="project-content-wrap elearning w-100">
     <div class="portfolio-wrap">
-      <div class="label">eLearning</div>
+      <div class="label mt-5rem">eLearning</div>
       <div class="close-button">
         <div class="close-button-hover"></div>
       </div>
 
-      <div class="header">Website Design</div>
-      <div class="description">Designed and developed the hiCreo.ai homepage and subpages, including Product, Pricing, About Us, Blog, Help Center, and User Guide. Optimized the webpages with SEO strategies to improve Google search rankings and enhance online visibility.</div>
+      <div class="itemList item5 text-start mt-5">
+        <div class="header">eLearning Skill Demonstration  |  2025</div>
+
+        <div class="description-wrap d-flex mt-2">
+          <div class="description">Created a concise, interactive 5-slide Storyline course demonstrating
+            two essential skills for successful eLearning developers.</div>
+          <div class="time-limit">| 48Hrs</div>
+        </div>
+
+        <div class="elearningDemoThumbnail unboxed"></div>
+        <div class="nav-instruction text-center">Click to launch the course</div>
+        
+        <div class="description-wrap d-flex">
+          <div class="description">Developed an interactive eLearning course by transforming provided
+            content into a storyboard and building the final experience in Storyline.
+            </div>
+          <div class="time-limit">| 72Hrs</div>
+        </div>
+        <div class="elearningDemoThumbnail gci"></div>
+        <div class="nav-instruction text-center">Click to launch the course</div>
+      </div>
+
+      <div class="itemList item6 text-start mt-10rem">
+        <div class="header">eLearning Courses     |     2013 - 2022</div>
+
+        <div class="description-wrap d-flex">
+          <div class="description">
+            Development of eLearning courses for clients
+          </div>
+        </div>
+        <div class="elearningDemoThumbnail NRCCRSM"></div>
+        <div class="nav-instruction text-center">Click to launch the course</div>
+
+        <div id="elearningLightboxCourse" class="elearning-lightbox">
+          <div class="lightbox-overlay"></div>
+          <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <iframe id="elearningFrame" src="" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="subHeader">eLearning Course Preview: Sample Screen Recordings</div>
+        <div class="description">
+          Here’s a preview of the eLearning courses I’ve developed. Due to client confidentiality, I’m sharing the first few slides, showcasing my work in interactive learning and multimedia design.
+        </div>
+
+        <div class="elearning-video-demo" >
+          <video controls poster="images/mdc-intro-thumbnail.webp">
+            <source src="portfolio/elearning/MDC-intro.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="instruction text-center mt-2">A-VLE Manager’s Development Course Intro </div>
+
+        <div class="elearning-video-demo" >
+          <video controls>
+            <source src="portfolio/elearning/mdc.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="instruction text-center mt-2">A-VLE Manager’s Development Course</div>
+        <div class="elearning-video-demo" >
+          <video controls>
+            <source src="portfolio/elearning/itas.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="instruction text-center mt-2">A-VLE Information Technology Approval System Course</div>
+        <div class="elearning-video-demo" >
+          <video controls  poster="images/sdp-thumbnail.webp">
+            <source src="portfolio/elearning/sdp.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="instruction text-center mt-2">NRC Significance Determination Decision Making Course</div>
+
+        <div class="nav-instruction gallery text-center">Click any image to see it in full size.</div>
+        <div class="template-wrap">
+          <div id="elearningGallery" class="elearningGallery">
+
+            <img src="images/elearning/thumbnail/image1.webp" in="1" class="thumb">
+            <img src="images/elearning/thumbnail/image2.webp" in="2" class="thumb">
+            <img src="images/elearning/thumbnail/image3.webp" in="3" class="thumb">
+            <img src="images/elearning/thumbnail/image4.webp" in="4" class="thumb">
+            <img src="images/elearning/thumbnail/image5.webp" in="5" class="thumb">
+            <img src="images/elearning/thumbnail/image6.webp" in="6" class="thumb">
+            <img src="images/elearning/thumbnail/image7.webp" in="7" class="thumb">
+            <img src="images/elearning/thumbnail/image8.webp" in="8" class="thumb">
+            <img src="images/elearning/thumbnail/image9.webp" in="9" class="thumb">
+            <img src="images/elearning/thumbnail/image10.webp" in="10" class="thumb">
+            <img src="images/elearning/thumbnail/image11.webp" in="11" class="thumb">
+            <img src="images/elearning/thumbnail/image12.webp" in="12" class="thumb">
+            <img src="images/elearning/thumbnail/image13.webp" in="13" class="thumb">
+            <img src="images/elearning/thumbnail/image14.webp" in="14" class="thumb">
+            <img src="images/elearning/thumbnail/image15.webp" in="15" class="thumb">
+            <img src="images/elearning/thumbnail/image16.webp" in="16" class="thumb">
+          </div>
+        </div>
+
+        <div id="elearningLightboxImage" class="elearning-lightbox">
+          <div class="lightbox-overlay"></div>
+          <div class="lightbox-content">
+            <span id="elearningImageLightboxClose" class="lightbox-close">&times;</span>
+            <div class="img-wrap d-flex justify-content-center align-items-center">
+              <img id="elearningLightboxImg" src="" alt="Enlarged Image">
+            </div>            
+          </div>
+        </div>
+
+        <div class="subHeader mt-10rem">ADAM (Air Defense Airspace Management)     |     2013</div>
+        
+        <div class="elearning-video-demo" >
+          <video id="elearningAdam" controls poster="images/adam-thumbnail.webp">
+            <source src="portfolio/elearning/adam.MP4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="description-wrap">
+          <div class="description mt-4">
+            Worked with the 3D team to model and map various components using 3ds Max. Click any link below to jump to the section of the video showcasing contributed work:
+          </div>
+          <div class="d-flex mt-4">
+            <ul>
+              <li><a href="#" data-time="82">Sentinel Radar: 1:22</a></li>
+              <li><a href="#" data-time="160">AN/PRC-117G: 2:40</a></li>
+              <li><a href="#" data-time="180">RF 7800M-V210 Radio: 3:00</a></li>            
+            </ul>
+            <ul style="margin-left:2rem;">
+              <li><a href="#" data-time="195">AN/VRC-104: 3:15</a></li>
+              <li><a href="#" data-time="201">CPCS: 3:21</a></li>
+              <li><a href="#" data-time="210">eMCSU: 3:30</a></li>
+            </ul>
+            <ul style="margin-left:2rem;">
+              <li><a href="#" data-time="215">JTT: 3:35</a></li>
+              <li><a href="#" data-time="222">MIDS: 3:42</a></li>
+              <li><a href="#" data-time="239">TACLANE: 3:59</a></li>
+            </ul>            
+          </div>      
+        </div>
+        <div class="button-wrap">
+          <div class="nav-instruction fold-up text-center">Click below to return to the main portfolio menu</div>
+          <div class="button-close button text-center">Fold Up<div class="button-hover"></div></div>
+        </div>
+        
+
+      </div>
     </div>
   </div>
 
-  <div class="project-content-wrap print-media w-100">
+  <div class="project-content-wrap others w-100">
       <div class="portfolio-wrap">
-      <div class="label">Print Media</div>
+      <div class="label  mt-5rem">Others</div>
       <div class="close-button">
         <div class="close-button-hover"></div>
       </div>
 
-      <div class="header">Website Design</div>
-      <div class="description">Designed and developed the hiCreo.ai homepage and subpages, including Product, Pricing, About Us, Blog, Help Center, and User Guide. Optimized the webpages with SEO strategies to improve Google search rankings and enhance online visibility.</div>
-    </div>
-  </div>
+      <div class="itemList item7 text-start mt-5">
+        <div class="header">Print Media</div>
+        <div class="description">Created professional-grade printable designs, including tri-fold brochures, posters, roll-up banners, business cards, and brand stickers for diverse projects.</div>
 
-  <div class="project-content-wrap mobile-game w-100">
-    <div class="portfolio-wrap">
-      <div class="label">Mobile Games</div>
-      <div class="close-button">
-        <div class="close-button-hover"></div>
+        <div class="nav-instruction gallery text-center">Click any image to see it in full size.</div>
+
+        <div class="template-wrap mt-3">
+          <div id="printGallery" class="printGallery">
+
+            <img src="images/print/thumbnail/image1.webp" in="1" class="thumb">
+            <img src="images/print/thumbnail/image2.webp" in="2" class="thumb">
+            <img src="images/print/thumbnail/image3.webp" in="3" class="thumb">
+            <img src="images/print/thumbnail/image4.webp" in="4" class="thumb">
+            <img src="images/print/thumbnail/image5.webp" in="5" class="thumb">
+            <img src="images/print/thumbnail/image6.webp" in="6" class="thumb">
+            <img src="images/print/thumbnail/image7.webp" in="7" class="thumb">
+            <img src="images/print/thumbnail/image8.webp" in="8" class="thumb">
+            <img src="images/print/thumbnail/image9.webp" in="9" class="thumb">
+            <img src="images/print/thumbnail/image10.webp" in="10" class="thumb">
+            <img src="images/print/thumbnail/image11.webp" in="11" class="thumb">
+            <img src="images/print/thumbnail/image12.webp" in="12" class="thumb">
+            <img src="images/print/thumbnail/image13.webp" in="13" class="thumb">
+          </div>
+        </div>
+
+        <div id="printLightboxImage" class="print-lightbox">
+          <div class="lightbox-overlay"></div>
+          <div class="lightbox-content">
+            <span id="printImageLightboxClose" class="lightbox-close">&times;</span>
+            <div class="img-wrap d-flex justify-content-center align-items-center">
+              <img id="printLightboxImg" src="" alt="Enlarged Image">
+            </div>            
+          </div>
+        </div>
+
       </div>
 
-      <div class="header">Website Design</div>
-      <div class="description">Designed and developed the hiCreo.ai homepage and subpages, including Product, Pricing, About Us, Blog, Help Center, and User Guide. Optimized the webpages with SEO strategies to improve Google search rankings and enhance online visibility.</div>
+      <div class="itemList item8 text-start">
+        <div class="header">Social Media Post/Templates</div>
+        <div class="description">Created professional-grade printable designs, including tri-fold brochures, posters, roll-up banners, business cards, and brand stickers for diverse projects.</div>
+
+        <div class="nav-instruction gallery text-center">Click any image to see it in full size.</div>
+
+        <div class="template-wrap mt-3">
+          <div id="socialGallery" class="socialGallery">
+          </div>
+        </div>
+
+        <div id="socialLightboxImage" class="social-lightbox">
+          <div class="lightbox-overlay"></div>
+          <div class="lightbox-content">
+            <span id="socialImageLightboxClose" class="lightbox-close">&times;</span>
+            <div class="img-wrap d-flex justify-content-center align-items-center">
+              <img id="socialLightboxImg" src="" alt="Enlarged Image">
+            </div>            
+          </div>
+        </div>
+      </div>
+
+      <div class="itemList item9 text-start">
+        <div class="header">Interactive Game Design & Development     |    2012</div>
+        <div class="description">UI/UX game design for iPhone/Android in Unity.</div>
+
+        <div class="d-flex mt-5">
+          <div class="game-thumbnail">
+            <img src="images/section2-hop-race-thumbnail.webp" />
+          </div>
+          <div class="textWrap ms-2">
+            <div class="subHeader mt-2">Hop Race</div>
+            <div class="description mt-1">Hop Race is an exhilarating racing game for Android. Aside from astounding graphics and a fun scene, this unorthodox game will keep you on the edge of your seat from the beginning until the end of the race.</div>
+          </div>
+        </div>
+
+        <div class="template-wrap mt-5 text-center">
+          <div class="gameGallery d-inline-block  text-start">
+            <img src="images/games/image1.webp" class="thumb">
+            <img src="images/games/image2.webp" class="thumb">
+            <img src="images/games/image3.webp" class="thumb">
+            <img src="images/games/image4.webp" class="thumb">
+            <img src="images/games/image5.webp" class="thumb">
+          </div>
+
+        </div>
+        <div class="iframe-wrap">
+          <iframe src="https://www.youtube-nocookie.com/embed/dENGPUDT0js?si=S_QFvWlO_RnK5aJ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+
+        <div class="d-flex" style="margin-top:5rem;">
+          <div class="game-thumbnail">
+            <img src="images/section2-jelly-thumbnail.webp" />
+          </div>
+          <div class="textWrap ms-2">
+            <div class="subHeader mt-2">JellyBall</div>
+            <div class="description mt-1">JellyBall is a projectile, puzzle-based game with soft-body physics. Your objective is to unite all red jelly balls on each level into a one big happy jelly by making strategic water balloon shots.</div>
+          </div>
+        </div>
+
+        <div class="template-wrap mt-5 text-center">
+          <div class="gameGallery d-inline-block  text-start">
+            <img src="images/games/image6.webp" class="thumb">
+            <img src="images/games/image7.webp" class="thumb">
+            <img src="images/games/image8.webp" class="thumb">
+            <img src="images/games/image9.webp" class="thumb">
+            <img src="images/games/image10.webp" class="thumb">
+          </div>
+        </div>
+
+        <div class="iframe-wrap">
+          <iframe src="https://www.youtube-nocookie.com/embed/V9RLPqwIKkA?si=MpX-3DhGee0_39jU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="itemList item10 text-start">
+          <div class="header">Other Released Videos</div>
+          <div class="description">A collection of videos created for various releases, including marketing campaigns, social media promotions, and other special purposes.</div>
+
+          <div class="iframe-wrap">
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8wJ8-cAMTZ4?si=xU0vGIQ9AVegDtTo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+
+          <div class="iframe-wrap">
+            <iframe  src="https://www.youtube-nocookie.com/embed/PMfN1kUzsZE?si=F8JM_POmEWn7TQIC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+
+          <div class="iframe-wrap">
+            <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fhicreosocialmedia%2Fvideos%2F605950017580578%2F&show_text=false&width=560&t=0" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+          </div>
+
+          <div class="others-video-wrap text-center">
+            <video controls>
+              <source src="videos/short1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div class="button-wrap text-center">
+            <div class="nav-instruction text-center">Click below to return to the main portfolio menu</div>
+            <div class="button-close button text-center">Fold Up<div class="button-hover"></div></div>
+          </div>
+        </div>
+
     </div>
   </div>
+
 
 </section>
 
@@ -306,9 +594,8 @@
     </ul>
     
     <div class="button-pane text-center">
-      <a href="Minsub_Kim_Resume.pdf" download class="resume-button">Take It. It’s Free.</a>
-      <br/>
-      <span class="desc">Download Full Résumé</span>
+      <div class="desc">Download Full Résumé</div>
+      <a href="file/Resume_MinsubKim.pdf" download class="resume-button">Download<div class="button-hover"></div></a>
     </div>
   </div>
 </section>
@@ -317,8 +604,12 @@
 <section id="contact" class="text-center">
   <div class="subHeader">Let’s Make Something Cool Together.</div>
   <div class="contact-icons">
-    <div><img src="images/section5-email.webp"/><br><span>email</span></div>
-    <div><img src="images/section5-linkedin.webp"/><br><span>LinkedIn</span></div>
+    <a href="mailto:minsubkim81@gmail.com" target="_blank">
+      <div class="email-button contact-button d-flex justify-content-center align-items-end">email<div class="button-hover"></div></div>
+    </a>
+    <a href="https://www.linkedin.com/in/minsub-kim-250560217/" target="_blank">
+      <div class="linkedin-button contact-button d-flex justify-content-center align-items-end">LinkedIn<div class="button-hover"></div></div>
+    </a>
   </div>
 </section>
 
