@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"WEBVTT%0D%0AKind:%20captions%0D%0ASource:%20Articulate%20Closed%20Captions%20Editor%0D%0ASource%20Version:%206.96.33815.0%0D%0A%0D%0A00:00:00.064%20--%3E%2000:00:06.808%0D%0A89%25%20of%20consumers%20are%20more%20likely%20to%20make%20another%20purchase%20after%20a%20positive%20customer%20service%20experience.%20%0D%0A%0D%0A"}')
