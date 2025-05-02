@@ -414,6 +414,7 @@ window.addEventListener('load', function () {
 
         // URL map for different demos
         const elearningCourseDemoIFrameUrls = {
+          iianc: 'portfolio/elearning/iianc/story.html',
           unboxed: 'portfolio/elearning/unboxed/story.html',
           gci: 'portfolio/elearning/gci/story.html',
           NRCCRSM: 'portfolio/elearning/NRCCRSM/story_html5.html'
@@ -428,6 +429,7 @@ window.addEventListener('load', function () {
             if (classList.contains('unboxed')) elearningCourseDemoIFrameKey = 'unboxed';
             else if (classList.contains('gci')) elearningCourseDemoIFrameKey = 'gci';
             else if (classList.contains('NRCCRSM')) elearningCourseDemoIFrameKey = 'NRCCRSM';
+            else if (classList.contains('iianc')) elearningCourseDemoIFrameKey = 'iianc';
 
             if (elearningCourseDemoIFrameKey) {
               elearningCourseDemoIFrameFrame.src = elearningCourseDemoIFrameUrls[elearningCourseDemoIFrameKey];

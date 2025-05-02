@@ -859,6 +859,13 @@
     margin-top:2rem;
     cursor:pointer;
   }
+  #projects .project-content-wrap.elearning .elearningDemoThumbnail.iianc{
+    background-image:url(../images/thumbnail-iianc.webp);
+    height: 450px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
   #projects .project-content-wrap.elearning .elearningDemoThumbnail.unboxed{
     background-image:url(../images/thumbnail-unboxed.webp);
     height: 500px;
@@ -879,6 +886,9 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+  }
+  #projects .project-content-wrap.elearning .elearningDemoThumbnail.iianc:hover{
+    background-image:url(../images/thumbnail-iianc-hover.webp);
   }
   #projects .project-content-wrap.elearning .elearningDemoThumbnail.unboxed:hover{
     background-image:url(../images/thumbnail-unboxed-hover.webp);
