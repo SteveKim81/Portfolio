@@ -23,738 +23,1125 @@
 
 </head>
 
-<body>
+<body class="body">
 
   <main>
-<!-- Navigation -->
-<nav class="navbar fixed-top">
-  <div class=" justify-content-center">
-    <ul class="navbar-nav flex-row">
-      <a class="nav-link" href="#home"><li class="nav-item home"><div class="icon-wrap"><img src="images/nav-home.webp"/></div>Home</li></a>
-      <a class="nav-link" href="#projects"><li class="nav-item projects"><div class="icon-wrap"><img src="images/nav-project.webp"/></div>Projects</li></a>
-      <a class="nav-link" href="#testimonials"><li class="nav-item testimonials"><div class="icon-wrap"><img src="images/nav-testimonial.webp"/></div>Testimonials</li></a>
-      <a class="nav-link" href="#resume"><li class="nav-item resume"><div class="icon-wrap"><img src="images/nav-resume.webp"/></div>Resume</li></a>
-      <a class="nav-link" href="#contact"><li class="nav-item contact"><div class="icon-wrap"><img src="images/nav-contact.webp"/></div>Contact</li></a>
-    </ul>
-  </div>
-</nav>
-
-<!-- Hero -->
-<section id="home" class="text-center d-flex justify-content-center align-items-center flex-column vh-100 w-100">
-  <div class="line-1"><span class="txtFx1">Hey </span><span class="txtFx2">There!</span> </div>
-  <div class="line-2">
-      <span class="letters">Yes, it’s me.</span>
-  </div>
-
-  <div class="line-3">
-    <span class="letters">Your future favorite creator.</span>
-  </div>
-
-  <div class="line-name">
-    <span class="letters">MINSUB KIM</span>
-  </div>
-  <div class="icon-divider"></div>
-</section>
-
-<!-- Intro -->
-<section id="intro" class="text-center animate__animated animate__slideInUp">
-  <div class="subHeader">I turn ☕ and ideas into</div>
-
-  <div class="capabilities">
-    <div class="rotating-words">
-      <div class="cap-design">DESIGN</div>
-      <div class="cap-elearning">E-LEARNING</div>
-      <div class="cap-programming">PROGRAMMING</div>
-    </div>
-  </div>
-</section>
-
-<!-- Projects -->
-<section id="projects" class=" text-center">
-  <div class="subHeader animate__animated animate__backInUp">See What I Make</div>
-  <div class="subHeader-description animate__animated animate__backInUp"><b>Click</b> each category to see what I’ve made.</div>
-  <div class="project-main-menu w-100 animate__animated animate__backInUp">
-
-    <div class="project-item hicreo text-start d-flex">
-      <img src="images/section2-project-thumbnail-hicreo.webp" width="186"/>
-      <div class="project-label-wrap d-flex align-items-start justify-content-center flex-column">
-        <div class="project-label">hiCreo</div>
-        <div class="project-description">UI/UX, SEO, & eLearning/Presentation Templates</div>
-      </div>
-      <div class="project-hover"></div>
-    </div>
-
-    <div class="project-item elearning text-start d-flex">
-      <img src="images/section2-project-thumbnail-elearning.webp" width="186"/>
-      <div class="project-label-wrap d-flex align-items-start justify-content-center flex-column">
-        <div class="project-label">eLearning</div>
-        <div class="project-description">Course Development & Interaction Design</div>
-        <div class="project-hover"></div>
-      </div>
-    </div>
-
-    <div class="project-item others text-start d-flex">
-      <img src="images/section2-project-thumbnail-print.webp" width="186"/>
-      <div class="project-label-wrap d-flex align-items-start justify-content-center flex-column">
-        <div class="project-label">Others</div>
-        <div class="project-description">Print/Digital Assets &<br/>Mobile App UI Design</div>
-        <div class="project-hover"></div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="project-sub-menu w-100 w-100 justify-content-center align-items-center">
-    <div class="project-item hicreo text-start d-flex flex-column justify-content-center align-items-center">
-      <img src="images/section2-project-thumbnail-hicreo-sub-menu.webp" width="67"/>
-      <div class="project-label-wrap d-flex align-items-start justify-content-center flex-column">
-      <div class="project-label">hiCreo</div>
-      </div>
-      <div class="project-hover"></div>
-    </div>
-    <div class="project-item elearning text-start d-flex flex-column justify-content-center align-items-center">
-        <img src="images/section2-project-thumbnail-elearning-sub-menu.webp" width="67"/>
-        <div class="project-label-wrap d-flex align-items-start justify-content-center flex-column">
-        <div class="project-label">eLearning</div>
+    <!-- Navigation -->
+    
+    <nav class="navbar fixed-top navbar-expand-lg">
+      <div class="container-fluid justify-content-between align-items-center" style="padding:0;">
+    
+        <!-- Logo & Branding -->
+        <a class="navbar-brand d-flex align-items-center" href="#home" style="pointer-events: none;">
+          <img src="images/logo.webp" width="30" class="me-2" />
+          <span style="font-size:1rem; color:#fff; font-weight:300; letter-spacing: 2px;">MINSUBKIM</span>
+        </a>
+    
+        <!-- Toggler (Hamburger) -->
+        <button class="navbar-toggler" type="button" onclick="document.getElementById('navbarNav').classList.toggle('show')">
+          <span class="navbar-toggle-icon">☰</span>
+        </button>
+    
+        <!-- Collapsible Nav Links -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav text-end">
+            <li class="nav-link"><a class="nav-item active" href="#home" id="nav-home">Home</a></li>
+            <li class="nav-link"><a class="nav-item" href="#hicreo" id="nav-hicreo">hiCreo</a></li>
+            <li class="nav-link"><a class="nav-item" href="#elearning" id="nav-elearning">eLearning</a></li>
+            <li class="nav-link"><a class="nav-item" href="#others" id="nav-others">Creative Media</a></li>
+            <li class="nav-link"><a class="nav-item" href="#resume" id="nav-resume">Resume</a></li>
+            <li class="nav-link"><a class="nav-item" href="#contact" id="nav-contact">Contact</a></li>
+          </ul>
         </div>
-        <div class="project-hover"></div>
-    </div>
-    <div class="project-item others text-start d-flex flex-column justify-content-center align-items-center">
-        <img src="images/section2-project-thumbnail-print-sub-menu.webp" width="67"/>
-        <div class="project-label-wrap d-flex align-items-start justify-content-center flex-column">
-        <div class="project-label">Others</div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="text-center justify-content-center align-items-center flex-column vh-100 w-100">
+      <div class="main-header w-100 vh-100 d-flex justify-content-center align-items-center flex-column" > 
+        <div class="main-line-1">ELEARNING&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;GRAPHIC&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;MULTIMEDIA</div>
+
+        <div class="ml11">
+          <span class="text-wrapper">
+            <span class="line line1"></span>
+            <span class="letters"></span>
+          </span>
         </div>
-        <div class="project-hover"></div>
-    </div>
-  </div>
-
-  <div class="project-content-wrap hicreo w-100">
-
-    <div class="portfolio-wrap">
-      <div class="label  mt-5rem">hiCreo</div>
-      <div class="close-button">
-        <div class="close-button-hover"></div>
+        <div class="main-line-3">
+          Bridging creativity and technology to craft impactful<br/> eLearning, graphic, and multimedia solutions.
+        </div>
       </div>
 
-      <div class="itemList item1 text-start mt-5">
-        <div class="header">Website Design  |  2025</div>
-        <div class="description">Designed and developed the hiCreo.ai homepage and subpages, including Product, Pricing, About Us, Blog, Help Center, and User Guide. Optimized the webpages with SEO strategies to improve Google search rankings and enhance online visibility.
-        </div>
+      <video class="background w-100 vh-100" style="object-fit:cover;" muted autoplay loop poster="images/main.webp">
+        <source src="videos/main-movie.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
 
-        <div class="hicreo-website-wrap">
+    <!-- hicreo -->
+    <section id="hicreo" class=" text-center">
+      
+      <div class="project-content-wrap hicreo w-100" style="overflow:hidden;">
 
+        <div class="portfolio-wrap d-flex">
 
-          <div class="hicreo-website-laptop">
-            <img src="images/section2-laptop-frame.webp" />
-            <div class="capture-img-laptop">
-              <img class="hicreo-screen-capture" src="images/section2-screenshot-hicreo-home-laptop.webp"/>
+          <div class="hero w-100 vh-100" style="overflow:hidden;">
+            <div class="hero-text-wrap">
+              <div class="hero-text header">
+                hiCreo
+              </div>
+              <div class="hero-text body">
+                AI-powered SaaS platform that streamlines the creation of business presentations and eLearning courses through intelligent design automation.
+              </div>
+              
+              <div class="hero-text sub-header" style="margin-top:2rem;">
+                Role: Design Team Leader
+              </div>
+              <div class="hero-text body">
+                ⚙️ Led UI/UX architecture and front-end development
+              </div>
+              <div class="hero-text body">
+                ♿ Ensured accessibility compliance (Section 508, WCAG)
+              </div>
+              <div class="hero-text body">
+                🤝 Collaborated with cross-functional teams across product and engineering
+              </div>
+              <div class="hero-text body">
+                🔍 Implemented SEO-driven and responsive design strategies
+              </div>
+              <div class="hero-text body">
+                🧱 Developed scalable interface components for enterprise users
+              </div>
+              <div class="hero-text body">
+                🧩 Created reusable variable templates for dynamic slide generation
+              </div>            
+              <div class="hero-text body">
+                📈 Increased platform traffic by 60% through usability improvements
+              </div>
+
+            </div>
+            <div class="image-wrap w-100 vh-100">
+              <img class="laptop" src="images/section-hicreo-main-laptop.webp"/>
+              <img class="phone" src="images/section-hicreo-main-phone.webp" />
             </div>
           </div>
 
-          <div class="hicreo-website-mobile">
-            <img src="images/section2-phone-frame.webp" width="213"/>
-            <div class="capture-img-mobile-wrap">
-              <div class="capture-img-mobile">
-                <img class="hicreo-screen-capture" src="images/section2-screenshot-hicreo-home-mobile.webp"/>
+          <div class="itemList item1 text-start w-100 vh-100 d-flex justify-content-center align-items-center" style="overflow:hidden;">
+            <div class="hicreo-portfolio-text-wrap">
+              <div class="header">Website Design  |  2025</div>
+              <div class="description">Designed and developed the hiCreo.ai homepage and subpages, including Product, Pricing, About Us, Blog, Help Center, and User Guide. Optimized the webpages with SEO strategies to improve Google search rankings and enhance online visibility.
+              </div>
+
+              <div class="nav-instruction text-start"><span class="text-highlight">Click</span> the buttons to navigate pages — <span class="text-highlight">scroll</span> to explore each screen.</div>
+
+              <div class="page-buttons d-flex">
+                <div class="button-home button text-center active">Home<div class="button-hover"></div></div>
+                <div class="button-about-us button text-center">About Us<div class="button-hover"></div></div>
+                <div class="button-blog-list button text-center">Blog List<div class="button-hover"></div></div>
+                <div class="button-blog-page button text-center">Blog Page<div class="button-hover"></div></div>
               </div>
             </div>
-          </div>
-          <div class="nav-instruction text-center">Click the buttons to navigate pages — scroll to explore each screen.</div>
-          <div class="page-buttons d-flex justify-content-center align-items-center">
-            <div class="button-home button text-center">Home<div class="button-hover"></div></div>
-            <div class="button-about-us button text-center">About Us<div class="button-hover"></div></div>
-            <div class="button-blog-list button text-center">Blog List<div class="button-hover"></div></div>
-            <div class="button-blog-page button text-center">Blog Page<div class="button-hover"></div></div>
-          </div>
 
-        </div>
+            <div class="hicreo-website-wrap">
+              <div class="hicreo-website-laptop">
+                <img src="images/section2-laptop-frame.webp" />
+                <div class="capture-img-laptop">
+                  <img class="hicreo-screen-capture" src="images/section2-screenshot-hicreo-home-laptop.webp"/>
+                </div>
+              </div>
 
-      </div>
-
-      <div class="itemList item2 text-start">
-        <div class="header">UI/UX Design  |  2025</div>
-        <div class="subHeader">Editor Page</div>
-        <div class="description">Designed and developed the user interface for hiCreo Editor and its tools, focusing on delivering an intuitive and seamless user experience. Prioritized user-centric design principles to create accessible and efficient workflows for AI-powered authoring.</div>
-
-        <div class="hicreo-website-wrap">
-
-          <div class="hicreo-website-laptop">
-            <img src="images/section2-laptop-frame.webp" />
-            <div class="capture-video-laptop">
-              <video class="lazy-video" preload="none" mute autoplay loop>
-                <source data-src="videos/section2-editor.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="itemList item3 text-start">
-        <div class="header">mLearning  |  2023</div>
-        <div class="description">Designed and developed mobile learning (mLearning) authoring tools with an intuitive UI/UX</div>
-
-        <div class="hicreo-website-wrap">
-
-          <div class="hicreo-website-laptop">
-            <img src="images/section2-laptop-frame.webp"/>
-            <div class="live-mlearning-course-laptop">
-              <iframe class="hicreo-screen-capture lazyload" src="about:blank" data-src="portfolio/mlearning/01/"  frameborder="0" allowfullscreen allow="autoplay" loading="lazy">
-              </iframe>
-            </div>
-          </div>
-
-          <div class="hicreo-website-mobile">
-            <img src="images/section2-phone-frame.webp" width="213"/>
-            <div class="capture-img-mobile-wrap">
-              <div class="live-mlearning-course-mobile">
-                <iframe class="hicreo-screen-capture lazyload" src="about:blank" width="480" height="1013" data-src="portfolio/mlearning/01/"  frameborder="0" allowfullscreen loading="lazy">
-                </iframe>
+              <div class="hicreo-website-mobile">
+                <img class="hicreo-website-mobile-frame" src="images/section2-phone-frame.webp"/>
+                <div class="capture-img-mobile-wrap">
+                  <div class="capture-img-mobile">
+                    <img class="hicreo-screen-capture" src="images/section2-screenshot-hicreo-home-mobile.webp"/>
+                  </div>
+                </div>
               </div>
             </div>
+
           </div>
+
+          <div class="itemList item2 text-start w-100 vh-100 d-flex justify-content-center align-items-center" style="overflow:hidden;">
+
+            <div class="hicreo-portfolio-text-wrap">
+              <div class="header">UI/UX Design  |  2025</div>
+              <div class="sub-header">Editor Page</div>
+              <div class="description">Designed and developed the user interface for hiCreo Editor and its tools, focusing on delivering an intuitive and seamless user experience. Prioritized user-centric design principles to create accessible and efficient workflows for AI-powered authoring.</div>
+            </div>
+
+            <div class="hicreo-website-wrap">
+
+              <div class="hicreo-website-laptop">
+                <img src="images/section2-laptop-frame.webp" />
+                <div class="capture-video-laptop">
+                  <video class="lazy-video" preload="none" mute autoplay loop poster="images/section2-video-poster.jpg">
+                    <source data-src="videos/section2-editor.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="itemList item3 text-start w-100 vh-100 d-flex justify-content-center align-items-center" style="overflow:hidden;">
+            <div class="hicreo-portfolio-text-wrap">
+              <div class="header">mLearning  |  2023</div>
+              <div class="description">Designed and developed mobile learning (mLearning) authoring tools with an intuitive UI/UX</div>
+
+              <div class="nav-instruction text-start"><span class="text-highlight">Click</span> the buttons to <span class="text-highlight">explore</span> each course, and use the on-screen UI to <span class="text-highlight">navigate</span> through the lessons.</div>
+            
+              <div class="page-buttons d-flex align-items-center">
+                <div class="button-microlearning button text-center active">Microlearning<div class="button-hover"></div></div>
+                <div class="button-vital button text-center">Vital Signs<div class="button-hover"></div></div>
+                <div class="button-adaptive button text-center">Adaptive Design<div class="button-hover"></div></div>
+              </div>
+            </div>
+            <div class="hicreo-website-wrap">
+
+              <div class="hicreo-website-laptop">
+                <img src="images/section2-laptop-frame.webp"/>
+                <div class="live-mlearning-course-laptop">
+                  <iframe class="hicreo-screen-capture lazyload" src="about:blank" data-src="portfolio/mlearning/01/"  frameborder="0" allowfullscreen allow="autoplay" loading="lazy">
+                  </iframe>
+                </div>
+              </div>
+
+              <div class="hicreo-website-mobile">
+                <img class="hicreo-website-mobile-frame" src="images/section2-phone-frame.webp"/>
+                <div class="capture-img-mobile-wrap">
+                  <div class="live-mlearning-course-mobile">
+                    <iframe class="hicreo-screen-capture lazyload" src="about:blank" width="480" height="1013" data-src="portfolio/mlearning/01/"  frameborder="0" allowfullscreen loading="lazy">
+                    </iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+          <div class="itemList item4 text-center w-100 vh-100" style="overflow:hidden;">
+            <div class="hicreo-portfolio-text-wrap" >
+              <div class="header text-start">eLearning/Presentation Templates   |  2025</div>
+
+              <div class="description text-start">Designed and developed presentation/eLearning templates for hiCreo.ai, utilizing the hiCreo editor to ensure seamless functionality and user experience.</div>
+
+              <div class="nav-instruction text-start"><span class="text-highlight">Click any image</span> to see it in full size.</div>
+            </div>
+            <div class="hicreo-template-wrap">
+
+              <div class="template-wrap">
+                <div class="gallery-wrapper">
+                  <div id="hicreoGallery" class="hicreoGallery"></div>
+                </div>
+                <!-- Lightbox -->
+                <div class="hicreoLightbox" id="hicreoLightbox" style="display: none;">
+                  <span class="close-lightbox">&times;</span>
+                  <img id="hicreoLightboxImg" src="" alt="Enlarged Image">
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
-        <div class="nav-instruction text-center">Click the buttons to explore each course, and use the on-screen UI to navigate through the lessons.</div>
-        
-        <div class="page-buttons d-flex justify-content-center align-items-center">
-          <div class="button-microlearning button text-center">Microlearning<div class="button-hover"></div></div>
-          <div class="button-vital button text-center">Vital Signs<div class="button-hover"></div></div>
-          <div class="button-adaptive button text-center">Adaptive Design<div class="button-hover"></div></div>
+
+        <div class="nav-hicreo-pages-wrap">
+          <div id="hicreo-prev" class="nav-hicreo-prev disabled"><div class="hicreo-prev-icon"></div>PREV</div>
+          <div id="hicreo-home" class="nav-hicreo-page selected"></div>
+          <div id="hicreo-web" class="nav-hicreo-page"></div>
+          <div id="hicreo-uiux" class="nav-hicreo-page"></div>
+          <div id="hicreo-mlearning" class="nav-hicreo-page"></div>
+          <div id="hicreo-template" class="nav-hicreo-page"></div>
+          <div id="hicreo-next" class="nav-hicreo-next">NEXT <div class="hicreo-next-icon"></div></div>
         </div>
 
       </div>
 
-      <div class="itemList item4 text-center ">
-        <div class="header text-start">eLearning/Presentation Templates   |  2025</div>
+    </section>
 
-        <div class="description text-start">Designed and developed presentation templates for hiCreo.ai, utilizing the hiCreo editor to ensure seamless functionality and user experience.</div>
+    <section id="elearning" class="text-center">
 
-        <div class="nav-instruction text-center">Click any image to see it in full size.</div>
-
-        <div class="hicreo-template-wrap">
-
-          <div class="template-wrap">
-            <div id="hicreoGallery" class="hicreoGallery"></div>
-
-            <!-- Lightbox -->
-            <div class="hicreoLightbox" id="hicreoLightbox" style="display: none;">
-              <span class="close-lightbox">&times;</span>
-              <img id="hicreoLightboxImg" src="" alt="Enlarged Image">
+      <div class="project-content-wrap elearning w-100 vh-100" style="overflow:hidden;">
+        <div class="portfolio-wrap d-flex">
+          <div class="hero vh-100" style="overflow:hidden;">
+            <div class="hero-text-container">
+              <div class="hero-text-wrap">
+                <div class="hero-text header">
+                  eLearning
+                </div>
+                <div class="hero-text body">
+                  Interactive, SCORM-compliant training solutions for government and corporate clients, focused on accessibility, engagement, and measurable learning outcomes.
+                </div>
+                
+                <div class="hero-text sub-header" style="margin-top:2rem;">
+                  Role: Senior eLearning Developer & Team Lead
+                </div>
+                <div class="hero-text body">
+                  🧠 Developed interactive courses using Articulate Storyline and Adobe Captivate
+                </div>
+                <div class="hero-text body">
+                  📦 Delivered SCORM-compliant modules integrated into LMS platforms (Moodle, ALMS, etc.)
+                </div>
+                <div class="hero-text body">
+                  ♿ Built fully Section 508-compliant content; tested with JAWS, NVDA, and color contrast tools
+                </div>
+                <div class="hero-text body">
+                  🛠 Developed technical scripts for multimedia narration, video, and audio accessibility
+                </div>
+                <div class="hero-text body">
+                  🎯 Led production teams to ensure quality, consistency, and on-time delivery
+                </div>
+                <div class="hero-text body">
+                  🧪 Conducted iterative usability testing and accessibility audits
+                </div>  
+              </div>
+                        
+            </div>
+            <div class="image-wrap vh-100">
+              <img class="Image-bg" src="images/elearning-bg.webp"/>
             </div>
           </div>
 
-        </div>
+          <div class="itemList item5 text-start mt-5">
+            
+            <div id="demontem-3" class="elearning-portfolio-item-wrap selected">
+              <div class="elearning-portfolio-text-wrap">
+                <div class="header">eLearning Skill Demonstration  |  2025</div>
 
-        <div class="nav-instruction text-center">Click below to return to the main portfolio menu</div>
-        <div class="button-close button text-center">Fold Up<div class="button-hover"></div></div>
+                <div class="description-wrap d-flex mt-2">
+                  <div class="description" style="width:100%;">Developed an interactive eLearning module using Articulate Storyline based on commercial property insurance content. The course features a real vs. personal property categorization activity, a branching scenario on direct vs. indirect loss, and a graded knowledge check. All content was preserved as written, with added interactivity, accessibility, and structured navigation to enhance learner engagement.</div>
+                </div>
 
-      </div>
+                <div class="nav-instruction text-start"><span class="text-highlight">Click</span> to launch the course</div>
 
-    </div>
+              </div>
 
-  </div>
-
-  <div class="project-content-wrap elearning w-100">
-    <div class="portfolio-wrap">
-      <div class="label mt-5rem">eLearning</div>
-      <div class="close-button">
-        <div class="close-button-hover"></div>
-      </div>
-
-      <div class="itemList item5 text-start mt-5">
-        <div class="header">eLearning Skill Demonstration  |  2025</div>
-
-        <div class="description-wrap d-flex mt-2">
-          <div class="description" style="width:100%;">Developed an interactive eLearning module using Articulate Storyline based on commercial property insurance content. The course features a real vs. personal property categorization activity, a branching scenario on direct vs. indirect loss, and a graded knowledge check. All content was preserved as written, with added interactivity, accessibility, and structured navigation to enhance learner engagement.</div>
-        </div>
-
-        <div class="elearningDemoThumbnail iianc"></div>
-        <div class="nav-instruction text-center">Click to launch the course</div>
-
-        <div class="description-wrap d-flex mt-2">
-          <div class="description">Created a concise, interactive 5-slide Storyline course—developed under the constraint of using no more than 5 slides—to explain and demonstrate two of the most essential skills of a successful eLearning developer.</div>
-          <div class="time-limit">| 48Hrs</div>
-        </div>
-
-        <div class="elearningDemoThumbnail unboxed"></div>
-        <div class="nav-instruction text-center">Click to launch the course</div>
-        
-        <div class="description-wrap d-flex">
-          <div class="description">Developed an interactive eLearning course by transforming provided
-            content into a storyboard and building the final experience in Storyline.
+              <div class="elearningDemoThumbnail iianc"></div>
             </div>
-          <div class="time-limit">| 72Hrs</div>
-        </div>
-        <div class="elearningDemoThumbnail gci"></div>
-        <div class="nav-instruction text-center">Click to launch the course</div>
-      </div>
 
-      <div class="itemList item6 text-start mt-10rem">
-        <div class="header">eLearning Courses     |     2013 - 2022</div>
+            <div id="demontem-2" class="elearning-portfolio-item-wrap">
 
-        <div class="description-wrap d-flex">
-          <div class="description">
-            Development of eLearning courses for clients
+              <div class="elearning-portfolio-text-wrap">
+                <div class="header">eLearning Skill Demonstration  |  2025  |  48Hrs</div>
+                <div class="description-wrap d-flex mt-2">
+                  <div class="description">Created a concise, interactive 5-slide Storyline course—developed under the constraint of using no more than 5 slides—to explain and demonstrate two of the most essential skills of a successful eLearning developer.</div>
+                </div>
+                <div class="nav-instruction text-start"><span class="text-highlight">Click</span> to launch the course</div>
+              </div>
+
+              <div class="elearningDemoThumbnail unboxed"></div>
+            </div>
+
+            <div id="demontem-1" class="elearning-portfolio-item-wrap">
+              <div class="elearning-portfolio-text-wrap">
+                <div class="header">eLearning Skill Demonstration  |  2025  |  72Hrs</div>
+
+                <div class="description-wrap d-flex">
+                  <div class="description">Developed an interactive eLearning course by transforming provided
+                    content into a storyboard and building the final experience in Storyline.
+                    </div>
+
+                </div>
+                <div class="nav-instruction text-start"><span class="text-highlight">Click</span> to launch the course</div>
+              </div>
+
+              <div class="elearningDemoThumbnail gci"></div>
+            </div>
+            
+            <div class="demo-thumbs-wrap">
+              <div class="demontem demontem3 selected"></div>
+              <div class="demontem demontem2"></div>
+              <div class="demontem demontem1"></div>
+            </div>
+
+          </div>
+
+          <div class="itemList item6 text-start">
+            <!-- block1 -->
+            <div id="coursetem-13" class="elearning-portfolio-item-wrap selected">
+              <div class="elearning-portfolio-text-wrap">
+                <div class="header">eLearning Courses     |     2013 - 2022</div>
+
+                <div class="description-wrap d-flex flex-column">
+                  <div class="sub-header">
+                    U.S.NRC: Correspondence Management Course
+                  </div>
+                  <div class="description">
+                    Developed eLearning courses for various clients.<br/>
+                    Led end-to-end project execution, overseeing instructional design integration, interactive media production, and course delivery.
+                  </div>
+                </div>
+                <div class="nav-instruction text-start"><span class="text-highlight">Click</span> to launch the course</div>
+              </div>
+
+              <div class="elearningDemoThumbnail NRCCRSM"></div>
+            </div>
+
+            <!-- block2 -->
+
+            <div id="coursetem-12" class="elearning-portfolio-item-wrap">
+              <div class="elearning-portfolio-text-wrap">
+                <div class="header">eLearning Courses     |     2013 - 2022</div>
+                <div class="sub-header">A-VLE Manager’s Development Course Intro Movie</div>
+                <div class="description">
+                  Created an animated intro movie using Adobe After Effects for the A-VLE Manager’s Development Course. The video introduces key themes of the program and sets the tone for the full eLearning experience.
+                </div>
+              </div>
+
+              <div class="elearning-video-demo" >
+                <video class="lazy-video" preload="none" controls poster="images/mdc-intro-thumbnail.webp">
+                  <source data-src="portfolio/elearning/MDC-intro.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+
+            <!-- block3 -->
+
+            <div id="coursetem-11" class="elearning-portfolio-item-wrap ">
+              <div class="elearning-portfolio-text-wrap">
+                <div class="header">eLearning Courses     |     2013 - 2022</div>
+                <div class="sub-header">A-VLE Manager’s Development Course</div>
+                <div class="description">
+                  Led the development of these eLearning courses. Due to client confidentiality, only the first few slides are shown to highlight my work in interactive learning and multimedia design.
+                </div>
+              </div>
+
+              <div class="elearning-video-demo" >
+                <video class="lazy-video" preload="none" controls>
+                  <source data-src="portfolio/elearning/mdc.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+
+            <!-- block4 -->
+
+            <div id="coursetem-10" class="elearning-portfolio-item-wrap">
+              <div class="elearning-portfolio-text-wrap">
+                <div class="header">eLearning Courses     |     2013 - 2022</div>
+                <div class="sub-header">A-VLE Information Technology Approval System Course</div>
+                <div class="description">
+                  Led the development of these eLearning courses. Due to client confidentiality, only the first few slides are shown to highlight my work in interactive learning and multimedia design.
+                </div>
+              </div>
+
+              <div class="elearning-video-demo" >
+                <video class="lazy-video" preload="none" controls>
+                  <source data-src="portfolio/elearning/itas.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+
+
+
+            <!-- block5 -->
+            <div id="coursetem-9" class="elearning-portfolio-item-wrap">
+              <div class="elearning-portfolio-text-wrap">
+                <div class="header">eLearning Courses     |     2013 - 2022</div>
+                <div class="sub-header">NRC Significance Determination Decision Making Course</div>
+                <div class="description">
+                  Here’s a preview of the eLearning courses I’ve developed. Due to client confidentiality, I’m sharing the first few slides, showcasing my work in interactive learning and multimedia design.
+                </div>
+              </div>
+
+              <div class="elearning-video-demo" >
+                <video class="lazy-video" preload="none" controls  poster="images/sdp-thumbnail.webp">
+                  <source data-src="portfolio/elearning/sdp.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+
+
+            <!-- block6 -->
+            <div id="coursetem-8" class="elearning-portfolio-item-wrap">
+              <div class="elearning-portfolio-text-wrap">
+                <div class="header">eLearning Courses     |     2013 - 2022</div>
+                <div class="sub-header">18B Special Forces Weapons Sergents Course</div>
+                <div class="description">
+                  Trains Special Forces candidates in the use of U.S. and foreign weapons, with emphasis on weapons proficiency, terrain analysis, and leading partner forces.
+                </div>
+                <div class="description">
+                  Developed interactive and accessible courses as a dedicated eLearning developer, aligning instructional goals with engaging multimedia content.
+                </div>
+              </div>
+              <div class="elearning-video-demo" >
+                <video class="lazy-video" preload="none" controls  poster="images/poster-18b.png">
+                  <source data-src="portfolio/elearning/18b.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+              
+
+
+            <!-- block7 -->
+            <div id="coursetem-7" class="elearning-portfolio-item-wrap">
+              <div class="elearning-portfolio-text-wrap">
+                <div class="header">eLearning Courses     |     2013 - 2022</div>
+                <div class="sub-header">Special Forces Sniper Course</div>
+                <div class="description">
+                  Trains Special Forces candidates in precision marksmanship, long-range engagement, and tactical reconnaissance to support unconventional warfare missions.
+                </div>
+                <div class="description">
+                  Developed interactive and accessible courses as a dedicated eLearning developer, aligning instructional goals with engaging multimedia content.
+                </div>
+              </div>
+              <div class="elearning-video-demo" >
+                <video class="lazy-video" preload="none" controls  poster="images/poster-sfsc.png">
+                  <source data-src="portfolio/elearning/sfsc.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+
+
+            <!-- block8 -->
+            <div id="coursetem-6" class="elearning-portfolio-item-wrap">
+              <div class="elearning-portfolio-text-wrap">
+                <div class="header">eLearning Courses     |     2013 - 2022</div>
+                <div class="sub-header">ARPR101: Army Personnel Recovery</div>
+                <div class="description">
+                  Introduces key concepts and procedures for Army Personnel Recovery, including roles, responsibilities, and recovery methods in both peacetime and operational environments.
+                </div>
+                <div class="description">
+                  Led end-to-end project execution, overseeing instructional design integration, interactive media production, and course delivery.
+                </div>
+              </div>
+              <div class="elearning-video-demo" >
+                <video class="lazy-video" preload="none" controls  poster="images/poster-arpr101.png">
+                  <source data-src="portfolio/elearning/arpr101.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+
+            <!-- block9 -->
+            <div id="coursetem-5" class="elearning-portfolio-item-wrap">
+              <div class="elearning-portfolio-text-wrap">
+                <div class="header">eLearning Courses     |     2013 - 2022</div>
+                <div class="sub-header">ARPR202: Army Personnel Recovery</div>
+                <div class="description">
+                  Expands on personnel recovery procedures, focusing on advanced coordination, mission planning, and support tools used to recover isolated personnel in complex operational environments.
+                </div>
+                <div class="description">
+                  Led end-to-end project execution, overseeing instructional design integration, interactive media production, and course delivery.
+                </div>
+              </div>
+              <div class="elearning-video-demo" >
+                <video class="lazy-video" preload="none" controls  poster="images/poster-arpr202.png">
+                  <source data-src="portfolio/elearning/arpr202.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+
+
+            <!-- block10 -->
+            <div id="coursetem-4" class="elearning-portfolio-item-wrap">
+              <div class="elearning-portfolio-text-wrap">
+                <div class="header">eLearning Courses     |     2013 - 2022</div>
+                <div class="sub-header">ARSERE102: Survival | Evasion | Resistance | Escape</div>
+                <div class="description">
+                  Covers fundamental SERE concepts, preparing personnel to survive in hostile environments, evade capture, resist exploitation, and escape when necessary.
+                </div>
+                <div class="description">
+                  Led end-to-end project execution, overseeing instructional design integration, interactive media production, and course delivery.
+                </div>
+              </div>
+              <div class="elearning-video-demo" >
+                <video class="lazy-video" preload="none" controls  poster="images/poster-arsere102.png">
+                  <source data-src="portfolio/elearning/arsere102.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+
+
+            <!-- block11 -->
+            <div id="coursetem-3" class="elearning-portfolio-item-wrap">
+              <div class="elearning-portfolio-text-wrap">
+                <div class="header">eLearning Courses     |     2013 - 2022</div>
+                <div class="sub-header">ARSERE103: Survival | Evasion | Resistance | Escape</div>
+                <div class="description">
+                  Builds on SERE fundamentals with advanced scenarios and practical applications, enhancing decision-making and adaptability in high-risk environments.
+                </div>
+                <div class="description">
+                  Led end-to-end project execution, overseeing instructional design integration, interactive media production, and course delivery.
+                </div>
+              </div>
+              <div class="elearning-video-demo" >
+                <video class="lazy-video" preload="none" controls  poster="images/poster-arsere103.png">
+                  <source data-src="portfolio/elearning/arsere103.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            
+
+            <!-- block12 -->
+            <div id="coursetem-2" class="elearning-portfolio-item-wrap">
+              <div class="elearning-portfolio-text-wrap">
+                <div class="header">eLearning Courses     |     2013 - 2022</div>
+                <div class="sub-header">Virtual Armory</div>
+                <div class="description">
+                  Introduces a wide range of U.S. military weapons through an interactive digital interface. Contributed to the project as UI/UX designer, focusing on intuitive navigation, visual clarity, and user-centered interaction design.
+                </div>
+              </div>
+              <div class="elearning-video-demo" >
+                <video class="lazy-video" preload="none" controls  poster="images/poster-va.png">
+                  <source data-src="portfolio/elearning/virtualarmory.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+
+            <!-- block13 -->
+            <div id="coursetem-1" class="elearning-portfolio-item-wrap">
+              <div class="elearning-portfolio-text-wrap">
+                <div class="header">eLearning Courses     |     2013 - 2022</div>
+                <div class="sub-header">ADAM (Air Defense Airspace Management)     |     2013</div>
+                <div class="description-wrap">
+                  <div class="description mt-4">
+                    Worked with the 3D team to model and map various components using 3ds Max. 3D modeled and mapped the devices listed below, with corresponding timestamps showing each section in the video.
+                  </div>
+                  <div class="d-flex mt-4 adamTimeStamp">
+                    <ul class="list1">
+                      <li>Sentinel Radar: 1:22</li>
+                      <li>AN/PRC-117G: 2:40</li>
+                      <li>RF 7800M-V210 Radio: 3:00</li>            
+                    </ul>
+                    <ul class="list2" >
+                      <li>AN/VRC-104: 3:15</li>
+                      <li>CPCS: 3:21</li>
+                      <li>eMCSU: 3:30</li>
+                    </ul>
+                    <ul class="list3">
+                      <li>JTT: 3:35</li>
+                      <li>MIDS: 3:42</li>
+                      <li>TACLANE: 3:59</li>
+                    </ul>            
+                  </div>      
+                </div>      
+              </div>
+              <div class="elearning-video-demo" >
+                <iframe id="elearningAdam" class="lazyload" src="about:blank" data-src="https://drive.google.com/file/d/1He1ZBjwLAmkPUBSQOowffNRjyqMX5kNm/preview" allow="autoplay" loading="lazy" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <div class="course-thumbs-container">
+              <div class="course-arrow left">&#10094;</div>
+              <div class="course-thumbs-wrap">
+                <div class="coursetem coursetem13 selected"></div>
+                <div class="coursetem coursetem12"></div>
+                <div class="coursetem coursetem11"></div>
+                <div class="coursetem coursetem10"></div>
+                <div class="coursetem coursetem9"></div>
+                <div class="coursetem coursetem8"></div>
+                <div class="coursetem coursetem7"></div>
+                <div class="coursetem coursetem6"></div>
+                <div class="coursetem coursetem5"></div>
+                <div class="coursetem coursetem4"></div>
+                <div class="coursetem coursetem3"></div>
+                <div class="coursetem coursetem2"></div>
+                <div class="coursetem coursetem1"></div>
+              </div>
+              <div class="course-arrow right">&#10095;</div>
+            </div>
+            
+          </div>
+
+          <div class="itemList item6-1 text-start justify-content-center align-items-center d-flex flex-column">
+
+            <div class="elearning-portfolio-text-wrap" >
+              <div class="header text-start">eLearning Course Screenshots & Slide Designs</div>
+
+              <div class="description text-start">A curated collection of slide designs and UI elements developed for various interactive and accessible eLearning projects.
+              </div>
+
+              <div class="nav-instruction text-start"><span class="text-highlight">Click any image</span> to see it in full size.</div>
+            </div>
+
+            <div class="elearning-template-wrap">
+              <div class="template-wrap">
+                <div class="gallery-wrapper">
+                  <div id="elearningGallery" class="elearningGallery">
+
+                    <img src="images/elearning/thumbnail/image1.webp" in="1" class="thumb">
+                    <img src="images/elearning/thumbnail/image2.webp" in="2" class="thumb">
+                    <img src="images/elearning/thumbnail/image3.webp" in="3" class="thumb">
+                    <img src="images/elearning/thumbnail/image4.webp" in="4" class="thumb">
+                    <img src="images/elearning/thumbnail/image5.webp" in="5" class="thumb">
+                    <img src="images/elearning/thumbnail/image6.webp" in="6" class="thumb">
+                    <img src="images/elearning/thumbnail/image7.webp" in="7" class="thumb">
+                    <img src="images/elearning/thumbnail/image8.webp" in="8" class="thumb">
+                    <img src="images/elearning/thumbnail/image9.webp" in="9" class="thumb">
+                    <img src="images/elearning/thumbnail/image10.webp" in="10" class="thumb">
+                    <img src="images/elearning/thumbnail/image11.webp" in="11" class="thumb">
+                    <img src="images/elearning/thumbnail/image12.webp" in="12" class="thumb">
+                    <img src="images/elearning/thumbnail/image13.webp" in="13" class="thumb">
+                    <img src="images/elearning/thumbnail/image14.webp" in="14" class="thumb">
+                    <img src="images/elearning/thumbnail/image15.webp" in="15" class="thumb">
+                    <img src="images/elearning/thumbnail/image16.webp" in="16" class="thumb">
+                    <img src="images/elearning/thumbnail/image17.webp" in="17" class="thumb">
+                    <img src="images/elearning/thumbnail/image18.webp" in="18" class="thumb">
+                    <img src="images/elearning/thumbnail/image19.webp" in="19" class="thumb">
+                    <img src="images/elearning/thumbnail/image20.webp" in="20" class="thumb">
+                    <img src="images/elearning/thumbnail/image21.webp" in="21" class="thumb">
+                    <img src="images/elearning/thumbnail/image22.webp" in="22" class="thumb">
+                    <img src="images/elearning/thumbnail/image23.webp" in="23" class="thumb">
+                    <img src="images/elearning/thumbnail/image24.webp" in="24" class="thumb">
+                    <img src="images/elearning/thumbnail/image25.webp" in="25" class="thumb">
+                    <img src="images/elearning/thumbnail/image26.webp" in="26" class="thumb">
+                    <img src="images/elearning/thumbnail/image27.webp" in="27" class="thumb">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="elearningLightboxImage" class="elearning-lightbox">
+              <div class="lightbox-overlay"></div>
+              <div class="lightbox-content">
+                <span id="elearningImageLightboxClose" class="lightbox-close">&times;</span>
+                <div class="img-wrap d-flex justify-content-center align-items-center">
+                  <img id="elearningLightboxImg" src="" alt="Enlarged Image">
+                </div>            
+              </div>
+            </div>
+
           </div>
         </div>
-        <div class="elearningDemoThumbnail NRCCRSM"></div>
-        <div class="nav-instruction text-center">Click to launch the course</div>
 
         <div id="elearningLightboxCourse" class="elearning-lightbox">
           <div class="lightbox-overlay"></div>
           <div class="lightbox-content">
-            <span class="lightbox-close">&times;</span>
+            <span id="elearningCourseClose" class="lightbox-close">&times;</span>
             <iframe id="elearningFrame" src="" frameborder="0" allowfullscreen></iframe>
           </div>
         </div>
 
-        <div class="subHeader">eLearning Course Preview: Sample Screen Recordings</div>
-        <div class="description">
-          Here’s a preview of the eLearning courses I’ve developed. Due to client confidentiality, I’m sharing the first few slides, showcasing my work in interactive learning and multimedia design.
+        <div class="nav-elearning-pages-wrap">
+          <div id="elearning-prev" class="nav-elearning-prev disabled"><div class="elearning-prev-icon"></div>PREV</div>
+          <div id="elearning-home" class="nav-elearning-page selected"></div>
+          <div id="elearning-demo" class="nav-elearning-page"></div>
+          <div id="elearning-courses" class="nav-elearning-page"></div>
+          <div id="elearning-image" class="nav-elearning-page"></div>
+          <div id="elearning-next" class="nav-elearning-next">NEXT <div class="elearning-next-icon"></div></div>
         </div>
 
-        <div class="elearning-video-demo" >
-          <video class="lazy-video" preload="none" controls poster="images/mdc-intro-thumbnail.webp">
-            <source data-src="portfolio/elearning/MDC-intro.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="instruction text-center mt-2">A-VLE Manager’s Development Course Intro </div>
+      </div>
+    </section>
 
-        <div class="elearning-video-demo" >
-          <video class="lazy-video" preload="none" controls>
-            <source data-src="portfolio/elearning/mdc.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="instruction text-center mt-2">A-VLE Manager’s Development Course</div>
-        <div class="elearning-video-demo" >
-          <video class="lazy-video" preload="none" controls>
-            <source data-src="portfolio/elearning/itas.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="instruction text-center mt-2">A-VLE Information Technology Approval System Course</div>
+    <section id="others" class="text-center">
 
-        <div class="elearning-video-demo" >
-          <video class="lazy-video" preload="none" controls  poster="images/sdp-thumbnail.webp">
-            <source data-src="portfolio/elearning/sdp.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="instruction text-center mt-2">NRC Significance Determination Decision Making Course</div>
+      <div class="project-content-wrap others vw-100 vh-100"  style="overflow:hidden;">
+        <div class="portfolio-wrap d-flex">
+          <div class="hero vh-100" style="overflow:hidden; position:relative;">
+            <div class="hero-text-container">
+              <div class="hero-text-wrap">
+                <div class="hero-text header">
+                  Creative Media
+                </div>
+                <div class="hero-text body">
+                  A diverse portfolio of visual design projects across print, digital, and interactive media — blending creativity with purposeful communication.
+                </div>
+                
+                <div class="hero-text sub-header" style="margin-top:2rem;">
+                  Role: Lead Designer / Media Specialist
+                </div>
+                <div class="hero-text body">
+                  🖨️ Designed marketing and editorial print materials (flyers, posters, catalogs)
+                </div>
+                <div class="hero-text body">
+                  📱 Produced branded content for social media platforms (Instagram, YouTube, LinkedIn)
+                </div>
+                <div class="hero-text body">
+                  🎮 Designed UI/UX for mobile games and applications (iOS/Android)
+                </div>
+                <div class="hero-text body">
+                  🎞️ Developed motion graphics and video edits using After Effects and Premiere
+                </div>
+                <div class="hero-text body">
+                  🧩 Delivered cohesive visual identities across multiple formats and platforms
+                </div>
+                <div class="hero-text body">
+                  🧠 Balanced aesthetic appeal with usability and messaging clarity
+                </div>  
+              </div>
+                        
+            </div>
 
-        <div class="elearning-video-demo" >
-          <video class="lazy-video" preload="none" controls  poster="images/poster-18b.png">
-            <source data-src="portfolio/elearning/18b.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="instruction text-center mt-2">18B Special Forces Weapons Sergents Course</div>
+            <div class="image-wrap vw-100 vh-100">
+              <img class="deco-element-front" src="images/other-hero-image6.webp" />
+              <img class="box-front" src="images/other-hero-image4.webp" />
+              <img class="printer" src="images/other-hero-image1.webp"/>
+              <img class="game" src="images/other-hero-image2.webp" />
+              <img class="phone" src="images/other-hero-image3.webp" />
+              <img class="box-back" src="images/other-hero-image5.webp" />
+              <img class="deco-element-back" src="images/other-hero-image7.webp" />
+            </div>
 
-        <div class="elearning-video-demo" >
-          <video class="lazy-video" preload="none" controls  poster="images/poster-sfsc.png">
-            <source data-src="portfolio/elearning/sfsc.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="instruction text-center mt-2">Special Forces Sniper Course</div>
-
-        <div class="elearning-video-demo" >
-          <video class="lazy-video" preload="none" controls  poster="images/poster-arpr101.png">
-            <source data-src="portfolio/elearning/arpr101.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="instruction text-center mt-2">ARPR101: Army Personnel Recovery</div>
-
-        <div class="elearning-video-demo" >
-          <video class="lazy-video" preload="none" controls  poster="images/poster-arpr202.png">
-            <source data-src="portfolio/elearning/arpr202.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="instruction text-center mt-2">ARPR202: Army Personnel Recovery</div>
-
-        <div class="elearning-video-demo" >
-          <video class="lazy-video" preload="none" controls  poster="images/poster-arsere102.png">
-            <source data-src="portfolio/elearning/arsere102.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="instruction text-center mt-2">ARSERE102: Survival | Evasion | Resistance | Escape</div>
-
-        <div class="elearning-video-demo" >
-          <video class="lazy-video" preload="none" controls  poster="images/poster-arsere103.png">
-            <source data-src="portfolio/elearning/arsere103.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="instruction text-center mt-2">ARSERE103: Survival | Evasion | Resistance | Escape</div>
-
-        <div class="elearning-video-demo" >
-          <video class="lazy-video" preload="none" controls  poster="images/poster-va.png">
-            <source data-src="portfolio/elearning/virtualarmory.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="instruction text-center mt-2">Virtual Armory</div>
-
-
-
-
-
-        <div class="nav-instruction gallery text-center">Click any image to see it in full size.</div>
-        <div class="template-wrap">
-          <div id="elearningGallery" class="elearningGallery">
-
-            <img src="images/elearning/thumbnail/image1.webp" in="1" class="thumb">
-            <img src="images/elearning/thumbnail/image2.webp" in="2" class="thumb">
-            <img src="images/elearning/thumbnail/image3.webp" in="3" class="thumb">
-            <img src="images/elearning/thumbnail/image4.webp" in="4" class="thumb">
-            <img src="images/elearning/thumbnail/image5.webp" in="5" class="thumb">
-            <img src="images/elearning/thumbnail/image6.webp" in="6" class="thumb">
-            <img src="images/elearning/thumbnail/image7.webp" in="7" class="thumb">
-            <img src="images/elearning/thumbnail/image8.webp" in="8" class="thumb">
-            <img src="images/elearning/thumbnail/image9.webp" in="9" class="thumb">
-            <img src="images/elearning/thumbnail/image10.webp" in="10" class="thumb">
-            <img src="images/elearning/thumbnail/image11.webp" in="11" class="thumb">
-            <img src="images/elearning/thumbnail/image12.webp" in="12" class="thumb">
-            <img src="images/elearning/thumbnail/image13.webp" in="13" class="thumb">
-            <img src="images/elearning/thumbnail/image14.webp" in="14" class="thumb">
-            <img src="images/elearning/thumbnail/image15.webp" in="15" class="thumb">
-            <img src="images/elearning/thumbnail/image16.webp" in="16" class="thumb">
-            <img src="images/elearning/thumbnail/image17.webp" in="17" class="thumb">
-            <img src="images/elearning/thumbnail/image18.webp" in="18" class="thumb">
-            <img src="images/elearning/thumbnail/image19.webp" in="19" class="thumb">
-            <img src="images/elearning/thumbnail/image20.webp" in="20" class="thumb">
-            <img src="images/elearning/thumbnail/image21.webp" in="21" class="thumb">
-            <img src="images/elearning/thumbnail/image22.webp" in="22" class="thumb">
-            <img src="images/elearning/thumbnail/image23.webp" in="23" class="thumb">
-            <img src="images/elearning/thumbnail/image24.webp" in="24" class="thumb">
-            <img src="images/elearning/thumbnail/image25.webp" in="25" class="thumb">
-            <img src="images/elearning/thumbnail/image26.webp" in="26" class="thumb">
-            <img src="images/elearning/thumbnail/image27.webp" in="27" class="thumb">
           </div>
-        </div>
 
-        <div id="elearningLightboxImage" class="elearning-lightbox">
-          <div class="lightbox-overlay"></div>
-          <div class="lightbox-content">
-            <span id="elearningImageLightboxClose" class="lightbox-close">&times;</span>
-            <div class="img-wrap d-flex justify-content-center align-items-center">
-              <img id="elearningLightboxImg" src="" alt="Enlarged Image">
-            </div>            
+          <div class="itemList item7 text-start d-flex justify-content-center align-items-center">
+            <div class="others-portfolio-text-wrap">
+              <div class="header">Print Media</div>
+              <div class="description">Created professional-grade printable designs, including tri-fold brochures, posters, roll-up banners, business cards, and brand stickers for diverse projects.</div>
+              <div class="nav-instruction gallery text-start"><span class="text-highlight">Click</span> any image to see it in full size.</div>
+            </div>
+
+            <div class="template-wrap mt-3">
+              <div id="printGallery" class="printGallery">
+
+                <img src="images/print/thumbnail/image1.webp" in="1" class="thumb">
+                <img src="images/print/thumbnail/image2.webp" in="2" class="thumb">
+                <img src="images/print/thumbnail/image3.webp" in="3" class="thumb">
+                <img src="images/print/thumbnail/image4.webp" in="4" class="thumb">
+                <img src="images/print/thumbnail/image5.webp" in="5" class="thumb">
+                <img src="images/print/thumbnail/image6.webp" in="6" class="thumb">
+                <img src="images/print/thumbnail/image7.webp" in="7" class="thumb">
+                <img src="images/print/thumbnail/image8.webp" in="8" class="thumb">
+                <img src="images/print/thumbnail/image9.webp" in="9" class="thumb">
+                <img src="images/print/thumbnail/image10.webp" in="10" class="thumb">
+                <img src="images/print/thumbnail/image11.webp" in="11" class="thumb">
+                <img src="images/print/thumbnail/image12.webp" in="12" class="thumb">
+                <img src="images/print/thumbnail/image13.webp" in="13" class="thumb">
+              </div>
+            </div>
+
+            <div id="printLightboxImage" class="print-lightbox">
+              <div class="lightbox-overlay"></div>
+              <div class="lightbox-content">
+                <span id="printImageLightboxClose" class="lightbox-close">&times;</span>
+                <div class="img-wrap d-flex justify-content-center align-items-center">
+                  <img id="printLightboxImg" src="" alt="Enlarged Image">
+                </div>            
+              </div>
+            </div>
+
           </div>
-        </div>
 
-        <div class="subHeader mt-10rem">ADAM (Air Defense Airspace Management)     |     2013</div>
+          <div class="itemList item8 text-start d-flex justify-content-center align-items-center">
 
-        <div class="elearning-video-demo" >
-          <iframe id="elearningAdam" class="lazyload" src="about:blank" data-src="https://drive.google.com/file/d/1He1ZBjwLAmkPUBSQOowffNRjyqMX5kNm/preview" allow="autoplay" loading="lazy" frameborder="0" allowfullscreen></iframe>
-        </div>
+            <div class="others-portfolio-text-wrap">
+              <div class="header">Social Media Post/Templates</div>
+              <div class="description">Created professional-grade printable designs, including tri-fold brochures, posters, roll-up banners, business cards, and brand stickers for diverse projects.</div>
 
-        <div class="description-wrap">
-          <div class="description mt-4">
-            Worked with the 3D team to model and map various components using 3ds Max. 3D modeled and mapped the devices listed below, with corresponding timestamps showing each section in the video.
+              <div class="nav-instruction gallery text-start"><span class="text-highlight">Click</span> any image to see it in full size.</div>
+            </div>
+
+            <div class="template-wrap mt-3">
+              <div id="socialGallery" class="socialGallery">
+              </div>
+            </div>
+
+            <div id="socialLightboxImage" class="social-lightbox">
+              <div class="lightbox-overlay"></div>
+              <div class="lightbox-content">
+                <span id="socialImageLightboxClose" class="lightbox-close">&times;</span>
+                <div class="img-wrap d-flex justify-content-center align-items-center">
+                  <img id="socialLightboxImg" src="" alt="Enlarged Image">
+                </div>            
+              </div>
+            </div>
           </div>
-          <div class="d-flex mt-4 adamTimeStamp">
-            <ul class="list1">
-              <li>Sentinel Radar: 1:22</li>
-              <li>AN/PRC-117G: 2:40</li>
-              <li>RF 7800M-V210 Radio: 3:00</li>            
-            </ul>
-            <ul class="list2" >
-              <li>AN/VRC-104: 3:15</li>
-              <li>CPCS: 3:21</li>
-              <li>eMCSU: 3:30</li>
-            </ul>
-            <ul class="list3">
-              <li>JTT: 3:35</li>
-              <li>MIDS: 3:42</li>
-              <li>TACLANE: 3:59</li>
-            </ul>            
-          </div>      
+
+          <div class="itemList item9 text-start d-flex justify-content-center align-items-center">
+
+            <div id="others-game-2" class="others-portfolio-item-wrap selected">
+              <div class="others-portfolio-text-wrap">
+                <div class="header">Game Design & Development     |    2012</div>
+                <div class="description">UI/UX game design for iPhone/Android in Unity.</div>
+                <div class="game-thumbnail mt-3">
+                  <img src="images/section2-hop-race-thumbnail.webp" />
+                </div>
+                <div class="textWrap">
+                  <div class="sub-header mt-2">Hop Race</div>
+                  <div class="description mt-1">Hop Race is an exhilarating racing game for Android. Aside from astounding graphics and a fun scene, this unorthodox game will keep you on the edge of your seat from the beginning until the end of the race.</div>
+                </div>
+                <div class="nav-instruction text-start"><span class="text-highlight">Click</span> a thumbnail below to load and play the video.</div>
+              </div>
+
+              <div class="media-wrap">              
+                <div class="iframe-wrap mt-1">
+                  <iframe class="lazyload" src="about:blank" data-src="https://www.youtube-nocookie.com/embed/dENGPUDT0js?si=S_QFvWlO_RnK5aJ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                </div>
+
+                <div class="template-wrap text-center">
+                  <div class="gameGallery d-inline-block  text-start">
+                    <img src="images/games/image1.webp" class="thumb">
+                    <img src="images/games/image2.webp" class="thumb">
+                    <img src="images/games/image3.webp" class="thumb">
+                    <img src="images/games/image4.webp" class="thumb">
+                    <img src="images/games/image5.webp" class="thumb">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="others-game-1" class="others-portfolio-item-wrap">
+              <div class="others-portfolio-text-wrap">
+                <div class="header">Interactive Game Design & Development     |    2012</div>
+                <div class="description">UI/UX game design for iPhone/Android in Unity.</div>
+                <div class="game-thumbnail  mt-3">
+                  <img src="images/section2-jelly-thumbnail.webp" />
+                </div>
+                <div class="textWrap">
+                  <div class="sub-header mt-2">JellyBall</div>
+                  <div class="description mt-1">JellyBall is a projectile, puzzle-based game with soft-body physics. Your objective is to unite all red jelly balls on each level into a one big happy jelly by making strategic water balloon shots.</div>
+                  <div class="nav-instruction text-start"><span class="text-highlight">Click</span> a thumbnail below to load and play the video.</div>
+                </div>
+              </div>
+
+              <div class="media-wrap"> 
+
+                <div class="iframe-wrap">
+                  <iframe class="lazyload" src="about:blank" data-src="https://www.youtube-nocookie.com/embed/V9RLPqwIKkA?si=MpX-3DhGee0_39jU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="template-wrap text-center">
+                  <div class="gameGallery d-inline-block  text-start">
+                    <img src="images/games/image6.webp" class="thumb">
+                    <img src="images/games/image7.webp" class="thumb">
+                    <img src="images/games/image8.webp" class="thumb">
+                    <img src="images/games/image9.webp" class="thumb">
+                    <img src="images/games/image10.webp" class="thumb">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="others-thumbs-container">
+              <div class="others-arrow left" style="display:none;">&#10094;</div>
+              <div class="others-thumbs-wrap">
+                <div class="otherstem otherstem2 selected"></div>
+                <div class="otherstem otherstem1"></div>
+              </div>
+              <div class="others-arrow right" style="display:none;">&#10095;</div>
+            </div>
+
+          </div>
+
+          <div class="itemList item11 text-start d-flex justify-content-center align-items-center">
+
+            <div id="others-app-1" class="others-portfolio-item-wrap selected">
+              <div class="others-portfolio-text-wrap">
+                <div class="header">Mobile App</div>
+                <div class="description">
+                  Designed mobile-friendly UI/UX for training, healthcare, and service apps — featuring intuitive interactions, accessible layouts, and motion-enhanced user flows.</div>
+                <div class="sub-header">Dialysis Education App</div>
+                <div class="description">
+                  Developed a patient-facing mobile interface to support dialysis education. Integrated visual learning paths and intuitive navigation to improve understanding and retention.
+                </div>
+                <div class="nav-instruction text-start"><span class="text-highlight">Click</span> a thumbnail below to load and play the video.</div>
+              </div>
+              
+              <div class="media-wrap"> 
+                <div class="others-video-wrap text-center">
+                  <video class="lazy-video" style="max-width:800px;" preload="none" controls poster="images/poster-dialysis.png">
+                    <source data-src="videos/dialysis.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </div>
+
+
+            <div id="others-app-2" class="others-portfolio-item-wrap">
+              <div class="others-portfolio-text-wrap">
+                <div class="header">Mobile App</div>
+                <div class="description">Designed mobile-friendly UI/UX for training, healthcare, and service apps — featuring intuitive interactions, accessible layouts, and motion-enhanced user flows.</div>
+                <div class="sub-header">BIT (Ballistics Information Tool)</div>
+                <div class="description">A mobile field tool that enables agents to capture and submit on-site ballistics data in real time — enhancing situational awareness and supporting command cell decision-making during crisis events.</div>
+                <div class="nav-instruction text-start"><span class="text-highlight">Click</span> a thumbnail below to load and play the video.</div>
+              </div>
+
+              <div class="media-wrap"> 
+                <div class="others-video-wrap text-center">
+                  <video class="lazy-video" style="max-width:800px;" preload="none" controls poster="images/poster-bit.png">
+                    <source data-src="videos/bit.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </div>
+
+            <div id="others-app-3" class="others-portfolio-item-wrap">
+              <div class="others-portfolio-text-wrap">
+                <div class="header">Mobile App</div>
+                <div class="description">Designed mobile-friendly UI/UX for training, healthcare, and service apps — featuring intuitive interactions, accessible layouts, and motion-enhanced user flows.</div>
+                <div class="sub-header">LIRS (Law Enforcement Information Reporting System)</div>
+                <div class="description">A secure mobile application for incident-based crime reporting, integrating video, audio, GPS, and timestamped data capture to streamline evidence collection and reporting for law enforcement agencies.</div>
+                <div class="nav-instruction text-start"><span class="text-highlight">Click</span> a thumbnail below to load and play the video.</div>
+              </div>
+
+              <div class="media-wrap"> 
+                <div class="others-video-wrap text-center">
+                  <video class="lazy-video" style="max-width:800px;" preload="none" controls poster="images/poster-lirs.png">
+                    <source data-src="videos/lirs.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </div>
+            
+            <div id="others-app-4" class="others-portfolio-item-wrap">
+              <div class="others-portfolio-text-wrap">
+                <div class="header">Mobile App</div>
+                <div class="description">Designed mobile-friendly UI/UX for training, healthcare, and service apps — featuring intuitive interactions, accessible layouts, and motion-enhanced user flows.</div>
+                <div class="sub-header">WIS (Weapons Identification System)</div>
+                <div class="description">A mobile system that supports rapid evidence collection and real-time communication during critical incidents, improving operational awareness for command teams in high-pressure environments.
+                </div>
+                <div class="nav-instruction text-start"><span class="text-highlight">Click</span> a thumbnail below to load and play the video.</div>
+              </div>
+
+              <div class="media-wrap"> 
+
+                <div class="others-video-wrap text-center">
+                  <video class="lazy-video" preload="none" controls poster="images/poster-wis.png">
+                    <source data-src="videos/wis.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </div>
+
+            <div class="others-thumbs-container">
+              <div class="others-arrow left" style="display:none;">&#10094;</div>
+              <div class="others-thumbs-wrap">
+                <div class="otherstem otherstem1 selected"></div>
+                <div class="otherstem otherstem2"></div>
+                <div class="otherstem otherstem3"></div>
+                <div class="otherstem otherstem4"></div>
+              </div>
+              <div class="others-arrow right" style="display:none;">&#10095;</div>
+            </div>
+
+          </div>
+
+          <div class="itemList item10 text-start d-flex justify-content-center align-items-center">
+            <div class="others-portfolio-item-wrap selected">
+              <div class="others-portfolio-text-wrap">
+                <div class="header">Released Videos</div>
+                  <div class="description">
+                    A collection of videos created for various releases, including marketing campaigns, social media promotions, and other special purposes.
+                  </div>
+                  <div class="nav-instruction text-start"><span class="text-highlight">Click</span> a thumbnail below to load and play the video.</div>
+
+                  <!-- Video Switch Buttons -->
+                  <div class="video-button-group text-start" style="margin-top: 1rem;">
+
+                    <button class="video-button others-video-button01 selected" data-type="youtube" data-src="https://www.youtube-nocookie.com/embed/8wJ8-cAMTZ4?si=xU0vGIQ9AVegDtTo"></button>
+                    <button class="video-button others-video-button02" data-type="youtube" data-src="https://www.youtube-nocookie.com/embed/PMfN1kUzsZE?si=F8JM_POmEWn7TQIC"></button>
+                    <button class="video-button others-video-button03" data-type="mp4" data-src="videos/hicreo-demo.mp4"></button>
+                    <button class="video-button others-video-button04" data-type="mp4-short" data-src="videos/short1.mp4"></button>
+                    <button class="video-button others-video-button05" data-type="mp4-short" data-src="videos/short2.mp4"></button>
+                    <button class="video-button others-video-button06" data-type="mp4-short" data-src="videos/short3.mp4"></button>
+                    <button class="video-button others-video-button07" data-type="mp4-short" data-src="videos/short4.mp4"></button>
+                    <button class="video-button others-video-button08" data-type="mp4-short" data-src="videos/short5.mp4"></button>
+                    <button class="video-button others-video-button09" data-type="mp4-short" data-src="videos/short6.mp4"></button>
+                  </div>
+                </div>
+              
+                <div class="media-wrap">
+                  <!-- Main Video Display Area -->
+                  <div class="others-video-wrap text-center other-released-videos">
+                    
+                  </div>
+                
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
-        <div class="button-wrap">
-          <div class="nav-instruction fold-up text-center">Click below to return to the main portfolio menu</div>
-          <div class="button-close button text-center">Fold Up<div class="button-hover"></div></div>
-        </div>
+
         
-
-      </div>
-    </div>
-  </div>
-
-  <div class="project-content-wrap others w-100">
-      <div class="portfolio-wrap">
-      <div class="label  mt-5rem">Others</div>
-      <div class="close-button">
-        <div class="close-button-hover"></div>
-      </div>
-
-      <div class="itemList item7 text-start mt-5">
-        <div class="header">Print Media</div>
-        <div class="description">Created professional-grade printable designs, including tri-fold brochures, posters, roll-up banners, business cards, and brand stickers for diverse projects.</div>
-
-        <div class="nav-instruction gallery text-center">Click any image to see it in full size.</div>
-
-        <div class="template-wrap mt-3">
-          <div id="printGallery" class="printGallery">
-
-            <img src="images/print/thumbnail/image1.webp" in="1" class="thumb">
-            <img src="images/print/thumbnail/image2.webp" in="2" class="thumb">
-            <img src="images/print/thumbnail/image3.webp" in="3" class="thumb">
-            <img src="images/print/thumbnail/image4.webp" in="4" class="thumb">
-            <img src="images/print/thumbnail/image5.webp" in="5" class="thumb">
-            <img src="images/print/thumbnail/image6.webp" in="6" class="thumb">
-            <img src="images/print/thumbnail/image7.webp" in="7" class="thumb">
-            <img src="images/print/thumbnail/image8.webp" in="8" class="thumb">
-            <img src="images/print/thumbnail/image9.webp" in="9" class="thumb">
-            <img src="images/print/thumbnail/image10.webp" in="10" class="thumb">
-            <img src="images/print/thumbnail/image11.webp" in="11" class="thumb">
-            <img src="images/print/thumbnail/image12.webp" in="12" class="thumb">
-            <img src="images/print/thumbnail/image13.webp" in="13" class="thumb">
-          </div>
-        </div>
-
-        <div id="printLightboxImage" class="print-lightbox">
-          <div class="lightbox-overlay"></div>
-          <div class="lightbox-content">
-            <span id="printImageLightboxClose" class="lightbox-close">&times;</span>
-            <div class="img-wrap d-flex justify-content-center align-items-center">
-              <img id="printLightboxImg" src="" alt="Enlarged Image">
-            </div>            
-          </div>
+        <div class="nav-others-pages-wrap">
+          <div id="others-prev" class="nav-others-prev disabled"><div class="others-prev-icon"></div>PREV</div>
+          <div id="others-home" class="nav-others-page selected"></div>
+          <div id="others-print" class="nav-others-page"></div>
+          <div id="others-social" class="nav-others-page"></div>
+          <div id="others-game" class="nav-others-page"></div>
+          <div id="others-app" class="nav-others-page"></div>
+          <div id="others-video" class="nav-others-page"></div>
+          <div id="others-next" class="nav-others-next">NEXT <div class="others-next-icon"></div></div>
         </div>
 
       </div>
+    </section>
 
-      <div class="itemList item8 text-start">
-        <div class="header">Social Media Post/Templates</div>
-        <div class="description">Created professional-grade printable designs, including tri-fold brochures, posters, roll-up banners, business cards, and brand stickers for diverse projects.</div>
-
-        <div class="nav-instruction gallery text-center">Click any image to see it in full size.</div>
-
-        <div class="template-wrap mt-3">
-          <div id="socialGallery" class="socialGallery">
-          </div>
+    <!-- Resume Summary -->
+    <section id="resume">
+      <div class="resume-wrap vh-100 d-flex justify-content-center align-items-center flex-column">
+        <div class="header w-100">Resume</div>
+        <div class="sub-header w-100">PROFESSIONAL SUMMARY</div>
+        <div class="description mt-2">
+          Results-driven UI/UX & eLearning Developer with 16+ years of experience leading high-impact design teams and developing AI-powered SaaS solutions, immersive eLearning experiences, and scalable digital platforms. Proven expertise in Adobe Creative Suite, JavaScript, PHP, Articulate Storyline, and SEO-driven web design. Passionate about designing intuitive digital experiences that enhance engagement, accessibility, and learning outcomes. Adept at leading cross-functional teams, optimizing workflows, and delivering user-centered designs that drive measurable success. 
         </div>
-
-        <div id="socialLightboxImage" class="social-lightbox">
-          <div class="lightbox-overlay"></div>
-          <div class="lightbox-content">
-            <span id="socialImageLightboxClose" class="lightbox-close">&times;</span>
-            <div class="img-wrap d-flex justify-content-center align-items-center">
-              <img id="socialLightboxImg" src="" alt="Enlarged Image">
-            </div>            
-          </div>
+        <ul class="description">
+          <li>16+ years of experience in UI/UX, eLearning, and multimedia development</li>
+          <li>Skilled in Storyline, Adobe Creative Suite, JavaScript, PHP, SCORM, and more</li>
+          <li>Led accessible design for government clients (Section 508, JAWS, NVDA)</li>
+          <li>Team leader at hiCreo, creating AI-powered eLearning templates</li>
+          <li>Fluent in English, Korean, and Japanese — smooth communicator everywhere</li>
+        </ul>
+        
+        <div class="button-pane text-center mt-3">
+          <div class="description">Download Full Résumé</div>
+          <a href="file/Resume_MinsubKim.pdf" download class="resume-button text-center">Download</a>
         </div>
       </div>
+    </section>
 
-      <div class="itemList item9 text-start">
-        <div class="header">Interactive Game Design & Development     |    2012</div>
-        <div class="description">UI/UX game design for iPhone/Android in Unity.</div>
+    <!-- Contact -->
+    <section id="contact" class="text-center">
+      <div class="contact-wrap vw-100 vh-100 d-flex justify-content-center align-items-center flex-column">
+        <div class="header w-100 text-start">Contact</div>
+        <div class="description text-start mt-3 w-100">Have a project in mind or a question?<br/>Let’s connect!</div>
 
-        <div class="d-flex mt-5">
-          <div class="game-thumbnail">
-            <img src="images/section2-hop-race-thumbnail.webp" />
+        <form id="contact-form" class="w-100 mt-5" action="https://formsubmit.io/send/minsubkim@email.com" method="POST">
+          <input name="_redirect" type="hidden" value="https://minsubkim.github.io/thankyou.html">
+          
+          <input type="text" name="_honey" style="display:none">
+
+          <div class="form-group">
+            <label for="name">Name<span style="color:red">*</span></label>
+            <input type="text" id="name" name="name" required />
           </div>
-          <div class="textWrap ms-2">
-            <div class="subHeader mt-2">Hop Race</div>
-            <div class="description mt-1">Hop Race is an exhilarating racing game for Android. Aside from astounding graphics and a fun scene, this unorthodox game will keep you on the edge of your seat from the beginning until the end of the race.</div>
+        
+          <div class="form-group">
+            <label for="email">Email<span style="color:red">*</span></label>
+            <input type="email" id="email" name="email" required />
           </div>
-        </div>
-
-        <div class="template-wrap mt-5 text-center">
-          <div class="gameGallery d-inline-block  text-start">
-            <img src="images/games/image1.webp" class="thumb">
-            <img src="images/games/image2.webp" class="thumb">
-            <img src="images/games/image3.webp" class="thumb">
-            <img src="images/games/image4.webp" class="thumb">
-            <img src="images/games/image5.webp" class="thumb">
+        
+          <div class="form-group">
+            <label for="message">Message<span style="color:red">*</span></label>
+            <textarea id="message" name="message" rows="5" required></textarea>
           </div>
+        
+          <button type="submit">Send Message</button>
+        </form>
 
-        </div>
-        <div class="iframe-wrap">
-          <iframe class="lazyload" src="about:blank" data-src="https://www.youtube-nocookie.com/embed/dENGPUDT0js?si=S_QFvWlO_RnK5aJ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-        </div>
-
-
-        <div class="d-flex" style="margin-top:5rem;">
-          <div class="game-thumbnail">
-            <img src="images/section2-jelly-thumbnail.webp" />
-          </div>
-          <div class="textWrap ms-2">
-            <div class="subHeader mt-2">JellyBall</div>
-            <div class="description mt-1">JellyBall is a projectile, puzzle-based game with soft-body physics. Your objective is to unite all red jelly balls on each level into a one big happy jelly by making strategic water balloon shots.</div>
-          </div>
-        </div>
-
-        <div class="template-wrap mt-5 text-center">
-          <div class="gameGallery d-inline-block  text-start">
-            <img src="images/games/image6.webp" class="thumb">
-            <img src="images/games/image7.webp" class="thumb">
-            <img src="images/games/image8.webp" class="thumb">
-            <img src="images/games/image9.webp" class="thumb">
-            <img src="images/games/image10.webp" class="thumb">
-          </div>
-        </div>
-
-        <div class="iframe-wrap">
-          <iframe class="lazyload" src="about:blank" data-src="https://www.youtube-nocookie.com/embed/V9RLPqwIKkA?si=MpX-3DhGee0_39jU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-        </div>
-
-        <div class="itemList item11 text-start">
-          <div class="header">Mobile App</div>
-
-          <div class="others-video-wrap text-center">
-            <video class="lazy-video" style="max-width:800px;" preload="none" controls poster="images/poster-dialysis.png">
-              <source data-src="videos/dialysis.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-
-          <div class="others-video-wrap text-center">
-            <video class="lazy-video" style="max-width:800px;" preload="none" controls poster="images/poster-bit.png">
-              <source data-src="videos/bit.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-
-          <div class="others-video-wrap text-center">
-            <video class="lazy-video" style="max-width:800px;" preload="none" controls poster="images/poster-lirs.png">
-              <source data-src="videos/lirs.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-
-          <div class="others-video-wrap text-center">
-            <video class="lazy-video" preload="none" controls poster="images/poster-wis.png">
-              <source data-src="videos/wis.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-
-        <div class="itemList item10 text-start">
-          <div class="header">Other Released Videos</div>
-          <div class="description">A collection of videos created for various releases, including marketing campaigns, social media promotions, and other special purposes.</div>
-
-          <div class="iframe-wrap">
-            <iframe class="lazyload" src="about:blank" width="560" height="315" data-src="https://www.youtube-nocookie.com/embed/8wJ8-cAMTZ4?si=xU0vGIQ9AVegDtTo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-          </div>
-
-          <div class="iframe-wrap">
-            <iframe class="lazyload" src="about:blank" data-src="https://www.youtube-nocookie.com/embed/PMfN1kUzsZE?si=F8JM_POmEWn7TQIC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-          </div>
-
-          <div class="others-video-wrap text-center">
-            <video class="lazy-video" preload="none" style="max-width:800px;" controls poster="images/hicreo-demo-poster.png">
-              <source data-src="videos/hicreo-demo.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-
-          <div class="others-video-wrap text-center">
-            <video class="lazy-video" preload="none" controls>
-              <source data-src="videos/short1.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-
-            <video class="lazy-video" preload="none" controls>
-              <source data-src="videos/short2.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-
-            <video class="lazy-video" preload="none" controls>
-              <source data-src="videos/short3.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-
-            <video class="lazy-video" preload="none" controls>
-              <source data-src="videos/short4.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-
-            <video class="lazy-video" preload="none" controls>
-              <source data-src="videos/short5.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-
-            <video class="lazy-video" preload="none" controls>
-              <source data-src="videos/short6.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-
-          <div class="button-wrap text-center">
-            <div class="nav-instruction text-center">Click below to return to the main portfolio menu</div>
-            <div class="button-close button text-center">Fold Up<div class="button-hover"></div></div>
-          </div>
-        </div>
-
-    </div>
-  </div>
-
-
-</section>
-
-<!-- Testimonials -->
-<section id="testimonials" class=" animate__animated animate__fadeIn">
-  <div class="subHeader text-center">They Said Nice Things. I Swear.</div>
-  <div class="blockquote bradd d-flex align-items-center justify-content-center flex-column animate__animated animate__slideInLeft">
-    “Minsub has been a creative powerhouse since 2008 — leading design, driving innovation, and inspiring our team with every project. From UI/UX to eLearning, his work is consistently top-tier.”
-    <br/>
-    <div class="text-end w-100">— Bradd Chi, ACLC</div>
-  </div>
-  <div class="blockquote jack d-flex align-items-center justify-content-center  flex-column animate__animated animate__slideInRight">
-    “Minsub is world-class — passionate, creative, and always leveling up. His leadership helped us shape cutting-edge tools like hiCreo, and his impact on our team was huge.”
-    <br/>
-    <div class="text-end w-100">— Jack Zeigler, ACLC</div>
-  </div>
-</section>
-
-<!-- Resume Summary -->
-<section id="resume" class=" animate__animated animate__zoomIn">
-  <div class="resume-wrap">
-    <div class="subHeader">Okay Fine, Here's the Boring Stuff.</div>
-    <ul>
-      <li>16+ years of experience in UI/UX, eLearning, and multimedia development</li>
-      <li>Skilled in Storyline, Adobe Creative Suite, JavaScript, PHP, SCORM, and more</li>
-      <li>Led accessible design for government clients (Section 508, JAWS, NVDA)</li>
-      <li>Team leader at hiCreo, creating AI-powered eLearning templates</li>
-      <li>Fluent in English, Korean, and Japanese — smooth communicator everywhere</li>
-    </ul>
-    
-    <div class="button-pane text-center">
-      <div class="desc">Download Full Résumé</div>
-      <a href="file/Resume_MinsubKim.pdf" download class="resume-button">Download<div class="button-hover"></div></a>
-    </div>
-  </div>
-</section>
-
-<!-- Contact -->
-<section id="contact" class="text-center animate__animated  animate__slideInUp">
-  <div class="subHeader">Let’s Make Something Cool Together.</div>
-  <div class="contact-icons">
-    <a href="mailto:minsubkim81@gmail.com" target="_blank">
-      <div class="email-button contact-button d-flex justify-content-center align-items-end">email<div class="button-hover"></div></div>
-    </a>
-    <a href="https://www.linkedin.com/in/minsub-kim-250560217/" target="_blank">
-      <div class="linkedin-button contact-button d-flex justify-content-center align-items-end">LinkedIn<div class="button-hover"></div></div>
-    </a>
-  </div>
-</section>
+      </div>
+    </section>
 
   </main>
 
-  <footer>
+  <footer class="w-100">
     &copy; 2025 Minsub Kim. All rights reserved.
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <div class="navi-transition-wrap" style="width:100%; height:100%; overflow:hidden; position:absolute; top:0;left:0;"></div>
 </body>
 </html>

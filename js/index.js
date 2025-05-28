@@ -1,251 +1,319 @@
-window.addEventListener('load', function () {
+window.addEventListener('DOMContentLoaded', function () {
+  const titles = [
+    "MULTIMEDIA SPECIALIST",
+    "ELEARNING DEVELOPER",
+    "GRAPHIC DESIGNER"
+  ];
 
-    const line1 = document.querySelector('.line-1');
-    if (line1) {
-      line1.style.opacity = 1;
+  let index = 0;
+  const ml11 = document.querySelector('.ml11');
+  const lettersSpan = ml11.querySelector('.letters');
+  const line = ml11.querySelector('.line');
+
+  function wrapLetters(text) {
+    return text.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+  }
+
+  // 1. Instantly show first title
+  lettersSpan.textContent = titles[index];
+  ml11.style.opacity = 1;
+
+  // 2. After short pause, begin full animation loop
+    function animateNextTitle() {
+      index = (index + 1) % titles.length;
+      const nextTitle = titles[index];
+      lettersSpan.innerHTML = wrapLetters(nextTitle);
+
+      anime.timeline({ loop: false })
+        .add({
+          targets: line,
+          scaleY: [0, 1],
+          opacity: [0.5, 1],
+          easing: "easeOutExpo",
+          duration: 700
+        })
+        .add({
+          targets: line,
+          translateX: [0, lettersSpan.getBoundingClientRect().width + 10],
+          easing: "easeOutExpo",
+          duration: 700,
+          delay: 100
+        })
+        .add({
+          targets: '.letter',
+          opacity: [0, 1],
+          easing: "easeOutExpo",
+          duration: 600,
+          offset: '-=775',
+          delay: (el, i) => 34 * (i + 1)
+        })
+        .add({
+          targets: ml11,
+          opacity: 0,
+          duration: 1000,
+          easing: "easeOutExpo",
+          delay: 1000,
+          complete: () => {
+            ml11.style.opacity = 1;
+            animateNextTitle(); // recursively call for the next title
+          }
+        });
     }
+    animateNextTitle();
+
+
+    document.querySelectorAll('.nav-item').forEach(item => {
+      const naviTransitionWrap = document.querySelector('.navi-transition-wrap');
     
+      item.addEventListener('click', () => {
+        setTimeout(() => {
+          //setInit ()
+          hicreo.init();
+          elearning.init();
+          others.init();
+        }, 500);
 
-      var line1Txt = document.querySelector('.line-1 span');
-      line1Txt.innerHTML = line1Txt.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+        // Get absolute position of the clicked nav item
+        const rect = item.getBoundingClientRect();
+        const absoluteTop = rect.top + window.scrollY;
+        const absoluteLeft = rect.left + window.scrollX;
+    
+        // Create and style the transition div
+        const transitionDiv = document.createElement('div');
+        transitionDiv.classList.add('navi-transition');
+        transitionDiv.style.position = 'absolute';
+        transitionDiv.style.top = `${absoluteTop}px`;
+        transitionDiv.style.left = `${absoluteLeft}px`;
+        naviTransitionWrap.appendChild(transitionDiv);
+        naviTransitionWrap.style.zIndex = `9999`
 
-      anime.timeline({loop: false}).add({
-        targets: '.line-1 span',
-        translateY: [100,0],
-        translateZ: 0,
-        opacity: [0,1],
-        easing: "easeOutExpo",
-        duration: 1400,
-        delay: (el, i) => 300 + 30 * i
-      })
+        // Add optional logic per nav ID
+        const clickedId = item.id;
 
-
-      setTimeout(function () {
-        const line2 = document.querySelector('.line-2');
-        if (line2) {
-          line2.style.opacity = 1;
+        // Optional: set a special color or animation based on ID
+        if (clickedId === "nav-home") {
+          transitionDiv.style.backgroundColor = '#000000';
+        }else if(clickedId === "nav-hicreo"){
+          transitionDiv.style.backgroundColor = '#021526';
+        }else if(clickedId === "nav-elearning"){
+          transitionDiv.style.backgroundColor = '#17153B';
+        }else if(clickedId === "nav-others"){
+          transitionDiv.style.backgroundColor = '#222831';
+        }else if(clickedId === "nav-resume"){
+          transitionDiv.style.backgroundColor = '#0A2647';
+        }else if(clickedId === "nav-contact"){
+          transitionDiv.style.backgroundColor = '#191919';
         }
+    
+        // Manage `.active` class
+        document.querySelectorAll('.nav-item').forEach(nav => {
+          nav.classList.remove('active');
+        });
+        item.classList.add('active');
+    
+        // Animate and remove transition overlay
+        setTimeout(() => {
+          transitionDiv.classList.add('active');
+          transitionDiv.style.left = "-150%";
+          transitionDiv.style.top = "-150%";
+        }, 50);
 
-        var line2Txt = document.querySelector('#home .line-2 .letters');
-        line2Txt.innerHTML = line2Txt.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
-        anime.timeline({loop: false})
-          .add({
-            targets: '.line-2 .letter',
-            scale: [4,1],
-            opacity: [0,1],
-            translateZ: 0,
-            easing: "easeOutExpo",
-            duration: 950,
-            delay: (el, i) => 70*i
-          });
-        }, 1800);
-
-
-
-
-        setTimeout(function () {
-        const line3 = document.querySelector('.line-3');
-        if (line3) {
-          line3.style.opacity = 1;
-        }
-
-        var line3Txt = document.querySelector('#home .line-3 .letters');
-        line3Txt.innerHTML = line3Txt.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
-        anime.timeline({loop: false})
-          .add({
-            targets: '.line-3 .letter',
-            scale: [4,1],
-            opacity: [0,1],
-            translateZ: 0,
-            easing: "easeOutExpo",
-            duration: 950,
-            delay: (el, i) => 70*i
-          });
-        }, 3500);
-
-
-        setTimeout(function () {
-          const lineName = document.querySelector('.line-name');
-          if (lineName) {
-            lineName.style.opacity = 1;
-          }
-
-          var lineNameTxt = document.querySelector('#home .line-name .letters');
-          lineNameTxt.innerHTML = lineNameTxt.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
-          anime.timeline({loop: false})
-          .add({
-            targets: '.line-name .letter',
-            scale: [0, 1],
-            duration: 1500,
-            elasticity: 600,
-            delay: (el, i) => 45 * (i+1)
-          })
-        }, 6000);
-
-        setTimeout(function () {
-          const iconDivider = document.querySelector('.icon-divider');
-          if (iconDivider) {
-            iconDivider.style.opacity = 1;
-          }
-
-          const intro = document.querySelector('#intro');
-          if (intro) {
-            intro.style.display = "block";
-          }
-
-        }, 8000);
-
-        setTimeout(function () {
-
-          window.scrollBy({
-            top: 700,
-            behavior: 'smooth'
-          });
-        }, 8800);
-
-
-        function isInViewport(el, offset = 0.8) {
-          const rect = el.getBoundingClientRect();
-          return rect.top < window.innerHeight * offset;
-        }
-        
-        window.addEventListener('scroll', () => {
-          const navbar = document.querySelector('.navbar');
-          navbar.classList.toggle('visible', window.scrollY > 0);
-        
-          const sections = ['projects', 'testimonials', 'resume', 'contact'];
-          sections.forEach(id => {
-            const section = document.getElementById(id);
-            if (section && isInViewport(section)) {
-              section.style.display = 'block';
+        setTimeout(() => {
+          transitionDiv.classList.add('fade-out');
+          const sectionIds = ['home', 'hicreo', 'elearning', 'others', 'resume', 'contact'];
+          const sections = sectionIds.map(id => document.getElementById(id));
+          naviTransitionWrap.style.zIndex = `0`
+          // Hide all sections
+          sections.forEach(section => {
+            if (section) {
+              section.style.display = 'none';
             }
           });
-        });
 
-      const projectMainMenu = document.querySelector('.project-main-menu');
-      const portfolioHiCreo = document.querySelector('.project-content-wrap.hicreo');
-      const portfolioElearning = document.querySelector('.project-content-wrap.elearning');
-      const portfolioOthers = document.querySelector('.project-content-wrap.others');
-      const closeButtons = document.querySelectorAll('.project-content-wrap .close-button');
-      const hiCreoClose = document.querySelector('#projects .project-content-wrap.hicreo .button-close');
-      const elearningClose = document.querySelector('#projects .project-content-wrap.elearning .button-close');
-      const othersClose = document.querySelector('#projects .project-content-wrap.others .button-close');
-      const portfolios = document.querySelectorAll('.project-content-wrap');
-      const projectItemBtn = document.querySelectorAll('.project-sub-menu .project-item');
-      const projectSubMenu = document.querySelector('.project-sub-menu');
-      const projectHiCreoBtn = document.querySelector('.project-sub-menu .project-item.hicreo');
-      const projectElearningBtn = document.querySelector('.project-sub-menu .project-item.elearning');
-      const projectOthersBtn = document.querySelector('.project-sub-menu .project-item.others');
+          // Extract section name by removing "nav-" prefix
+          const sectionId = clickedId.replace('nav-', '');
+          const targetSection = document.getElementById(sectionId);
 
-      function hideAllPortfolios() {
-        portfolios.forEach(p => {
-          p.style.display = 'none';
-        });
+          // Show the clicked section if it exists
+          if (targetSection) {
+            targetSection.style.display = 'block';
+          }
+
+        }, 400);
+
+        setTimeout(() => {
+          transitionDiv.remove();
+        }, 500);
+
+
+      });
+    });
+    
+    const hicreoLaptop = document.querySelector('#hicreo .laptop');
+    const hicreoPhone = document.querySelector('#hicreo .phone');
+    
+    let mouseX = 0;
+    let mouseY = 0;
+    let ticking = false;
+    
+    const maxMove = 20;
+    
+    function updateTransforms() {
+      const offsetX = (mouseX - window.innerWidth / 2) / (window.innerWidth / 2);
+      const offsetY = (mouseY - window.innerHeight / 2) / (window.innerHeight / 2);
+    
+      if (hicreoLaptop) {
+        hicreoLaptop.style.transform = `translate(${-offsetX * maxMove}px, ${-offsetY * maxMove}px)`;
       }
-
-      function hideProjectsSubMenu() {
-        projectSubMenu.style.display = 'none';
+    
+      if (hicreoPhone) {
+        hicreoPhone.style.transform = `translate(${offsetX * maxMove}px, ${offsetY * maxMove}px)`;
       }
-
-      function removeActiveFromProjectButtons() {
-        projectItemBtn.forEach(btn => {
-          btn.classList.remove('active');
-        });
+    
+      ticking = false;
+    }
+    
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    
+      if (!ticking) {
+        requestAnimationFrame(updateTransforms);
+        ticking = true;
       }
+    });
+    
+    window.addEventListener('mouseleave', () => {
+      if (hicreoLaptop) hicreoLaptop.style.transform = 'translate(0, 0)';
+      if (hicreoPhone) hicreoPhone.style.transform = 'translate(0, 0)';
+    });
 
-      document.body.addEventListener('click', function (e) {
-        if (e.target.closest('.project-item.hicreo')) {
-          hideAllPortfolios();
-          removeActiveFromProjectButtons();
-          portfolioHiCreo.style.display = 'block';
-          projectMainMenu.style.display = 'none';
-          projectSubMenu.style.display = 'flex';
-          projectHiCreoBtn.classList.add('active');
+    function setupPortfolioNavigation({
+      sectionId,
+      portfolioSelector,
+      pages,
+    }) {
+      const navNext = document.querySelector(`#${sectionId}-next`);
+      const navPrev = document.querySelector(`#${sectionId}-prev`);
+      const portfolio = document.querySelector(portfolioSelector);
+      const navDots = pages.map(p => document.querySelector(`#${sectionId}-${p}`));
+    
+      let currentIndex = 0;
+    
+      function updateNav() {
+        navDots.forEach(dot => dot.classList.remove('selected'));
+        if (navDots[currentIndex]) {
+          navDots[currentIndex].classList.add('selected');
         }
-      
-        else if (e.target.closest('.project-item.elearning')) {
-          hideAllPortfolios();
-          removeActiveFromProjectButtons();
-          portfolioElearning.style.display = 'block';
-          projectMainMenu.style.display = 'none';
-          projectSubMenu.style.display = 'flex';
-          projectElearningBtn.classList.add('active');
-        }
-      
-        else if (e.target.closest('.project-item.others')) {
-          hideAllPortfolios();
-          removeActiveFromProjectButtons();
-          portfolioOthers.style.display = 'block';
-          projectMainMenu.style.display = 'none';
-          projectSubMenu.style.display = 'flex';
-          projectOthersBtn.classList.add('active');
+    
+        navPrev.classList.toggle('disabled', currentIndex === 0);
+        navNext.classList.toggle('disabled', currentIndex === navDots.length - 1);
+    
+        portfolio.style.left = `-${currentIndex * 100}%`;
+
+      }
+    
+      navNext.addEventListener('click', () => {
+        if (currentIndex < navDots.length - 1) {
+          currentIndex++;
+          updateNav();
         }
       });
-
-      closeButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.project-content-wrap').forEach(panel => {
-            panel.style.display = 'none';
-          });
-          projectMainMenu.style.display = 'block';
-          hideProjectsSubMenu()
+    
+      navPrev.addEventListener('click', () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateNav();
+        }
+      });
+    
+      navDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          currentIndex = index;
+          updateNav();
         });
       });
+    
+      // Optional initializer
+      function init() {
+        currentIndex = 0;
+        updateNav();
 
-      
-      if (hiCreoClose) {
-        hiCreoClose.addEventListener('click', function (e) {
-          document.querySelector('.project-content-wrap.hicreo').style.display = 'none';
-          projectMainMenu.style.display = 'block';
-          hideProjectsSubMenu()
+        const elearningWrap = document.querySelectorAll('.elearning-portfolio-item-wrap');
+        const elearningDemoBtn = document.querySelectorAll('.demontem');
+        const elearningCourseBtn = document.querySelectorAll('.coursetem');
+        const latesDemoItem = document.querySelector('#demontem-3');
+        const latesCourseItem = document.querySelector('#coursetem-13');
+        const latesDemoBtn = document.querySelector('.demontem3');
+        const latesCourseBtn = document.querySelector('.coursetem13');
 
-          const projectsSection = document.getElementById('projects');
-          if (projectsSection) {
-            projectsSection.scrollIntoView({ behavior: 'smooth' });
-          }
-          
+        elearningWrap.forEach(container => {
+          container.classList.remove('selected');
         });
-      } else {
-        console.warn('hiCreoClose button not found');
-      }
-      
-      
-      if (elearningClose) {
-        elearningClose.addEventListener('click', function (e) {
-          document.querySelector('.project-content-wrap.elearning').style.display = 'none';
-          projectMainMenu.style.display = 'block';
-          hideProjectsSubMenu()
-
-          const projectsSection = document.getElementById('projects');
-          if (projectsSection) {
-            projectsSection.scrollIntoView({ behavior: 'smooth' });
-          }
-          
+        elearningDemoBtn.forEach(btn => {
+          btn.classList.remove('selected');
         });
-      } else {
-        console.warn('hiCreoClose button not found');
-      }
-
-      if (othersClose) {
-        othersClose.addEventListener('click', function (e) {
-          document.querySelector('.project-content-wrap.others').style.display = 'none';
-          projectMainMenu.style.display = 'block';
-          hideProjectsSubMenu()
-
-          const projectsSection = document.getElementById('projects');
-          if (projectsSection) {
-            projectsSection.scrollIntoView({ behavior: 'smooth' });
-          }
-          
+        elearningCourseBtn.forEach(btn => {
+          btn.classList.remove('selected');
         });
-      } else {
-        console.warn('hiCreoClose button not found');
-      }
+        latesDemoItem.classList.add('selected');
+        latesCourseItem.classList.add('selected');
+        latesDemoBtn.classList.add('selected');
+        latesCourseBtn.classList.add('selected');
+          
+        const othersWrap = document.querySelectorAll('.others-portfolio-item-wrap');
+        const othersVideoWrap = document.querySelector('.item10 .others-portfolio-item-wrap');
+        const othersVideoButtons = document.querySelectorAll('.item10 .video-button');
+        const latesVideoButtons = document.querySelector('.item10 .others-video-button01');
+        const latesGameItem = document.querySelector('#others-game-2');
+        const latesAppItem = document.querySelector('#others-app-1');
+        const othersBtn = document.querySelectorAll('.otherstem');
+        const latesGameButton = document.querySelector('.item9 .otherstem2');
+        const latesAppButton = document.querySelector('.item11 .otherstem1');
+        othersWrap.forEach(container => {
+          container.classList.remove('selected');
+        });
+        othersBtn.forEach(btn => {
+          btn.classList.remove('selected');
+        });
+        othersVideoButtons.forEach(btn => {
+          btn.classList.remove('selected');
+        });
 
-      
+        latesGameItem.classList.add('selected');
+        latesAppItem.classList.add('selected');
+        latesGameButton.classList.add('selected');
+        latesAppButton.classList.add('selected');
+        othersVideoWrap.classList.add('selected');
+        latesVideoButtons.classList.add('selected');
+        clearVideoPlayer();
+
+        const firstButton = otherVideoButtons[0];
+        const type = firstButton.getAttribute('data-type');
+        const src = firstButton.getAttribute('data-src');
+        loadVideo(type, src);
+      }
+    
+      return { init };
+    }
+
+    const hicreo = setupPortfolioNavigation({
+      sectionId: 'hicreo',
+      portfolioSelector: '#hicreo .portfolio-wrap',
+      pages: ['home', 'web', 'uiux', 'mlearning', 'template'],
+    });
+    
+    const elearning = setupPortfolioNavigation({
+      sectionId: 'elearning',
+      portfolioSelector: '#elearning .portfolio-wrap',
+      pages: ['home', 'demo', 'courses', 'image'],
+    });
+    
+    const others = setupPortfolioNavigation({
+      sectionId: 'others',
+      portfolioSelector: '#others .portfolio-wrap',
+      pages: ['home', 'print', 'social', 'game','app', 'video'],
+    });
 
       const laptopImage = document.querySelector('.hicreo-website-laptop .hicreo-screen-capture');
       const mobileImage = document.querySelector('.hicreo-website-mobile .hicreo-screen-capture');
@@ -269,11 +337,11 @@ window.addEventListener('load', function () {
         }
       };
 
-      const webPageButton = document.querySelectorAll('.hicreo-website-wrap .page-buttons .button');
-      const webPageButtonHome = document.querySelector('.hicreo-website-wrap .page-buttons .button.button-home');
-      const webPageAboutUs = document.querySelector('.hicreo-website-wrap .page-buttons .button.button-about-us');
-      const webPageBlogList = document.querySelector('.hicreo-website-wrap .page-buttons .button.button-blog-list');
-      const webPageButtonBlogPage = document.querySelector('.hicreo-website-wrap .page-buttons .button.button-blog-page');
+      const webPageButton = document.querySelectorAll('.hicreo-portfolio-text-wrap .page-buttons .button');
+      const webPageButtonHome = document.querySelector('.hicreo-portfolio-text-wrap .page-buttons .button.button-home');
+      const webPageAboutUs = document.querySelector('.hicreo-portfolio-text-wrap .page-buttons .button.button-about-us');
+      const webPageBlogList = document.querySelector('.hicreo-portfolio-text-wrap .page-buttons .button.button-blog-list');
+      const webPageButtonBlogPage = document.querySelector('.hicreo-portfolio-text-wrap .page-buttons .button.button-blog-page');
 
       function removeActiveFromwebPageButtons() {
         webPageButton.forEach(btn => {
@@ -308,6 +376,34 @@ window.addEventListener('load', function () {
         removeActiveFromwebPageButtons()
         webPageButtonBlogPage.classList.add('active');
       });
+
+
+      const lazyVideos = document.querySelectorAll("video.lazy-video");
+  
+      if ("IntersectionObserver" in window) {
+        const videoObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const video = entry.target;
+              const source = video.querySelector("source");
+              source.src = source.dataset.src;
+              video.load();
+              observer.unobserve(video);
+            }
+          });
+        });
+  
+        lazyVideos.forEach(video => {
+          videoObserver.observe(video);
+        });
+      } else {
+        // Fallback for browsers without IntersectionObserver
+        lazyVideos.forEach(video => {
+          const source = video.querySelector("source");
+          source.src = source.dataset.src;
+          video.load();
+        });
+      }
 
       const laptopFrame = document.querySelector('.live-mlearning-course-laptop .hicreo-screen-capture');
       const mobileFrame = document.querySelector('.live-mlearning-course-mobile .hicreo-screen-capture');
@@ -357,224 +453,429 @@ window.addEventListener('load', function () {
         mlearningButtonAdaptive.classList.add('active');
       });
       
-        const hiCreoGallery = document.getElementById('hicreoGallery');
-        const hiCreoLightbox = document.getElementById('hicreoLightbox');
-        const hiCreoLightboxImg = document.getElementById('hicreoLightboxImg');
-
-        // Define how many images are in each folder
-        const folderImageCounts = {
-        1: 25,
-        2: 25,
-        3: 24,
-        4: 25,
-        5: 25,
-        6: 12,
-        7: 12,
-        8: 50
-        };
-
-        // Loop through each folder and image number
-        for (let folder = 1; folder <= 8; folder++) {
-          const count = folderImageCounts[folder];
-        
-          for (let i = 1; i <= count; i++) {
-            const thumbPath = `images/templates/${folder}/thumbnail/slide${i}.webp`;
-            const fullPath = `images/templates/${folder}/slide${i}.webp`;
-        
-            const hicreoTemplateThumbnailimg = document.createElement('img');
-            hicreoTemplateThumbnailimg.src = 'images/placeholder.webp'; // Optional placeholder
-            hicreoTemplateThumbnailimg.setAttribute('data-src', thumbPath);
-            hicreoTemplateThumbnailimg.dataset.full = fullPath;
-            hicreoTemplateThumbnailimg.alt = `Template ${folder} Slide ${i}`;
-            hicreoTemplateThumbnailimg.classList.add('thumb', 'lazyload');
-        
-            hicreoTemplateThumbnailimg.addEventListener('click', () => {
-              hiCreoLightboxImg.src = fullPath;
-              hiCreoLightbox.style.display = 'flex';
-            });
-        
-            hiCreoGallery.appendChild(hicreoTemplateThumbnailimg);
-          }
-        }
-
-        // Close the lightbox on click
-        hiCreoLightbox.addEventListener('click', (e) => {
-            if (e.target === hiCreoLightbox) {
-              hiCreoLightbox.style.display = 'none';
-            }
-          });
-
-        document.querySelector('.close-lightbox').addEventListener('click', () => {
-        hiCreoLightbox.style.display = 'none';
-        });
-
-        const elearningCourseDemoIFrameLightbox = document.getElementById('elearningLightboxCourse');
-        const elearningCourseDemoIFrameFrame = document.getElementById('elearningFrame');
-        const elearningCourseDemoIFrameCloseBtn = document.querySelector('.lightbox-close');
-
-        // URL map for different demos
-        const elearningCourseDemoIFrameUrls = {
-          iianc: 'portfolio/elearning/iianc/story.html',
-          unboxed: 'portfolio/elearning/unboxed/story.html',
-          gci: 'portfolio/elearning/gci/story.html',
-          NRCCRSM: 'portfolio/elearning/NRCCRSM/story_html5.html'
-        };
-
-        // Click listeners for thumbnails
-        document.querySelectorAll('.elearningDemoThumbnail').forEach(elearningCourseDemoIFrameThumbnail => {
-          elearningCourseDemoIFrameThumbnail.addEventListener('click', () => {
-            const classList = elearningCourseDemoIFrameThumbnail.classList;
-            let elearningCourseDemoIFrameKey = null;
-
-            if (classList.contains('unboxed')) elearningCourseDemoIFrameKey = 'unboxed';
-            else if (classList.contains('gci')) elearningCourseDemoIFrameKey = 'gci';
-            else if (classList.contains('NRCCRSM')) elearningCourseDemoIFrameKey = 'NRCCRSM';
-            else if (classList.contains('iianc')) elearningCourseDemoIFrameKey = 'iianc';
-
-            if (elearningCourseDemoIFrameKey) {
-              elearningCourseDemoIFrameFrame.src = elearningCourseDemoIFrameUrls[elearningCourseDemoIFrameKey];
-              elearningCourseDemoIFrameLightbox.classList.add('show');
-            }
             
-            if (elearningCourseDemoIFrameKey === 'NRCCRSM') {
-              elearningCourseDemoIFrameCloseBtn.style.color = 'black';
-              elearningCourseDemoIFrameCloseBtn.style.top = '-5px'
-            } else {
-              elearningCourseDemoIFrameCloseBtn.style.color = 'white';
-              elearningCourseDemoIFrameCloseBtn.style.top = '10px'
-            }
+      const hiCreoGallery = document.getElementById('hicreoGallery');
+      const hiCreoLightbox = document.getElementById('hicreoLightbox');
+      const hiCreoLightboxImg = document.getElementById('hicreoLightboxImg');
 
-          });
-        });
+      // Define how many images are in each folder
+      const folderImageCounts = {
+      1: 25,
+      2: 25,
+      3: 24,
+      4: 25,
+      5: 25,
+      6: 12,
+      7: 12,
+      8: 50
+      };
 
-        // Close lightbox
-        elearningCourseDemoIFrameCloseBtn.addEventListener('click', () => {
-          elearningCourseDemoIFrameFrame.src = ''; // Stop playback
-          elearningCourseDemoIFrameLightbox.classList.remove('show');
-        });
-
-        const elearningThumbs = document.querySelectorAll('#elearningGallery .thumb');
-        const elearningLightbox = document.getElementById('elearningLightboxImage');
-        const elearningLightboxImg = document.getElementById('elearningLightboxImg');
-        const elearningImageLightboxClose = document.getElementById('elearningImageLightboxClose');
-        
-        elearningThumbs.forEach(thumb => {
-          thumb.addEventListener('click', () => {
-            const imgIndex = thumb.getAttribute('in');
-            const fullImgPath = `images/elearning/image${imgIndex}.webp`;
-        
-            elearningLightboxImg.src = fullImgPath;
-            elearningLightbox.classList.add('show');
-            elearningLightbox.style.display = 'flex';
-          });
-        });
-        
-        elearningImageLightboxClose.addEventListener('click', () => {
-          elearningLightbox.classList.remove('show');
-          elearningLightbox.style.display = 'none';
-          elearningLightboxImg.src = ''; // optional: clear image
-        });
-
-        const elearnignAdamVideo = document.getElementById('elearningAdam');
-        const timeLinks = document.querySelectorAll('[data-time]');
+      // Loop through each folder and image number
+      for (let folder = 1; folder <= 8; folder++) {
+        const count = folderImageCounts[folder];
       
-        timeLinks.forEach(link => {
-          link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const time = parseFloat(this.getAttribute('data-time'));
-            elearnignAdamVideo.currentTime = time;
-            elearnignAdamVideo.play();
-          });
-        });
-
-
-        const printThumbs = document.querySelectorAll('#printGallery .thumb');
-        const printLightbox = document.getElementById('printLightboxImage');
-        const printLightboxImg = document.getElementById('printLightboxImg');
-        const printImageLightboxClose = document.getElementById('printImageLightboxClose');
-        
-        printThumbs.forEach(thumb => {
-          thumb.addEventListener('click', () => {
-            const imgIndex = thumb.getAttribute('in');
-            const fullImgPath = `images/print/image${imgIndex}.webp`;
-        
-            printLightboxImg.src = fullImgPath;
-            printLightbox.classList.add('show');
-            printLightbox.style.display = 'flex';
-          });
-        });
-        
-        printImageLightboxClose.addEventListener('click', () => {
-          printLightbox.classList.remove('show');
-          printLightbox.style.display = 'none';
-          printLightboxImg.src = ''; // optional: clear image
-        });
-
-
-        const socialGallery = document.getElementById('socialGallery');
-        const socialLightbox = document.getElementById('socialLightboxImage');
-        const socialLightboxImg = document.getElementById('socialLightboxImg');
-        const socialLightboxClose = document.getElementById('socialImageLightboxClose');
+        for (let i = 1; i <= count; i++) {
+          const thumbPath = `images/templates/${folder}/thumbnail/slide${i}.webp`;
+          const fullPath = `images/templates/${folder}/slide${i}.webp`;
       
-        const totalSocialImages = 54;
+          const hicreoTemplateThumbnailimg = document.createElement('img');
+          hicreoTemplateThumbnailimg.src = 'images/placeholder.webp'; // Optional placeholder
+          hicreoTemplateThumbnailimg.setAttribute('data-src', thumbPath);
+          hicreoTemplateThumbnailimg.dataset.full = fullPath;
+          hicreoTemplateThumbnailimg.alt = `Template ${folder} Slide ${i}`;
+          hicreoTemplateThumbnailimg.classList.add('thumb', 'lazyload');
       
-        // Generate thumbnails and append to the gallery
-        for (let i = 1; i <= totalSocialImages; i++) {
-          const socialThumbPath = `images/social/thumbnail/image${i}.webp`;
-          const socialFullPath = `images/social/image${i}.webp`;
-      
-          const socialThumbImg = document.createElement('img');
-          socialThumbImg.src = socialThumbPath;
-          socialThumbImg.alt = `Social Template ${i}`;
-          socialThumbImg.classList.add('thumb');
-          socialThumbImg.dataset.full = socialFullPath;
-      
-          // Add click event to open lightbox
-          socialThumbImg.addEventListener('click', () => {
-            socialLightboxImg.src = socialFullPath;
-            socialLightbox.style.display = 'flex';
+          hicreoTemplateThumbnailimg.addEventListener('click', () => {
+            hiCreoLightboxImg.src = fullPath;
+            hiCreoLightbox.style.display = 'flex';
           });
       
-          socialGallery.appendChild(socialThumbImg);
+          hiCreoGallery.appendChild(hicreoTemplateThumbnailimg);
         }
-      
-        // Close the lightbox on close button or outside click
-        socialLightbox.addEventListener('click', (e) => {
-          if (
-            e.target === socialLightbox || 
-            e.target === socialLightboxClose
-          ) {
-            socialLightbox.style.display = 'none';
+      }
+
+      // Close the lightbox on click
+      hiCreoLightbox.addEventListener('click', (e) => {
+          if (e.target === hiCreoLightbox) {
+            hiCreoLightbox.style.display = 'none';
           }
         });
 
-    });
+      document.querySelector('.close-lightbox').addEventListener('click', () => {
+      hiCreoLightbox.style.display = 'none';
+      });
 
-    document.addEventListener("DOMContentLoaded", function () {
-      const lazyVideos = document.querySelectorAll("video.lazy-video");
-  
-      if ("IntersectionObserver" in window) {
-        const videoObserver = new IntersectionObserver((entries, observer) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const video = entry.target;
-              const source = video.querySelector("source");
-              source.src = source.dataset.src;
-              video.load();
-              observer.unobserve(video);
-            }
+      const elearningHero = document.querySelector('#elearning .hero');
+      const elearningHeroBg = elearningHero.querySelector('#elearning .Image-bg');
+
+      elearningHero.addEventListener('mousemove', (e) => {
+        const { offsetWidth: width, offsetHeight: height } = elearningHero;
+        const x = e.clientX / width - 0.5; // range: -0.5 to 0.5
+        const y = e.clientY / height - 0.5;
+
+        const moveX = x * 30; // adjust sensitivity
+        const moveY = y * 30;
+
+        elearningHeroBg.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px))`;
+      });
+
+      elearningHero.addEventListener('mouseleave', () => {
+        elearningHeroBg.style.transform = 'translate(-50%, -50%)';
+      });
+
+      const elearningCourseDemoIFrameLightbox = document.getElementById('elearningLightboxCourse');
+      const elearningCourseDemoIFrameFrame = document.getElementById('elearningFrame');
+      const elearningCourseDemoIFrameCloseBtn = document.querySelector('#elearning #elearningCourseClose');
+
+      // URL map for different demos
+      const elearningCourseDemoIFrameUrls = {
+        iianc: 'portfolio/elearning/iianc/story.html',
+        unboxed: 'portfolio/elearning/unboxed/story.html',
+        gci: 'portfolio/elearning/gci/story.html',
+        NRCCRSM: 'portfolio/elearning/NRCCRSM/story_html5.html'
+      };
+
+      // Click listeners for thumbnails
+      document.querySelectorAll('.elearningDemoThumbnail').forEach(elearningCourseDemoIFrameThumbnail => {
+        elearningCourseDemoIFrameThumbnail.addEventListener('click', () => {
+          const classList = elearningCourseDemoIFrameThumbnail.classList;
+          let elearningCourseDemoIFrameKey = null;
+
+          if (classList.contains('unboxed')) elearningCourseDemoIFrameKey = 'unboxed';
+          else if (classList.contains('gci')) elearningCourseDemoIFrameKey = 'gci';
+          else if (classList.contains('NRCCRSM')) elearningCourseDemoIFrameKey = 'NRCCRSM';
+          else if (classList.contains('iianc')) elearningCourseDemoIFrameKey = 'iianc';
+
+          if (elearningCourseDemoIFrameKey) {
+            elearningCourseDemoIFrameFrame.src = elearningCourseDemoIFrameUrls[elearningCourseDemoIFrameKey];
+            elearningCourseDemoIFrameLightbox.classList.add('show');
+          }
+          
+          if (elearningCourseDemoIFrameKey === 'NRCCRSM') {
+            elearningCourseDemoIFrameCloseBtn.style.color = 'black';
+            elearningCourseDemoIFrameCloseBtn.style.top = '-5px'
+          } else {
+            elearningCourseDemoIFrameCloseBtn.style.color = 'white';
+            elearningCourseDemoIFrameCloseBtn.style.top = '10px'
+          }
+
+        });
+
+      });
+      // Close lightbox
+      elearningCourseDemoIFrameCloseBtn.addEventListener('click', () => {
+        elearningCourseDemoIFrameFrame.src = ''; // Stop playback
+        elearningCourseDemoIFrameLightbox.classList.remove('show');
+
+      });
+
+      const elearningDemotem3Btn = document.querySelector('#elearning .demontem3');
+      const elearningDemotem2Btn = document.querySelector('#elearning .demontem2');
+      const elearningDemotem1Btn = document.querySelector('#elearning .demontem1');
+      const elearningDemotem3 = document.getElementById('demontem-3'); 
+      const elearningDemotem2 = document.getElementById('demontem-2'); 
+      const elearningDemotem1 = document.getElementById('demontem-1'); 
+
+      elearningDemotem3Btn.addEventListener('click', () => {
+        elearningDemotem3.classList.add("selected"); 
+        elearningDemotem2.classList.remove("selected");
+        elearningDemotem1.classList.remove("selected");
+        elearningDemotem3Btn.classList.add("selected"); 
+        elearningDemotem2Btn.classList.remove("selected"); 
+        elearningDemotem1Btn.classList.remove("selected"); 
+      });
+
+      elearningDemotem2Btn.addEventListener('click', () => {
+        elearningDemotem3.classList.remove("selected"); 
+        elearningDemotem2.classList.add("selected");
+        elearningDemotem1.classList.remove("selected");
+        elearningDemotem3Btn.classList.remove("selected"); 
+        elearningDemotem2Btn.classList.add("selected"); 
+        elearningDemotem1Btn.classList.remove("selected"); 
+      });
+
+      elearningDemotem1Btn.addEventListener('click', () => {
+        elearningDemotem3.classList.remove("selected"); 
+        elearningDemotem2.classList.remove("selected");
+        elearningDemotem1.classList.add("selected");
+        elearningDemotem3Btn.classList.remove("selected"); 
+        elearningDemotem2Btn.classList.remove("selected"); 
+        elearningDemotem1Btn.classList.add("selected"); 
+      });
+
+
+      const courseBtns = [];
+      const courseSections = [];
+      
+      // 1. Collect buttons and containers
+      for (let courseNumber = 1; courseNumber <= 13; courseNumber++) {
+        const elearningCouresBtn = document.querySelector(`#elearning .coursetem${courseNumber}`);
+        const elearningSection = document.getElementById(`coursetem-${courseNumber}`);
+      
+        if (elearningCouresBtn && elearningSection) {
+          courseBtns.push(elearningCouresBtn);
+          courseSections.push(elearningSection);
+      
+          // 2. Add click event to each button
+          elearningCouresBtn.addEventListener('click', () => {
+            // Remove 'selected' from all buttons and sections
+            courseBtns.forEach(b => b.classList.remove('selected'));
+            courseSections.forEach(s => s.classList.remove('selected'));
+      
+            // Add 'selected' only to the clicked pair
+            elearningCouresBtn.classList.add('selected');
+            elearningSection.classList.add('selected');
+
+            document.querySelectorAll('#elearning video').forEach(video => {
+              video.pause();
+            });
           });
-        });
-  
-        lazyVideos.forEach(video => {
-          videoObserver.observe(video);
-        });
-      } else {
-        // Fallback for browsers without IntersectionObserver
-        lazyVideos.forEach(video => {
-          const source = video.querySelector("source");
-          source.src = source.dataset.src;
-          video.load();
-        });
+        }
       }
-    });
+      
+      const thumbsWrap = document.querySelector('.course-thumbs-wrap');
+      const leftArrow = document.querySelector('.course-arrow.left');
+      const rightArrow = document.querySelector('.course-arrow.right');
+      
+      // Scroll by 1 thumbnail width (plus margin)
+      const scrollAmount = 500;
+      
+      leftArrow.addEventListener('click', () => {
+        thumbsWrap.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      });
+      
+      rightArrow.addEventListener('click', () => {
+        thumbsWrap.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      });
+
+      const elearningThumbs = document.querySelectorAll('#elearningGallery .thumb');
+      const elearningLightbox = document.getElementById('elearningLightboxImage');
+      const elearningLightboxImg = document.getElementById('elearningLightboxImg');
+      const elearningImageLightboxClose = document.getElementById('elearningImageLightboxClose');
+      
+      elearningThumbs.forEach(thumb => {
+        thumb.addEventListener('click', () => {
+          const imgIndex = thumb.getAttribute('in');
+          const fullImgPath = `images/elearning/image${imgIndex}.webp`;
+      
+          elearningLightboxImg.src = fullImgPath;
+          elearningLightbox.classList.add('show');
+          elearningLightbox.style.display = 'flex';
+        });
+      });
+      
+      elearningImageLightboxClose.addEventListener('click', () => {
+        elearningLightbox.classList.remove('show');
+        elearningLightbox.style.display = 'none';
+        elearningLightboxImg.src = ''; // optional: clear image
+      });
+
+
+      const printThumbs = document.querySelectorAll('#printGallery .thumb');
+      const printLightbox = document.getElementById('printLightboxImage');
+      const printLightboxImg = document.getElementById('printLightboxImg');
+      const printImageLightboxClose = document.getElementById('printImageLightboxClose');
+      
+      printThumbs.forEach(thumb => {
+        thumb.addEventListener('click', () => {
+          const imgIndex = thumb.getAttribute('in');
+          const fullImgPath = `images/print/image${imgIndex}.webp`;
+      
+          printLightboxImg.src = fullImgPath;
+          printLightbox.classList.add('show');
+          printLightbox.style.display = 'flex';
+        });
+      });
+      
+      printImageLightboxClose.addEventListener('click', () => {
+        printLightbox.classList.remove('show');
+        printLightbox.style.display = 'none';
+        printLightboxImg.src = ''; // optional: clear image
+      });
+
+      
+      const socialGallery = document.getElementById('socialGallery');
+      const socialLightbox = document.getElementById('socialLightboxImage');
+      const socialLightboxImg = document.getElementById('socialLightboxImg');
+      const socialLightboxClose = document.getElementById('socialImageLightboxClose');
+    
+      const totalSocialImages = 54;
+    
+      // Generate thumbnails and append to the gallery
+      for (let i = 1; i <= totalSocialImages; i++) {
+        const socialThumbPath = `images/social/thumbnail/image${i}.webp`;
+        const socialFullPath = `images/social/image${i}.webp`;
+    
+        const socialThumbImg = document.createElement('img');
+        socialThumbImg.src = socialThumbPath;
+        socialThumbImg.alt = `Social Template ${i}`;
+        socialThumbImg.classList.add('thumb');
+        socialThumbImg.dataset.full = socialFullPath;
+    
+        // Add click event to open lightbox
+        socialThumbImg.addEventListener('click', () => {
+          socialLightboxImg.src = socialFullPath;
+          socialLightbox.style.display = 'flex';
+        });
+    
+        socialGallery.appendChild(socialThumbImg);
+      }
+    
+      // Close the lightbox on close button or outside click
+      socialLightbox.addEventListener('click', (e) => {
+        if (
+          e.target === socialLightbox || 
+          e.target === socialLightboxClose
+        ) {
+          socialLightbox.style.display = 'none';
+        }
+      });
+
+
+      const othersGametem1Btn = document.querySelector('#others .item9 .otherstem1');
+      const othersGametem2Btn = document.querySelector('#others .item9 .otherstem2');
+      const othersGametem1 = document.querySelector('#others #others-game-1'); 
+      const othersGametem2 = document.querySelector('#others #others-game-2'); 
+
+      othersGametem1Btn.addEventListener('click', () => {
+        othersGametem1Btn.classList.add("selected"); 
+        othersGametem2Btn.classList.remove("selected");
+        othersGametem1.classList.add("selected"); 
+        othersGametem2.classList.remove("selected");
+      });
+      othersGametem2Btn.addEventListener('click', () => {
+        othersGametem2Btn.classList.add("selected"); 
+        othersGametem1Btn.classList.remove("selected");
+        othersGametem2.classList.add("selected"); 
+        othersGametem1.classList.remove("selected");
+      });
+
+      const othersApptem1Btn = document.querySelector('#others .item11 .otherstem1');
+      const othersApptem2Btn = document.querySelector('#others .item11 .otherstem2');
+      const othersApptem3Btn = document.querySelector('#others .item11 .otherstem3');
+      const othersApptem4Btn = document.querySelector('#others .item11 .otherstem4');
+      const othersApptem1 = document.querySelector('#others #others-app-1'); 
+      const othersApptem2 = document.querySelector('#others #others-app-2'); 
+      const othersApptem3 = document.querySelector('#others #others-app-3'); 
+      const othersApptem4 = document.querySelector('#others #others-app-4'); 
+
+      othersApptem1Btn.addEventListener('click', () => {
+        othersApptem1Btn.classList.add("selected"); 
+        othersApptem2Btn.classList.remove("selected");
+        othersApptem3Btn.classList.remove("selected");
+        othersApptem4Btn.classList.remove("selected");
+        othersApptem1.classList.add("selected"); 
+        othersApptem2.classList.remove("selected");
+        othersApptem3.classList.remove("selected");
+        othersApptem4.classList.remove("selected");
+      });
+      othersApptem2Btn.addEventListener('click', () => {
+        othersApptem2Btn.classList.add("selected"); 
+        othersApptem1Btn.classList.remove("selected");
+        othersApptem3Btn.classList.remove("selected");
+        othersApptem4Btn.classList.remove("selected");
+        othersApptem2.classList.add("selected"); 
+        othersApptem1.classList.remove("selected");
+        othersApptem3.classList.remove("selected");
+        othersApptem4.classList.remove("selected");
+      });
+      othersApptem3Btn.addEventListener('click', () => {
+        othersApptem3Btn.classList.add("selected"); 
+        othersApptem1Btn.classList.remove("selected");
+        othersApptem2Btn.classList.remove("selected");
+        othersApptem4Btn.classList.remove("selected");
+        othersApptem3.classList.add("selected"); 
+        othersApptem1.classList.remove("selected");
+        othersApptem2.classList.remove("selected");
+        othersApptem4.classList.remove("selected");
+      });
+      othersApptem4Btn.addEventListener('click', () => {
+        othersApptem4Btn.classList.add("selected"); 
+        othersApptem1Btn.classList.remove("selected");
+        othersApptem3Btn.classList.remove("selected");
+        othersApptem2Btn.classList.remove("selected");
+        othersApptem4.classList.add("selected"); 
+        othersApptem1.classList.remove("selected");
+        othersApptem3.classList.remove("selected");
+        othersApptem2.classList.remove("selected");
+      });
+
+      const otherVideoWrap = document.querySelector('.item10 .others-video-wrap');
+      const otherVideoButtons = document.querySelectorAll('.video-button');
+      const otherReleasedVideos = document.querySelector('.other-released-videos');
+      function clearVideoPlayer() {
+        otherReleasedVideos.classList.remove('mp4');
+        otherReleasedVideos.classList.remove('mp4-short');
+        otherReleasedVideos.classList.remove('youtube');
+        while (otherVideoWrap.firstChild) {
+          otherVideoWrap.removeChild(otherVideoWrap.firstChild);
+        }
+      }
+    
+      function loadVideo(type, src) {
+        clearVideoPlayer();
+    
+        if (type === 'mp4') {
+          const video = document.createElement('video');
+          video.setAttribute('controls', '');
+          video.setAttribute('width', '100%');
+    
+          const source = document.createElement('source');
+          source.setAttribute('src', src);
+          source.setAttribute('type', 'video/mp4');
+    
+          video.appendChild(source);
+          otherVideoWrap.appendChild(video);
+          otherReleasedVideos.classList.add('mp4');
+
+        } else if (type === 'mp4-short') {
+          const video = document.createElement('video');
+          video.setAttribute('controls', '');
+    
+          const source = document.createElement('source');
+          source.setAttribute('src', src);
+          source.setAttribute('type', 'video/mp4');
+    
+          video.appendChild(source);
+          otherVideoWrap.appendChild(video);  
+          otherReleasedVideos.classList.add('mp4-short');
+                
+        }else if (type === 'youtube') {
+          const iframe = document.createElement('iframe');
+          iframe.setAttribute('width', '100%');
+          iframe.setAttribute('height', '450');
+          iframe.setAttribute('src', src);
+          iframe.setAttribute('frameborder', '0');
+          iframe.setAttribute('allowfullscreen', '');
+          iframe.setAttribute('allow', 'accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+          iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+          otherVideoWrap.appendChild(iframe);
+          otherReleasedVideos.classList.add('youtube');
+          
+        }
+      }
+    
+      otherVideoButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const type = button.getAttribute('data-type');
+          const src = button.getAttribute('data-src');
+          // Remove 'selected' class from all buttons
+          otherVideoButtons.forEach(btn => btn.classList.remove('selected'));
+          // Add 'selected' to the clicked button
+          button.classList.add('selected');
+          loadVideo(type, src);
+        });
+      });
+    
+      const navbarNav = document.getElementById('navbarNav');
+      const navLinks = document.querySelectorAll('.nav-link');
+    
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          // Collapse menu if it's currently shown
+          if (navbarNav.classList.contains('show')) {
+            navbarNav.classList.remove('show');
+          }
+        });
+      });
+});
