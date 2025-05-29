@@ -2665,7 +2665,7 @@ section#hicreo .nav-hicreo-pages-wrap .nav-hicreo-prev:hover .hicreo-prev-icon{
   }
   .others-portfolio-text-wrap{
     margin:0 1rem;
-    with:calc(100% - 2rem);
+    width:calc(100% - 2rem);
   }
   #elearning .project-content-wrap.elearning .elearningDemoThumbnail{
     height: calc(100% - 420px);
@@ -2785,16 +2785,16 @@ section#hicreo .nav-hicreo-pages-wrap .nav-hicreo-prev:hover .hicreo-prev-icon{
     background-position:center;
   }
   #hicreo .item4 .hicreoGallery{
-    grid-template-columns: repeat(auto-fill, 300px);
+    grid-template-columns: repeat(auto-fill, 150px);
   }
   #hicreo .item4 .hicreoGallery img{
-    width:300px;
+    width:150px;
   }
   #elearning .project-content-wrap.elearning .item6-1 .elearningGallery{
-    grid-template-columns: repeat(auto-fill, 300px);
+    grid-template-columns: repeat(auto-fill, 150px);
   }
   #elearning .project-content-wrap.elearning .item6-1 .elearningGallery img{
-    width: 300px;
+    width: 150px;
   }
   #others .project-content-wrap.others .item7 .printGallery img{
     width: calc(33.33% - 6px);
@@ -2882,4 +2882,86 @@ section#hicreo .nav-hicreo-pages-wrap .nav-hicreo-prev:hover .hicreo-prev-icon{
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #aaa;  /* on hover */
+}
+
+/* mobile */
+body.mobile .hero-text-wrap{
+  padding-top:100px;
+}
+body.mobile section .nav-others-pages-wrap, section .nav-elearning-pages-wrap, section .nav-hicreo-pages-wrap{
+  bottom:34px;
+}
+body.mobile section  #hicreo .portfolio-wrap .item3 .hicreo-website-wrap .hicreo-website-mobile{
+  right: calc(50% - 178px);
+}
+
+body.mobile #elearning .course-thumbs-wrap .coursetem, 
+body.mobile #elearning .demo-thumbs-wrap .demontem{
+    width: 100px;
+    height: 56px;
+}
+body.mobile #elearning .project-content-wrap.elearning .elearningDemoThumbnail{
+  width:100%;
+  height:auto;
+  aspect-ratio: 16 / 9;
+}
+body.mobile .elearning-portfolio-item-wrap{
+  height:100%;
+}
+body.mobile #elearning .demo-thumbs-wrap{
+  bottom:80px;
+}
+body.mobile #elearning .course-thumbs-container{
+  bottom:60px;
+}
+body.mobile #coursetem-8,
+body.mobile #coursetem-7,
+body.mobile #coursetem-6,
+body.mobile #coursetem-5,
+body.mobile #coursetem-4,
+body.mobile #coursetem-3{
+  padding-bottom:50px;
+}
+body.mobile .others-portfolio-text-wrap{
+  padding-bottom:0px;
+}
+body.mobile #others .project-content-wrap.others .item7 #printLightboxImg{
+ object-position:center;
+}
+body.mobile #others .project-content-wrap.others .item8 .socialGallery{
+  padding-bottom:80px;
+}
+body.mobile #others .others-portfolio-item-wrap .media-wrap{
+  padding-top:20px;
+}
+body.mobile #others .others-thumbs-container{
+  bottom:50px;
+}
+body.mobile #others .others-thumbs-wrap .otherstem{
+  width:50px;
+  height:50px;
+}
+body.mobile #others .others-thumbs-wrap{
+  gap:8px;
+}
+body.mobile #others .project-content-wrap.others .itemList.item9 .gameGallery img {
+    width: calc(33% - 6px);
+    border-radius: 5px;
+}
+body.mobile #others #others-app-4.others-portfolio-item-wrap{
+  flex-direction: column;
+}
+body.mobile #others #others-app-4.others-portfolio-item-wrap .others-portfolio-text-wrap{
+  width: calc(100% - 2rem);
+  margin:0 1rem;
+}
+body.mobile #others #others-app-4.others-portfolio-item-wrap .media-wrap{
+  width: calc(100% - 64px);
+}
+body.mobile #others .other-released-videos.youtube iframe{
+  height:auto;
+}
+body.mobile #others .other-released-videos.mp4-short video{
+  height:auto;
+  width: 100%;
 }

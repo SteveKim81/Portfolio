@@ -1,4 +1,12 @@
 window.addEventListener('DOMContentLoaded', function () {
+
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    document.body.classList.add("mobile");
+  }
+
+
   const titles = [
     "MULTIMEDIA SPECIALIST",
     "ELEARNING DEVELOPER",
@@ -638,7 +646,7 @@ window.addEventListener('DOMContentLoaded', function () {
       const rightArrow = document.querySelector('.course-arrow.right');
       
       // Scroll by 1 thumbnail width (plus margin)
-      const scrollAmount = 500;
+      const scrollAmount = window.innerWidth * 0.5;
       
       leftArrow.addEventListener('click', () => {
         thumbsWrap.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
