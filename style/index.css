@@ -2895,13 +2895,9 @@ body.mobile section  #hicreo .portfolio-wrap .item3 .hicreo-website-wrap .hicreo
   right: calc(50% - 178px);
 }
 
-body.mobile #elearning .course-thumbs-wrap .coursetem, 
-body.mobile #elearning .demo-thumbs-wrap .demontem{
-    width: 100px;
-    height: 56px;
-}
 body.mobile #elearning .project-content-wrap.elearning .elearningDemoThumbnail{
-  width:100%;
+  width:calc(100% - 2rem);
+  margin:0 1rem;
   height:auto;
   aspect-ratio: 16 / 9;
 }
@@ -2909,11 +2905,59 @@ body.mobile .elearning-portfolio-item-wrap{
   height:100%;
 }
 body.mobile #elearning .demo-thumbs-wrap{
-  bottom:80px;
+  display:none;
+}
+body.mobile #elearning .elearning-portfolio-item-wrap{
+  display:flex;
+  opacity:1;
+  flex-direction: column;
+  padding:50px 0;
+  height:auto;
+  min-height:auto;
+}
+body.mobile #elearning .elearning-portfolio-item-wrap#demontem-3{
+  padding-top:100px;
+}
+body.mobile #elearning .elearning-portfolio-item-wrap#demontem-1{
+  padding-bottom:100px;
+}
+body.mobile #elearning .elearning-portfolio-item-wrap#coursetem-12 .header,
+body.mobile #elearning .elearning-portfolio-item-wrap#coursetem-11 .header,
+body.mobile #elearning .elearning-portfolio-item-wrap#coursetem-10 .header,
+body.mobile #elearning .elearning-portfolio-item-wrap#coursetem-9 .header,
+body.mobile #elearning .elearning-portfolio-item-wrap#coursetem-8 .header,
+body.mobile #elearning .elearning-portfolio-item-wrap#coursetem-7 .header,
+body.mobile #elearning .elearning-portfolio-item-wrap#coursetem-6 .header,
+body.mobile #elearning .elearning-portfolio-item-wrap#coursetem-5 .header,
+body.mobile #elearning .elearning-portfolio-item-wrap#coursetem-4 .header,
+body.mobile #elearning .elearning-portfolio-item-wrap#coursetem-3 .header,
+body.mobile #elearning .elearning-portfolio-item-wrap#coursetem-2 .header,
+body.mobile #elearning .elearning-portfolio-item-wrap#coursetem-1 .header,
+body.mobile #elearning .elearning-portfolio-item-wrap#demontem-1 .header,
+body.mobile #elearning .elearning-portfolio-item-wrap#demontem-2 .header{
+  display:none;
 }
 body.mobile #elearning .course-thumbs-container{
-  bottom:60px;
+  display:none;
 }
+body.mobile #elearning .project-content-wrap.elearning .item6 #coursetem-8 .elearning-video-demo video, 
+body.mobile #elearning .project-content-wrap.elearning .item6 #coursetem-7 .elearning-video-demo video, 
+body.mobile #elearning .project-content-wrap.elearning .item6 #coursetem-6 .elearning-video-demo video, 
+body.mobile #elearning .project-content-wrap.elearning .item6 #coursetem-5 .elearning-video-demo video, 
+body.mobile #elearning .project-content-wrap.elearning .item6 #coursetem-4 .elearning-video-demo video, 
+body.mobile #elearning .project-content-wrap.elearning .item6 #coursetem-3 .elearning-video-demo video{
+  width:100%;
+  height:auto;
+}
+body.mobile .item6 .elearning-portfolio-item-wrap{
+  margin-top:0;
+}
+body.mobile #elearning .project-content-wrap.elearning .item6 #coursetem-1 .elearning-video-demo{
+  width:calc(100% - 2rem);
+  margin:0 1rem;
+  height:auto;
+}
+
 body.mobile #coursetem-8,
 body.mobile #coursetem-7,
 body.mobile #coursetem-6,
@@ -2933,10 +2977,33 @@ body.mobile #others .project-content-wrap.others .item8 .socialGallery{
 }
 body.mobile #others .others-portfolio-item-wrap .media-wrap{
   padding-top:20px;
+  padding-bottom:0;
 }
 body.mobile #others .others-thumbs-container{
-  bottom:75px;
-  height:55px;
+  display:none;
+}
+body.mobile #others .others-portfolio-item-wrap, #elearning .elearning-portfolio-item-wrap{
+  display:flex;
+  opacity: 1;
+  flex-direction: column;
+  padding:50px 0;
+  height:auto;
+  min-height:auto;
+}
+body.mobile .item11, 
+body.mobile .item9 {
+  flex-direction: column;
+}
+body.mobile #others .others-portfolio-item-wrap#others-app-2 .others-portfolio-text-wrap,
+body.mobile #others .others-portfolio-item-wrap#others-app-3 .others-portfolio-text-wrap,
+body.mobile #others .others-portfolio-item-wrap#others-app-4 .others-portfolio-text-wrap,
+body.mobile #others .others-portfolio-item-wrap#others-game-1 .others-portfolio-text-wrap{
+  padding-top:50px;
+}
+body.mobile .description.global,
+body.mobile .global.header,
+body.mobile #others .others-portfolio-item-wrap#others-game-1 .others-portfolio-text-wrap .header{
+  display:none;
 }
 body.mobile #others .others-thumbs-wrap .otherstem{
   width:50px;
