@@ -2829,23 +2829,11 @@ section#hicreo .nav-hicreo-pages-wrap .nav-hicreo-prev:hover .hicreo-prev-icon{
     #elearning .demo-thumbs-wrap{
       position:fixed;
     }
-    .itemList.item5 .elearning-portfolio-text-wrap,
-    .itemList.item6 .elearning-portfolio-text-wrap{
-      justify-content: center;
-      display: flex;
-      flex-direction: column;
-    }
-    #elearning .elearning-portfolio-item-wrap{
-      align-items: center;
-    }
+
     #elearning .project-content-wrap.elearning .elearningDemoThumbnail{
       background-position:center;
     }
-    .others-portfolio-text-wrap{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+
     #others .others-portfolio-item-wrap .media-wrap{
       display:flex;
       justify-content: center;
@@ -2859,6 +2847,21 @@ section#hicreo .nav-hicreo-pages-wrap .nav-hicreo-prev:hover .hicreo-prev-icon{
       justify-content: center;
       display: flex;
       flex-direction: column;
+    }
+
+    .itemList.item5 .elearning-portfolio-text-wrap,
+    .itemList.item6 .elearning-portfolio-text-wrap{
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+    }
+    #elearning .elearning-portfolio-item-wrap{
+      align-items: center;
+    }
+    .others-portfolio-text-wrap{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
   }
 
