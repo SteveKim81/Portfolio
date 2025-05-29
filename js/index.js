@@ -1,8 +1,11 @@
 window.addEventListener('DOMContentLoaded', function () {
 
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  function isMobile() {
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    return /android|bb\d+|meego|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od|ad)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|silk|playbook/i.test(ua);
+  }
 
-  if (isMobile) {
+  if (isMobile()) {
     document.body.classList.add("mobile");
   }
 
