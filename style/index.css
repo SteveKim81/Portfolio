@@ -2935,7 +2935,8 @@ body.mobile #others .others-portfolio-item-wrap .media-wrap{
   padding-top:20px;
 }
 body.mobile #others .others-thumbs-container{
-  bottom:50px;
+  bottom:75px;
+  height:55px;
 }
 body.mobile #others .others-thumbs-wrap .otherstem{
   width:50px;
