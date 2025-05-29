@@ -3038,3 +3038,9 @@ body.mobile #others .other-released-videos.mp4-short video{
   height:auto;
   width: 100%;
 }
+body.mobile #elearning .project-content-wrap.elearning .item6-1 #elearningLightboxImg{
+  object-position: center;
+}
+body.mobile #others .project-content-wrap.others #socialLightboxImage .lightbox-close{
+  right:20px;
+}
