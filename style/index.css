@@ -1673,7 +1673,7 @@ section#hicreo .nav-hicreo-pages-wrap .nav-hicreo-prev:hover .hicreo-prev-icon{
  .elearning-portfolio-item-wrap{
   display:flex;
   justify-content: center;
-  padding:100px 0 200px 0;
+  padding:100px 0 100px 0;
  }
 
  #elearning .demo-thumbs-wrap{
@@ -1681,7 +1681,7 @@ section#hicreo .nav-hicreo-pages-wrap .nav-hicreo-prev:hover .hicreo-prev-icon{
   justify-content: center;
   align-items: center;
   position:relative;
-  bottom:100px;
+  bottom:130px;
   width:100vw;
  }
  #others .others-thumbs-wrap .otherstem{
@@ -1818,7 +1818,7 @@ section#hicreo .nav-hicreo-pages-wrap .nav-hicreo-prev:hover .hicreo-prev-icon{
   justify-content: center;
   align-items: center;
   position:relative;
-  bottom:100px;
+  bottom:130px;
   width:100vw;
   height:100px;
  }
