@@ -2991,6 +2991,7 @@ body.mobile #others .others-portfolio-item-wrap .media-wrap{
 }
 body.mobile #others .others-portfolio-item-wrap .media-wrap .other-released-videos{
   width:100%;
+  margin-bottom:100px;
 }
 body.mobile #others .others-portfolio-item-wrap .media-wrap .other-released-videos iframe{
   width:100%;
