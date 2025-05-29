@@ -3011,6 +3011,7 @@ body.mobile #others .others-portfolio-item-wrap{
   padding:50px 0;
   height:auto;
   min-height:auto;
+  align-items: center;
 }
 body.mobile .item11, 
 body.mobile .item9 {
@@ -3065,3 +3066,10 @@ body.mobile #others .project-content-wrap.others #socialLightboxImage .lightbox-
 body.mobile section#others .hero .hero-text-wrap{justify-content:center;}
 body.mobile #contact{width:100vw; height:100vh;}
 body.mobile #hicreo .hero .image-wrap{display:none;}
+body.mobile section#others .portfolio-wrap > div{ align-items: center;}
+body.mobile #others .others-portfolio-item-wrap .media-wrap{
+  height:auto;
+}
+body.mobile  #others .item9 .others-portfolio-item-wrap .media-wrap .iframe-wrap iframe{
+  width:100%;
+}
