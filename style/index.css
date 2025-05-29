@@ -2945,6 +2945,11 @@ body.mobile #elearning .elearning-portfolio-item-wrap#demontem-2 .header{
 body.mobile #elearning .course-thumbs-container{
   display:none;
 }
+body.mobile #elearning .project-content-wrap.elearning .elearning-video-demo video{
+  width:100%;
+  height:auto;
+}
+
 body.mobile #elearning .project-content-wrap.elearning .item6 #coursetem-8 .elearning-video-demo video, 
 body.mobile #elearning .project-content-wrap.elearning .item6 #coursetem-7 .elearning-video-demo video, 
 body.mobile #elearning .project-content-wrap.elearning .item6 #coursetem-6 .elearning-video-demo video, 
@@ -2984,6 +2989,17 @@ body.mobile #others .others-portfolio-item-wrap .media-wrap{
   padding-top:20px;
   padding-bottom:0;
 }
+body.mobile #others .others-portfolio-item-wrap .media-wrap .other-released-videos{
+  width:100%;
+}
+body.mobile #others .others-portfolio-item-wrap .media-wrap .other-released-videos iframe{
+  width:100%;
+}
+body.mobile #others .item10 .others-portfolio-item-wrap .media-wrap{
+  width:calc(100% - 4rem);
+  aspect-ratio: 16/9;
+}
+
 body.mobile #others .others-thumbs-container{
   display:none;
 }
@@ -3044,3 +3060,6 @@ body.mobile #elearning .project-content-wrap.elearning .item6-1 #elearningLightb
 body.mobile #others .project-content-wrap.others #socialLightboxImage .lightbox-close{
   right:20px;
 }
+
+body.mobile section#others .hero .hero-text-wrap{justify-content:center;}
+body.mobile #contact{width:100vw; height:100vh;}
