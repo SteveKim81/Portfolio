@@ -2915,6 +2915,11 @@ body.mobile #elearning .elearning-portfolio-item-wrap{
   height:auto;
   min-height:auto;
 }
+body.mobile #elearning .portfolio-wrap .item5 .nav-instruction,
+body.mobile #elearning .portfolio-wrap .item6 .nav-instruction{
+  margin-bottom: 1rem;
+}
+body.mobile #elearning .elearning-portfolio-item-wrap#coursetem-13,
 body.mobile #elearning .elearning-portfolio-item-wrap#demontem-3{
   padding-top:100px;
 }
