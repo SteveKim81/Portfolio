@@ -87,7 +87,8 @@
     top:0px;
     z-index:900;
     justify-content: space-between;
-    padding:0 0.5rem;
+    padding:0 2rem;
+    background-color:RGBA(0,0,0,0.8);
   }
   .navbar.visible {
     top:0px;
@@ -815,7 +816,7 @@
     height: 500px;
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center top;
     margin: 0 100px 0 50px;
     width:calc(60% - 150px);
   }
@@ -1035,6 +1036,22 @@
     display: flex;
     flex-wrap: wrap;
     gap: 7px;
+    background:RGBA(0,0,0,0.5);
+    border-radius:10px;
+    padding:1rem;
+  }
+  #others .project-content-wrap.others .item7 .printGallery {
+    height: 100%;
+    min-height: 150px;
+    overflow-y: auto;
+    max-height: 600px;
+  }
+
+  #others .project-content-wrap.others .item8 .socialGallery{
+    max-height: 600px;
+    height:calc(100vh - 260px);
+    overflow-y: scroll;
+    min-height:150px;
   }
   #others .project-content-wrap.others .item8 .socialGallery img{
     width: calc(25% - 6px);
@@ -1064,17 +1081,12 @@
   #others .project-content-wrap.others .item8 .template-wrap,
   #others .project-content-wrap.others .item7 .template-wrap{
     padding:1rem;
-    background:RGBA(0,0,0,0.5);
-    border-radius:10px;
     width:calc(60% - 150px);
     margin:0 100px 0 50px;
     max-width:936px;
   }
 
-  #others .project-content-wrap.others .item8 .template-wrap{
-    max-height: 70vh;
-    overflow-y: scroll;
-  }
+
   #projects .project-content-wrap.others .item8 .template-wrap{
     height:600px;
     overflow-y:scroll;
@@ -1286,6 +1298,7 @@ section#hicreo{
   position:absolute;
   top:0;
   background-color:#021526;
+  overflow: hidden;
 }
 section#elearning{
   position: absolute;
@@ -1304,9 +1317,10 @@ section#contact{
 section#hicreo .hero{
   display:flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   width:100%;
   position: relative;
+  overflow-x: hidden;
 }
 section#elearning .hero{
   display:flex;
@@ -1323,8 +1337,9 @@ section .hero .hero-text-wrap{
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  padding:5%;
+  padding:100px 5%;
   width:80%;
+  min-height:100%;
 }
 
 section#elearning .hero .hero-text-wrap{
@@ -1332,19 +1347,18 @@ section#elearning .hero .hero-text-wrap{
   position:absolute;
   z-index:1;
   display:flex;
-  justify-content: center;
+
   align-items: flex-start;
   flex-direction: column;
-  padding:5%;
   width:70%;
 }
 section#others .hero .hero-text-container{
   display: flex;
   justify-content: center;
-  align-items: center;
   width: 100vw;
   height: 100vh;
   position: relative;
+  overflow-y:auto;
 }
 section#others .hero .hero-text-wrap .body {
   font-size: 1.25rem;
@@ -1362,9 +1376,10 @@ section#elearning .hero .hero-text-container{
   position:absolute;
   z-index:1;
   display:flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+  overflow-y: auto;
 }
 section .hero .hero-text-wrap .header{
   font-size:3rem;
@@ -1401,7 +1416,7 @@ section#elearning .hero .hero-text-wrap .body{
 }
 
 section .hero .image-wrap{
-  position:absolute;
+  position:fixed;
   z-index:0;
 } 
 section#others .hero .image-wrap{
@@ -1446,7 +1461,7 @@ section .hero .image-wrap .phone{
   width:30%;
   position:absolute;
   bottom:-10%;
-  right:-1%;
+  right:5%;
   transition: transform 0.05s ease-in-out;
   will-change: transform;
 }
@@ -1454,14 +1469,16 @@ section .nav-others-pages-wrap,
 section .nav-elearning-pages-wrap,
 section .nav-hicreo-pages-wrap{
   display: flex;
-  width: 100%;
+  width: 400px;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  bottom: 50px;
+  position: fixed;
+  bottom: 40px;
   color:#fff;
   z-index: 2;
-  
+  background-color:RGBA(0,0,0,0.8);
+  left:calc(50% - 200px);
+  border-radius:10px;
 }
 section .nav-others-pages-wrap .nav-others-page,
 section .nav-elearning-pages-wrap .nav-elearning-page,
@@ -1586,7 +1603,7 @@ section#hicreo .nav-hicreo-pages-wrap .nav-hicreo-prev:hover .hicreo-prev-icon{
   border-bottom: 4px solid transparent;
   border-right: 8px solid #fff;
  }
- section#elearothersning .nav-others-pages-wrap .nav-others-next.disabled:hover .others-next-icon,
+ section#others .nav-others-pages-wrap .nav-others-next.disabled:hover .others-next-icon,
  section#elearning .nav-elearning-pages-wrap .nav-elearning-next.disabled:hover .elearning-next-icon,
  section#hicreo .nav-hicreo-pages-wrap .nav-hicreo-next.disabled:hover .hicreo-next-icon{
   border-top: 4px solid transparent;
@@ -1620,14 +1637,14 @@ section#hicreo .nav-hicreo-pages-wrap .nav-hicreo-prev:hover .hicreo-prev-icon{
   left:0;
  }
  section#others .portfolio-wrap > div {
-  flex: 0 0 100vw; /* 👈 This is the key */
-  height: 100vh;
-  overflow: hidden;
+  flex: 0 0 100vw;
+  min-height: 100vh;
  }
  section#elearning .portfolio-wrap > div {
-  flex: 0 0 100vw; /* 👈 This is the key */
+  flex: 0 0 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x:hidden;
   }
  .others-portfolio-text-wrap,
  .elearning-portfolio-text-wrap,
@@ -1635,30 +1652,36 @@ section#hicreo .nav-hicreo-pages-wrap .nav-hicreo-prev:hover .hicreo-prev-icon{
   width:calc(40% - 150px);
   margin:0 50px 0 100px;
  }
+ .others-portfolio-text-wrap{
+  display:inline-table;
+  padding:100px 0 150px 0;
+ }
  .hicreo-portfolio-text-wrap{
   width:calc(100% - 200px); 
   margin-bottom:20px;
  }
-
+  #others .project-content-wrap.others .item8 .template-wrap,
+  #others .project-content-wrap.others .item7 .template-wrap{
+    padding:100px 0 150px 0;
+  }
  .others-portfolio-item-wrap{
   display:flex;
   justify-content: center;
-  align-items: center;
-  height: calc(100vh - 180px);
+  /* align-items: center; */
+  height: 100%;
  }
  .elearning-portfolio-item-wrap{
   display:flex;
   justify-content: center;
-  align-items: center;
-  height: calc(100vh - 150px);
+  padding:100px 0 200px 0;
  }
 
  #elearning .demo-thumbs-wrap{
   display:flex;
   justify-content: center;
   align-items: center;
-  position:absolute;
-  bottom:150px;
+  position:relative;
+  bottom:100px;
   width:100vw;
  }
  #others .others-thumbs-wrap .otherstem{
@@ -1774,6 +1797,7 @@ section#hicreo .nav-hicreo-pages-wrap .nav-hicreo-prev:hover .hicreo-prev-icon{
  #elearning .elearning-portfolio-item-wrap{
   display:none; 
   opacity:0;
+  min-height:100vh;
  }
  #others .others-portfolio-item-wrap.selected,
  #elearning .elearning-portfolio-item-wrap.selected{
@@ -1784,7 +1808,7 @@ section#hicreo .nav-hicreo-pages-wrap .nav-hicreo-prev:hover .hicreo-prev-icon{
   display:flex;
   justify-content: center;
   align-items: center;
-  position:absolute;
+  position:fixed;
   bottom:80px;
   width:100vw;
   height:100px;
@@ -1793,13 +1817,13 @@ section#hicreo .nav-hicreo-pages-wrap .nav-hicreo-prev:hover .hicreo-prev-icon{
   display:flex;
   justify-content: center;
   align-items: center;
-  position:absolute;
-  bottom:150px;
+  position:relative;
+  bottom:100px;
   width:100vw;
   height:100px;
  }
- .others-thumbs-container::before,
- .others-thumbs-container::after,
+ /* .others-thumbs-container::before,
+ .others-thumbs-container::after, */
  .course-thumbs-container::before,
  .course-thumbs-container::after {
    content: "";
@@ -1929,6 +1953,8 @@ section#hicreo .nav-hicreo-pages-wrap .nav-hicreo-prev:hover .hicreo-prev-icon{
   flex-direction: column;
   width: calc(60% - 150px);
   margin: 0 100px 0 50px;
+  padding:100px 0 150px 0;
+  display:inline-table;
 }
 #others .others-portfolio-item-wrap .media-wrap .iframe-wrap{
   text-align: center;;
@@ -2136,6 +2162,10 @@ section#hicreo .nav-hicreo-pages-wrap .nav-hicreo-prev:hover .hicreo-prev-icon{
 #resume .resume-wrap ul.description{
   font-size: 1.25rem;
 }
+
+.item1, .item2, .item3 {
+  padding:100px 0;
+}
 @media (min-width: 992px) {
   .navbar-toggler {
     display: none;
@@ -2205,6 +2235,10 @@ section#hicreo .nav-hicreo-pages-wrap .nav-hicreo-prev:hover .hicreo-prev-icon{
   .others-portfolio-text-wrap, .elearning-portfolio-text-wrap, .hicreo-portfolio-text-wrap{
     width: calc(40% - 70px);
     margin: 0 20px 0 50px;
+  }
+  .item4 .hicreo-portfolio-text-wrap{
+    width: calc(100% - 200px);
+    margin-bottom: 20px;
   }
   #elearning .project-content-wrap.elearning .elearningDemoThumbnail{
     width: calc(60% - 70px);
@@ -2391,6 +2425,10 @@ section#hicreo .nav-hicreo-pages-wrap .nav-hicreo-prev:hover .hicreo-prev-icon{
   }
   .item6-1 .elearning-portfolio-text-wrap,
   .others-portfolio-text-wrap, .elearning-portfolio-text-wrap, .hicreo-portfolio-text-wrap{
+    width:90%;
+    margin:0;
+  }
+  .item4 .hicreo-portfolio-text-wrap{
     width:90%;
     margin:0;
   }
@@ -2622,6 +2660,9 @@ section#hicreo .nav-hicreo-pages-wrap .nav-hicreo-prev:hover .hicreo-prev-icon{
   .elearning-portfolio-text-wrap, .hicreo-portfolio-text-wrap{
     width:100%;
   }
+  .item4 .hicreo-portfolio-text-wrap{
+    width:100%;
+  }
   .others-portfolio-text-wrap{
     margin:0 1rem;
     with:calc(100% - 2rem);
@@ -2782,3 +2823,60 @@ section#hicreo .nav-hicreo-pages-wrap .nav-hicreo-prev:hover .hicreo-prev-icon{
     font-size:0.8rem;
   }
  }
+
+  @media (min-height: 740px) {
+    #elearning .course-thumbs-container,
+    #elearning .demo-thumbs-wrap{
+      position:fixed;
+    }
+    .itemList.item5 .elearning-portfolio-text-wrap,
+    .itemList.item6 .elearning-portfolio-text-wrap{
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+    }
+    #elearning .elearning-portfolio-item-wrap{
+      align-items: center;
+    }
+    #elearning .project-content-wrap.elearning .elearningDemoThumbnail{
+      background-position:center;
+    }
+    .others-portfolio-text-wrap{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    #others .others-portfolio-item-wrap .media-wrap{
+      display:flex;
+      justify-content: center;
+    }
+  }
+  @media (min-height: 500px) {
+
+    .itemList.item1 .hicreo-portfolio-text-wrap,
+    .itemList.item2 .hicreo-portfolio-text-wrap,
+    .itemList.item3 .hicreo-portfolio-text-wrap{
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+
+/* Scrollbar track (vertical) */
+::-webkit-scrollbar {
+  width: 8px; /* vertical scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a; /* track background */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;  /* scrollbar color */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;  /* on hover */
+}
