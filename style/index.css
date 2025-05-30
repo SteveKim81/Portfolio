@@ -3014,6 +3014,12 @@ body.mobile #others .others-portfolio-item-wrap{
   height:auto;
   min-height:auto;
   align-items: center;
+  width:100vw;
+}
+body.mobile #others .item11 .others-portfolio-item-wrap#others-app-1 .media-wrap .others-video-wrap video,
+body.mobile #others .item11 .others-portfolio-item-wrap#others-app-2 .media-wrap .others-video-wrap video,
+body.mobile #others .item11 .others-portfolio-item-wrap#others-app-3 .media-wrap .others-video-wrap video{
+  width:100%;
 }
 body.mobile .item11, 
 body.mobile .item9 {
