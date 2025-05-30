@@ -500,6 +500,8 @@
 
   #hicreo .portfolio-wrap .hicreo-website-wrap{
     position:relative;
+    display:flex;
+    align-items:center;
   }
   .portfolio-wrap .nav-instruction{
     margin-top:1rem;
@@ -565,7 +567,7 @@
   }
   #hicreo .portfolio-wrap .item1 .hicreo-website-wrap .hicreo-website-mobile{
     position:absolute;
-    top: 150px;
+    top: calc(50% - 129px);
     right: 80px;
   }
   #hicreo .portfolio-wrap .item1 .hicreo-website-wrap .hicreo-website-mobile .hicreo-website-mobile-frame{
@@ -573,8 +575,8 @@
   }
   #hicreo .portfolio-wrap .item3 .hicreo-website-wrap .hicreo-website-mobile{
     position:absolute;
-    top: 150px;
-    right: 0px;
+    top: calc(50% - 129px);
+    right: 20px;
   }
 
   #hicreo .portfolio-wrap .hicreo-website-wrap .hicreo-website-mobile .capture-img-mobile-wrap{
