@@ -18,8 +18,8 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
   const titles = [
-    "MULTIMEDIA SPECIALIST",
-    "ELEARNING DEVELOPER",
+    "DIGITAL CREATIVE",
+    "CREATIVE MEDIA SPECIALIST",
     "GRAPHIC DESIGNER"
   ];
 
